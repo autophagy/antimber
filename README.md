@@ -29,4 +29,5 @@ Things to install that don't really need a config:
  - GRUB theme :: Vimix
  - Icons :: numix (grey via numix-folders)
  - Display Manager :: SDDM with Abstract Dark Theme
- - Console fonts :: Terminus/Droid Sans Mono
+ - Console fonts :: Droid Sans Mono
+ - System font :: System San Francisco Display
