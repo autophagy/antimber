@@ -13,6 +13,7 @@ Should contain configs for:
  - compton
  - zsh/oh-my-zsh
  - URxvt
+ - dunst
 
 ## Reminders for Install
 
