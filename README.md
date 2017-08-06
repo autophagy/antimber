@@ -4,6 +4,12 @@ Purpose of this repo is to accumulate config files from playing around with
 Arch in a VM, to prep for a fresh install. Also as an installer reminder for
 when I get around to it.
 
+## Theme
+
+Simple, minimalist forest green theme.
+
+![mock up of final UI](mock_up.png)
+
 ## Configs
 
 Should contain configs for:
