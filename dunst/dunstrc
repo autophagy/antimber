@@ -190,8 +190,8 @@
     timeout = 10
 
 [urgency_critical]
-    background = "#424242"
-    foreground = "#A89494"
+    background = "#A89494"
+    foreground = "#424242"
     timeout = 0
 
 [weechat hl]
