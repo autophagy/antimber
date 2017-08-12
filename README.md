@@ -8,7 +8,7 @@ when I get around to it.
 
 Simple, minimalist forest green theme.
 
-![mock up of final UI](mock_up.png)
+![mock up of final UI](mock_up.jpg)
 
 ## Configs
 
