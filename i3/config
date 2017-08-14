@@ -219,6 +219,9 @@ exec --no-startup-id xautolock -time 10 -locker i3lock
 exec --no-startup-id dunst
 exec --no-startup-id polybar statusbar
 
+# Lockscreen binding
+bindsym $mod+Shift+o exec --no-startup-id i3lock
+
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
