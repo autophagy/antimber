@@ -22,6 +22,7 @@
 background = #424242
 foreground = #94A895
 alert = #A89494
+poweritems = #9B8989
 
 [bar/statusbar]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -165,14 +166,19 @@ label-close-background = ${colors.alert}
 
 menu-0-0 = 
 menu-0-0-padding = 5
-menu-0-0-background = #9B8989
+menu-0-0-background = ${colors.poweritems}
 menu-0-0-foreground = #252525
 menu-0-0-exec = shutdown -h now
 menu-0-1 = 
 menu-0-1-padding = 5
-menu-0-1-background = ${colors.alert}
+menu-0-1-background = ${colors.poweritems}
 menu-0-1-foreground = #252525
 menu-0-1-exec = reboot
+menu-0-2 = 
+menu-0-2-padding = 5
+menu-0-2-background = ${colors.poweritems}
+menu-0-2-foreground = #252525
+menu-0-2-exec = i3-msg exit
 
 [settings]
 screenchange-reload = true
