@@ -215,12 +215,12 @@ mode "resize" {
 
 # Autostart applications
 exec --no-startup-id nitrogen --restore;
-exec --no-startup-id xautolock -time 10 -locker i3lock
+exec --no-startup-id xautolock -time 10 -locker i3lock -i ~/.config/i3lock/bg.png
 exec --no-startup-id dunst
 exec --no-startup-id polybar statusbar
 
 # Lockscreen binding
-bindsym $mod+Shift+o exec --no-startup-id i3lock
+bindsym $mod+Shift+o exec --no-startup-id i3lock -i ~/.config/i3lock/bg.png
 
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
