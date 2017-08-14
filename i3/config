@@ -37,7 +37,7 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu
+bindsym $mod+d exec --no-startup-id dmenu_run -b -fn "Noto-10.5" -nb "#424242" -nf "#94A895" -sf "#424242" -sb "#94A895"
 
 
 ###################
