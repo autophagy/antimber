@@ -167,10 +167,10 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+assign [class="qutebrowser"] $ws2
+assign [class="Chromium"] $ws2
+assign [class="Atom"] $ws3
+assign [class="Spotify"] $ws10
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
