@@ -213,14 +213,21 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# i3lock color options
+set $i3lock_img -i ~/.config/i3lock/i3lock_bg.png
+set $i3lock_colors --insidecolor=42424266 --ringcolor=424242ff --linecolor=00000000
+set $i3lock_vercolors --insidevercolor=42424266 --ringvercolor=94a895ff
+set $i3lock_wrongcolors --insidewrongcolor=a8949466 --ringwrongcolor=a89494ff
+set $i3lock_misc --keyhlcolor=94a895ff --textcolor=00000000 --bshlcolor=a89494ff
+
 # Autostart applications
 exec --no-startup-id nitrogen --restore;
-exec --no-startup-id xautolock -time 10 -locker i3lock -i ~/.config/i3lock/bg.png
+exec --no-startup-id xautolock -time 10 -locker i3lock $i3lock_img $i3lock_colors $i3lock_vercolors $i3lock_wrongcolors $i3lock_misc
 exec --no-startup-id dunst
 exec --no-startup-id polybar statusbar
 
 # Lockscreen binding
-bindsym $mod+Shift+o exec --no-startup-id i3lock -i ~/.config/i3lock/bg.png
+bindsym $mod+Shift+o exec --no-startup-id i3lock $i3lock_img $i3lock_colors $i3lock_vercolors $i3lock_wrongcolors $i3lock_misc
 
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
