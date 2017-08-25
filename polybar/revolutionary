@@ -22,7 +22,6 @@ now = dt.datetime.now()
 republican_now = fr.from_gregorian(now.year, now.month, now.day)
 formatted = fr.format(republican_now[0], republican_now[1], republican_now[2])
 roman_numeral_year = roman_year(republican_now[0])
-print("{0} {1} // {2}.{3}".format(formatted[:formatted.rfind(' ')],
-                                             roman_numeral_year,
-                                             now.hour,
-                                             now.minute))
+print("{0} {1} // {2}".format(formatted[:formatted.rfind(' ')],
+                                        roman_numeral_year,
+                                        now.strftime("%H.%M")))
