@@ -58,7 +58,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 
 # Start Applications
 bindsym $mod+F3 exec ranger
-bindsym Print exec --no-startup-id i3-scrot
+bindsym Print exec --no-startup-id scrot
 
 # focus_follows_mouse no
 
