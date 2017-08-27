@@ -163,7 +163,12 @@ menu-0-2 = 
 menu-0-2-padding = 3
 menu-0-2-background = ${colors.poweritems}
 menu-0-2-foreground = #252525
-menu-0-2-exec = i3-msg exit
+menu-0-2-exec = ~/.config/i3/i3lock.sh && systemctl suspend
+menu-0-3 = 
+menu-0-3-padding = 3
+menu-0-3-background = ${colors.poweritems}
+menu-0-3-foreground = #252525
+menu-0-3-exec = i3-msg exit
 
 [module/revolutionary]
 type = custom/script
