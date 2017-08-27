@@ -58,7 +58,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 2; notify-send 'brightness d
 
 # Start Applications
 bindsym $mod+F3 exec ranger
-bindsym Print exec --no-startup-id scrot
+bindsym Print exec --no-startup-id scrot ~/images/screenshots/%b%d::%H%M%S.png
 
 # focus_follows_mouse no
 
