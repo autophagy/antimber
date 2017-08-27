@@ -82,7 +82,7 @@ label-urgent-background = ${colors.alert}
 
 [module/wlan]
 type = internal/network
-interface = enp0s3
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal>
