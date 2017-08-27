@@ -2,6 +2,6 @@
 
 arboria:
   dir: arboria
-  desc: Arboria is a minimalist, forest green themed set up for Arch, with date
+  desc: Arboria is a minimalist, forest green theme set up for Arch, with date
         displayed in the French Revolutionary Calendar.
   readme: https://github.com/autophagy/dotfiles/blob/master/arboria/README.md

@@ -1,6 +1,6 @@
 # Arboria :: Dotfiles
 
-Arboria is a minimalist, forest green themed set up for
+Arboria is a minimalist, forest green theme set up for
 [Arch](https://www.archlinux.org/), with date displayed in the
 [French Revolutionary Calendar](https://en.wikipedia.org/wiki/French_Republican_Calendar).
 
