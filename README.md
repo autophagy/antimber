@@ -1,33 +1,14 @@
-# Autophagy // Dotfiles
+# Autophagy :: Dotfiles
 
-Purpose of this repo is to accumulate config files from playing around with
-Arch in a VM, to prep for a fresh install. Also as an installer reminder for
-when I get around to it.
+Dotfiles for [Arch Linux](https://www.archlinux.org/) themes, all based around
+the use of the [i3wm-gaps](https://github.com/Airblader/i3) window manager.
 
-## Theme
+## Themes
 
-Simple, minimalist forest green theme.
+### 0x01 :: Arboria
 
-![mock up of final UI](mock_up.jpg)
+![arboria UI](arboria/arboria.jpg)
 
-## Configs
+Elements :: i3wm // polybar // dunst
 
-Should contain configs for:
-
- - i3-wm/i3-gaps
- - polybar
- - compton
- - zsh/oh-my-zsh
- - URxvt
- - dunst
-
-## Reminders for Install
-
-Things to install that don't really need a config:
-
- - GTK3 theme :: VimixDark-Laptop
- - GRUB theme :: Vimix
- - Icons :: numix (grey via numix-folders)
- - Display Manager :: SDDM with Abstract Dark Theme
- - Console fonts :: Droid Sans Mono
- - System font :: System San Francisco Display
+[Arboria README](arboria/README.md)
