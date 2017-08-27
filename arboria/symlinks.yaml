@@ -1,0 +1,34 @@
+# Symlinks for arboria theme
+dunst:
+  rc:
+    src: dunst/dunstrc
+    dst: ~/.config/dunst/dunstrc
+
+i3:
+  config:
+    src: i3/config
+    dst: ~/.config/i3/config
+  i3lock_bg:
+    src: i3/i3lock_bg.png
+    dst: ~/.config/i3/i3lock_bg.png
+  i3lock_script:
+    src: i3/i3lock.sh
+    dst: ~/.config/i3/i3lock.sh
+
+polybar:
+  config:
+    src: polybar/config
+    dst: ~/.config/polybar/config
+  revolutionary:
+    src: polybar/revolutionary
+    dst: ~/.config/polybar/revolutionary
+
+qutebrowser:
+  conf:
+    src: qutebrowser/qutebrowser.conf
+    dst: ~/.config/qutebrowser/qutebrowser.conf
+
+xresources:
+  conf:
+    src: .Xresources
+    dst: ~/.Xresources
