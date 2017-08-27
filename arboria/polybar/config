@@ -125,7 +125,7 @@ format-charging-padding = 3
 format-discharging = <ramp-capacity>
 format-discharging-padding = 3
 
-format-full = <ramp-capacity>
+format-full =
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${colors.alert}
