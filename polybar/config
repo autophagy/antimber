@@ -25,7 +25,7 @@ alert = #A89494
 poweritems = #9B8989
 
 [bar/statusbar]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = eDP1
 width = 100%
 height = 40
 radius = 0.0
