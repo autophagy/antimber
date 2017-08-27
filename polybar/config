@@ -63,20 +63,20 @@ wrapping-scroll = true
 strip-wsnumbers = true
 pin-workspaces = true
 
-label-mode-padding = 5
+label-mode-padding = 3
 label-mode-foreground = ${colors.background}
 
 label-unfocused-foreground = ${colors.foreground}
-label-unfocused-padding = 5
+label-unfocused-padding = 3
 
 label-visible-foregroud = ${colors.foreground}
-label-visible-padding = 5
+label-visible-padding = 3
 
 label-focused-foreground = ${colors.background}
 label-focused-background = #9FA895
-label-focused-padding = 5
+label-focused-padding = 3
 
-label-urgent-padding = 5
+label-urgent-padding = 3
 label-urgent-foreground = ${colors.background}
 label-urgent-background = ${colors.alert}
 
@@ -86,7 +86,7 @@ interface = enp0s3
 interval = 3.0
 
 format-connected = <ramp-signal>
-format-connected-padding = 5
+format-connected-padding = 3
 
 format-disconnected =
 
@@ -105,9 +105,9 @@ ramp-signal-4-foreground = ${colors.foreground}
 type = internal/volume
 
 format-volume = <ramp-volume>
-format-volume-padding = 5
+format-volume-padding = 3
 label-muted = 
-label-muted-padding = 5
+label-muted-padding = 3
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -120,10 +120,10 @@ adapter = AC
 full-at = 98
 
 format-charging = +<ramp-capacity>
-format-charging-padding = 5
+format-charging-padding = 3
 
 format-discharging = <ramp-capacity>
-format-discharging-padding = 5
+format-discharging-padding = 3
 
 format-full = <ramp-capacity>
 
@@ -141,26 +141,26 @@ type = custom/menu
 format-spacing = 0
 
 label-open = 
-label-open-padding = 5
+label-open-padding = 3
 label-open-foreground = #252525
 label-open-background = ${colors.alert}
 label-close = 
-label-close-padding = 5
+label-close-padding = 3
 label-close-foreground = #252525
 label-close-background = ${colors.alert}
 
 menu-0-0 = 
-menu-0-0-padding = 5
+menu-0-0-padding = 3
 menu-0-0-background = ${colors.poweritems}
 menu-0-0-foreground = #252525
 menu-0-0-exec = shutdown -h now
 menu-0-1 = 
-menu-0-1-padding = 5
+menu-0-1-padding = 3
 menu-0-1-background = ${colors.poweritems}
 menu-0-1-foreground = #252525
 menu-0-1-exec = reboot
-menu-0-2 = 
-menu-0-2-padding = 5
+menu-0-2 = 
+menu-0-2-padding = 3
 menu-0-2-background = ${colors.poweritems}
 menu-0-2-foreground = #252525
 menu-0-2-exec = i3-msg exit
