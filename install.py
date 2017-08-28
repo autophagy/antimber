@@ -30,9 +30,10 @@ def get_valid_themes():
 
 def print_theme_descriptions(valid_themes):
     for theme in valid_themes:
-        print('Theme  :: {0}'.format(theme))
-        print('Desc   :: {0}'.format(valid_themes[theme]['desc']))
-        print('Readme :: {0}\n'.format(valid_themes[theme]['readme']))
+        print('Theme    :: {0}'.format(theme))
+        print('Desc     :: {0}'.format(valid_themes[theme]['desc']))
+        print('Dotfiles :: {0}'.format(valid_themes[theme]['dotfiles']))
+        print('Readme   :: {0}\n'.format(valid_themes[theme]['readme']))
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Autophagy Theme Installer')
@@ -44,7 +45,9 @@ def parse_args():
 
 
 def main():
-    """ Installs an Autophagian Arch theme via symlinking
+    """
+    Installs an Autophagian Arch theme via symlinking, based on a theme's
+    yaml configuration.
     """
     args = parse_args()
     valid_themes = get_valid_themes()
