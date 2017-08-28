@@ -8,7 +8,11 @@ Work spaces are currently:
 1 :: terminal // 2 :: browser // 3 :: code // 4 :: comm // 5-9 :: free //
 0 :: spotify
 
-![arboria UI](arboria.jpg)
+#### Clean
+![arboria clean](clean.jpg)
+
+#### Busy
+![arboria busy](busy.jpg)
 
 ## Components Used
 

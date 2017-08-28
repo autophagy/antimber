@@ -6,11 +6,15 @@ the use of the [i3wm-gaps](https://github.com/Airblader/i3) window manager.
 ## Themes
 
 ### 0x01 :: Arboria
+#### Clean
 
-![arboria UI](arboria/arboria.jpg)
+![arboria clean](arboria/clean.jpg)
 
-Elements :: i3wm // polybar // dunst
+#### Busy
 
+![arboria busy](arboria/busy.jpg)
+
+Elements :: i3wm // polybar // dunst   
 [Arboria README](arboria/README.md)
 
 ## Installation
