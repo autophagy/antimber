@@ -19,7 +19,7 @@ def install_symlink(theme, symlink):
     dst = os.path.expanduser(symlink['dst'])
     try:
         os.symlink(src, dst)
-    except FileExistsError as e:
+    except FileExistsError:
         os.remove(dst)
         os.symlink(src, dst)
     print('    Symlinked :: {0} -> {1}'.format(symlink['src'], symlink['dst']))
