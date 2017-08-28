@@ -12,7 +12,7 @@
 # Config file for dunst notifications 
 
 [global]
-    font = Noto 10
+    font = Interface 12
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -24,7 +24,7 @@
     # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
     # If markup is not allowed, those tags will be stripped out of the
     # message.
-    allow_markup = yes
+    markup = yes
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -78,7 +78,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "320x4-30+50"
+    geometry = "x40-0-0"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -132,10 +132,10 @@
     separator_height = 0
 
     # Padding between text and separator.
-    padding = 33
+    padding = 10
 
     # Horizontal padding.
-    horizontal_padding =  33
+    horizontal_padding =  15
 
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
@@ -182,12 +182,12 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#424242"
     foreground = "#A8A8A8"
-    timeout = 10
+    timeout = 2
 
 [urgency_normal]
-    background = "#424242"
-    foreground = "#94A895"
-    timeout = 10
+    background = "#94A895"
+    foreground = "#424242"
+    timeout = 2
 
 [urgency_critical]
     background = "#A89494"
