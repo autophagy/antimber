@@ -14,6 +14,7 @@ def create_symlinks(theme_name):
         for symlink in symlinks[symlink_category]:
             install_symlink(theme_name, symlinks[symlink_category][symlink])
 
+
 def install_symlink(theme, symlink):
     src = os.path.abspath('{0}/{1}'.format(theme, symlink['src']))
     dst = os.path.expanduser(symlink['dst'])
@@ -24,9 +25,11 @@ def install_symlink(theme, symlink):
         os.symlink(src, dst)
     print('    Symlinked :: {0} -> {1}'.format(symlink['src'], symlink['dst']))
 
+
 def get_valid_themes():
     with open('themes.yaml', 'r') as themes:
         return yaml.load(themes)
+
 
 def print_theme_descriptions(valid_themes):
     for theme in valid_themes:
@@ -34,6 +37,7 @@ def print_theme_descriptions(valid_themes):
         print('Desc     :: {0}'.format(valid_themes[theme]['desc']))
         print('Dotfiles :: {0}'.format(valid_themes[theme]['dotfiles']))
         print('Readme   :: {0}\n'.format(valid_themes[theme]['readme']))
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Autophagy Theme Installer')
@@ -62,3 +66,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
+
