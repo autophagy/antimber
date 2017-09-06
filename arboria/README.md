@@ -36,6 +36,7 @@ Work spaces are currently:
    printscrn
  - [imagemagick](https://www.imagemagick.org/script/index.php) :: for i3lock
    screenshot && blur
+ - [bc](https://www.gnu.org/software/bc/) :: for i3lock icon type detection
  - [rxvt-unicode](https://www.archlinux.org/packages/community/x86_64/rxvt-unicode/)
    :: terminal emulator
 
