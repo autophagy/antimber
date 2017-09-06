@@ -14,6 +14,9 @@ Work spaces are currently:
 #### Busy
 ![arboria busy](busy.jpg)
 
+#### Lock Screen
+![arboria i3lock](i3lock.jpg)
+
 ## Components Used
 
  - [i3wm-gaps](https://github.com/Airblader/i3) :: tiling window manager
@@ -31,6 +34,8 @@ Work spaces are currently:
    Revolutionary date
  - [scrot](https://www.archlinux.org/packages/community/i686/scrot/) :: for
    printscrn
+ - [imagemagick](https://www.imagemagick.org/script/index.php) :: for i3lock
+   screenshot && blur
  - [rxvt-unicode](https://www.archlinux.org/packages/community/x86_64/rxvt-unicode/)
    :: terminal emulator
 
