@@ -218,7 +218,7 @@ mode "resize" {
 exec --no-startup-id nitrogen --restore;
 exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/i3lock.sh
 exec --no-startup-id dunst
-exec --no-startup-id polybar statusbar
+exec --no-startup-id polybar -r statusbar
 exec --no-startup-id xrdb /home/mika/.Xresources
 exec --no-startup-id setxkbmap gb
 exec --no-startup-id xset b off
