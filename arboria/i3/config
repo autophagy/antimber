@@ -111,6 +111,10 @@ bindsym $mod+a focus parent
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
+# move workspace between monitors
+bindsym $mod+m move workspace to output right
+bindsym $mod+Shift+m move workspace to output left
+
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
