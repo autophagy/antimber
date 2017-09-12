@@ -25,7 +25,9 @@ polybar:
   revolutionary:
     src: polybar/revolutionary
     dst: ~/.config/polybar/revolutionary
-
+  mailalert:
+    src: polybar/mailalert
+    dst: ~/.config/polybar/mailalert
 qutebrowser:
   conf:
     src: qutebrowser/qutebrowser.conf

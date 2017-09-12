@@ -1,0 +1,15 @@
+#!/bin/bash
+# vi:syntax=sh
+
+CRATE=~/mail/crate/INBOX/new
+AUTO=~/mail/autophagy/INBOX/new
+DEAD=~/mail/deadcells/INBOX/new
+
+num=$(($(ls $CRATE | wc -l )+$(ls $AUTO | wc -l)+$(ls $DEAD | wc -l)))
+
+if [ $num -gt 0 ]
+then
+  echo 
+else
+  echo
+fi
