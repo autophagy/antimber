@@ -28,6 +28,9 @@ polybar:
   mailalert:
     src: polybar/mailalert
     dst: ~/.config/polybar/mailalert
+  vpnalert:
+    src: polybar/vpnalert
+    dst: ~/.config/polybar/vpnalert
 qutebrowser:
   conf:
     src: qutebrowser/qutebrowser.conf

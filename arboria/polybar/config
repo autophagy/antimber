@@ -51,7 +51,7 @@ font-1 = FontAwesome:pixelsize=14;2
 
 modules-left = i3
 modules-center = revolutionary
-modules-right = mailalert wlan battery volume powermenu
+modules-right = mailalert vpnalert wlan battery volume powermenu
 
 tray-position =
 
@@ -182,6 +182,13 @@ interval = 5
 format = <label>
 format-padding = 3
 exec = ~/.config/polybar/mailalert
+
+[module/vpnalert]
+type = custom/script
+interval = 5
+format = <label>
+format-padding = 3
+exec = ~/.config/polybar/vpnalert
 
 [settings]
 screenchange-reload = true

@@ -1,0 +1,11 @@
+#!/bin/bash
+# vi:syntax=sh
+
+vpnid=$(pgrep openvpn)
+
+if [[ ${#vpnid} -ne 0 ]]
+then
+  echo 
+else
+  echo
+fi
