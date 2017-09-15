@@ -187,6 +187,12 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Keepassx2"] floating enable
 for_window [class="zoom"] floating enable
 
+# Send focused window to scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show first scratchpad
+bindsym $mod+minus scratchpad show
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
