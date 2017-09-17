@@ -2,26 +2,28 @@
 # vi:syntax=python
 
 from convertdate import french_republican as fr
-import datetime as dt
-from collections import OrderedDict
+from datetime import datetime as dt
+from math import floor
 
-def roman_year(year):
-    numerals = {'M':1000, 'CM':900, 'D':500, 'CD':400,
-                'C':100, 'XC':900, 'L':50, 'XL':40,
-                'X': 10, 'IX': 9,  'V':5, 'IV':4, 'I':1}
-    numerals = OrderedDict(sorted(numerals.items(), key=lambda k: k[1],
-                                  reverse=True))
-    roman_year = ''
-    for numeral in numerals:
-        c = int(year/numerals[numeral])
-        roman_year += numeral*c
-        year -= numerals[numeral]*c
-    return roman_year
+mónþas = [
+    u'Hærfest',
+    u'Mist',
+    u'Forst',
+    u'Snáw',
+    u'Regn',
+    u'Wind',
+    u'Sǽd',
+    u'Blóstm',
+    u'Mǽdland',
+    u'Ríp',
+    u'Hát',
+    u'Wæstm',
+    u'Wending'
+]
 
-now = dt.datetime.now()
-republican_now = fr.from_gregorian(now.year, now.month, now.day)
-formatted = fr.format(republican_now[0], republican_now[1], republican_now[2])
-roman_numeral_year = roman_year(republican_now[0])
-print("{0} {1} // {2}".format(formatted[:formatted.rfind(' ')],
-                                        roman_numeral_year,
-                                        now.strftime("%H.%M")))
+def convert_date(date):
+    return [date[2], mónþas[date[1]-1], floor(date[0])]
+
+now = dt.now()
+anglo_now = convert_date(fr.from_gregorian(now.year, now.month, now.day))
+print("{0} // {1}".format(' '.join(map(str, anglo_now)), now.strftime("%H.%M")))
