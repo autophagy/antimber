@@ -38,5 +38,5 @@ qutebrowser:
 
 xresources:
   conf:
-    src: .Xresources
+    src: Xresources
     dst: ~/.Xresources
