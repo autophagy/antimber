@@ -9,13 +9,13 @@ Work spaces are currently:
 0 :: spotify
 
 #### Clean
-![arboria clean](clean.jpg)
+![arboria clean](screenshots/clean.jpg)
 
 #### Busy
-![arboria busy](busy.jpg)
+![arboria busy](screenshots/busy.jpg)
 
 #### Lock Screen
-![arboria i3lock](i3lock.jpg)
+![arboria i3lock](screenshots/i3lock.jpg)
 
 ## Components Used
 
