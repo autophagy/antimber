@@ -175,6 +175,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 assign [class="qutebrowser"] $ws2
 assign [class="Chromium"] $ws2
 assign [class="Atom"] $ws3
+assign [class="Sublime_text"] $ws3
 assign [class="Spotify"] $ws10
 
 # Open specific applications in floating mode
