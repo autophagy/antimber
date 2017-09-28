@@ -18,8 +18,8 @@ URxvt.pasteCommand: xclip -o -selection clipboard
 ! Fonts
 
 !DejaVu Sans Mono (Powerline)
-URxvt.font: xft:DejaVu Sans Mono for Powerline-12
-URxvt.boldFont: xft:DejaVu Sans Mono for Powerline-12
+URxvt.font: xft:Droid Sans Mono for Powerline-12
+URxvt.boldFont: xft:Droid Sans Mono for Powerline-12
 URxvt.letterSpace: -2
 URxvt.internalBorder: 20
 
@@ -58,7 +58,7 @@ URxvt.foreground: #94A895
 !
 ! White
 *.color7:      #d0b8a3
-*.color15:     #d8c8bb
+*.color15:     #94A895
 !
 ! Bold, Italic, Underline
 *.colorBD:     #e5e5e5
