@@ -1,4 +1,4 @@
-# Arboria :: Dotfiles
+# Antimber :: Arboria
 
 Arboria is a minimalist, forest green theme set up for
 [Arch](https://www.archlinux.org/), with date displayed in the
