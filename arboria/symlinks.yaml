@@ -17,6 +17,9 @@ i3:
   i3lock_script:
     src: i3/i3lock.sh
     dst: ~/.config/i3/i3lock.sh
+  polybar_launch_script:
+    src: i3/polybar.sh
+    dst: ~/.config/i3/polybar.sh
 
 polybar:
   config:
