@@ -41,8 +41,8 @@ def print_theme_descriptions(valid_themes):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Autophagy Theme Installer')
-    parser.add_argument('-n', '--name', type=str,
-                        help='Name of the theme to install')
+    parser.add_argument('-i', '--install', type=str,
+                        help='Install a theme, given a valid theme name')
     parser.add_argument('-l', '--list', action='store_true',
                         help='List valid themes')
     return parser.parse_args()
