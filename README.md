@@ -26,18 +26,18 @@ Elements :: i3wm // polybar // dunst
 Theme installation is done via `install.py`. To set up:
 
 ```
-virtualenv -p python3 .env
-.env/bin/pip install -r requirements.txt
+virtualenv -p python3 .venv
+.venv/bin/pip install -r requirements.txt
 ```
 
 To list valid themes:
 
 ```
-.env/bin/python install.py -l
+.venv/bin/python install.py -l
 ```
 
 To install a theme (for example, arboria):
 
 ```
-.env/bin/python install.py -n arboria
+.venv/bin/python install.py -n arboria
 ```
