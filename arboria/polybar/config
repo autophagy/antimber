@@ -53,8 +53,6 @@ modules-left = i3
 modules-center = revolutionary
 modules-right = mailalert vpnalert wlan battery volume powermenu
 
-tray-position =
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
