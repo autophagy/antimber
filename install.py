@@ -58,11 +58,11 @@ def main():
     if (args.list):
         print_theme_descriptions(valid_themes)
         sys.exit()
-    if (args.name is None or args.name not in valid_themes):
+    if (args.install is None or args.install not in valid_themes):
         print('You must provide a valid theme name. Valid themes are:')
         print_theme_descriptions(valid_themes)
         sys.exit()
-    create_symlinks(args.name)
+    create_symlinks(args.install)
 
 if __name__ == '__main__':
     sys.exit(main())
