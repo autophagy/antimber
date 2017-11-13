@@ -291,29 +291,29 @@ c.colors.statusbar.normal.fg = '#424242'
 
 ## Foreground color of the URL in the statusbar on error.
 ## Type: QssColor
-# c.colors.statusbar.url.error.fg = 'orange'
+c.colors.statusbar.url.error.fg = '#a62626'
 
 ## Default foreground color of the URL in the statusbar.
 ## Type: QssColor
-# c.colors.statusbar.url.fg = 'white'
+c.colors.statusbar.url.fg = '#424242'
 
 ## Foreground color of the URL in the statusbar for hovered links.
 ## Type: QssColor
-# c.colors.statusbar.url.hover.fg = 'aqua'
+c.colors.statusbar.url.hover.fg = '#1287a4'
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
 ## Type: QssColor
-# c.colors.statusbar.url.success.http.fg = 'white'
+c.colors.statusbar.url.success.http.fg = '#424242'
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
 ## Type: QssColor
-# c.colors.statusbar.url.success.https.fg = 'lime'
+c.colors.statusbar.url.success.https.fg = '#424242'
 
 ## Foreground color of the URL in the statusbar when there's a warning.
 ## Type: QssColor
-# c.colors.statusbar.url.warn.fg = 'yellow'
+c.colors.statusbar.url.warn.fg = '#a27f2b'
 
 ## Background color of the tab bar.
 ## Type: QtColor
