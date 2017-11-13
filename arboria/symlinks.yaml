@@ -34,10 +34,11 @@ polybar:
   vpnalert:
     src: polybar/vpnalert
     dst: ~/.config/polybar/vpnalert
+
 qutebrowser:
-  conf:
-    src: qutebrowser/qutebrowser.conf
-    dst: ~/.config/qutebrowser/qutebrowser.conf
+  config:
+    src: qutebrowser/config.py
+    dst: ~/.config/qutebrowser/config.py
 
 xresources:
   conf:
