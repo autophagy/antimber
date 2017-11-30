@@ -1,0 +1,41 @@
+# Symlinks for hwit theme
+dunst:
+  rc:
+    src: dunst/dunstrc
+    dst: ~/.config/dunst/dunstrc
+
+i3:
+  config:
+    src: i3/config
+    dst: ~/.config/i3/config
+  i3lock_icon_white:
+    src: i3/i3lock_icon_white.png
+    dst: ~/.config/i3/i3lock_icon_white.png
+  i3lock_icon_black:
+    src: i3/i3lock_icon_black.png
+    dst: ~/.config/i3/i3lock_icon_black.png
+  i3lock_script:
+    src: i3/i3lock.sh
+    dst: ~/.config/i3/i3lock.sh
+  polybar_launch_script:
+    src: i3/polybar.sh
+    dst: ~/.config/i3/polybar.sh
+
+polybar:
+  config:
+    src: polybar/config
+    dst: ~/.config/polybar/config
+  revolutionary:
+    src: polybar/revolutionary
+    dst: ~/.config/polybar/revolutionary
+  mailalert:
+    src: polybar/mailalert
+    dst: ~/.config/polybar/mailalert
+  vpnalert:
+    src: polybar/vpnalert
+    dst: ~/.config/polybar/vpnalert
+
+xresources:
+  conf:
+    src: Xresources
+    dst: ~/.Xresources

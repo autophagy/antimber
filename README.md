@@ -18,8 +18,24 @@ the use of the [i3wm-gaps](https://github.com/Airblader/i3) window manager.
 
 ![arboria i3lock](arboria/screenshots/i3lock.jpg)
 
-Elements :: i3wm // polybar // dunst   
+Elements :: i3wm // polybar // dunst
 [Arboria README](arboria/README.md)
+
+### 0x02 :: Hwit
+#### Clean
+
+...
+
+#### Busy
+
+...
+
+#### Lock Screen
+
+...
+
+Elements :: i3wm // polybar // dunst
+[Hwit README](hwit/README.md)
 
 ## Installation
 
