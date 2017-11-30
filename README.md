@@ -24,13 +24,15 @@ Elements :: i3wm // polybar // dunst
 ### 0x02 :: Hwit
 #### Clean
 
-...
+![hwit clean](hwit/screenshots/clean.jpg)
 
 #### Busy
 
-...
+![hwit busy](hwit/screenshots/busy.jpg)
 
 #### Lock Screen
+
+![hwit i3lock](hwit/screenshots/i3lock.jpg)
 
 ...
 
