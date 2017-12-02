@@ -40,7 +40,7 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 0
 
 module-margin-left = 1
@@ -64,19 +64,16 @@ pin-workspaces = true
 label-mode-padding = 3
 label-mode-foreground = ${colors.background}
 
-label-unfocused-foreground = ${colors.foreground}
-label-unfocused-padding = 3
+label-unfocused = "  "
+label-unfocused-foreground = #afafaf
+label-unfocused-padding = 1
 
-label-visible-foregroud = ${colors.foreground}
-label-visible-padding = 3
+label-focused = "  "
+label-focused-padding = 1
 
-label-focused-foreground = ${colors.background}
-label-focused-background = #EBEBEB
-label-focused-padding = 3
-
-label-urgent-padding = 3
-label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.alert}
+label-urgent = "  "
+label-urgent-foreground = #828282
+label-urgent-padding = 1
 
 [module/wlan]
 type = internal/network
