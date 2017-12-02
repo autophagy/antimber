@@ -65,14 +65,14 @@ pin-workspaces = true
 label-mode-padding = 3
 label-mode-foreground = ${colors.background}
 
-label-unfocused = " □ "
+label-unfocused = □
 label-unfocused-foreground = #afafaf
 label-unfocused-padding = 1
 
-label-focused = " ■ "
+label-focused = ■
 label-focused-padding = 1
 
-label-urgent = " ▤ "
+label-urgent = ▤
 label-urgent-foreground = #828282
 label-urgent-padding = 1
 
@@ -101,9 +101,9 @@ ramp-signal-4-foreground = ${colors.foreground}
 type = internal/volume
 
 format-volume = <ramp-volume>
-format-volume-padding = 3
+format-volume-padding = 2
 label-muted = □
-label-muted-padding = 3
+label-muted-padding = 2
 
 ramp-volume-0 = ◱
 ramp-volume-1 = ◰
@@ -117,10 +117,10 @@ adapter = AC
 full-at = 98
 
 format-charging = ◦<ramp-capacity>
-format-charging-padding = 1
+format-charging-padding = 2
 
 format-discharging = <ramp-capacity>
-format-discharging-padding = 1
+format-discharging-padding = 2
 
 format-full =
 
@@ -177,7 +177,7 @@ exec = ~/.config/polybar/revolutionary
 type = custom/script
 interval = 5
 format = <label>
-format-padding = 3
+format-padding = 2
 exec = ~/.config/polybar/mailalert
 
 [module/vpnalert]

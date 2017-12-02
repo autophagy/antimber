@@ -9,7 +9,7 @@ num=$(($(ls $CRATE | wc -l )+$(ls $AUTO | wc -l)+$(ls $DEAD | wc -l)))
 
 if [ $num -gt 0 ]
 then
-  echo 
+  echo ▤
 else
   echo
 fi
