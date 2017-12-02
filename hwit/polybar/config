@@ -48,6 +48,7 @@ module-margin-right = 1
 
 font-0 = Interface:pixelsize=12;2
 font-1 = FontAwesome:pixelsize=14;2
+font-2 = DejaVuSansMonoforPowerline:pixelsize=14;2
 
 modules-left = i3
 modules-center = revolutionary
@@ -64,14 +65,14 @@ pin-workspaces = true
 label-mode-padding = 3
 label-mode-foreground = ${colors.background}
 
-label-unfocused = "  "
+label-unfocused = " □ "
 label-unfocused-foreground = #afafaf
 label-unfocused-padding = 1
 
-label-focused = "  "
+label-focused = " ■ "
 label-focused-padding = 1
 
-label-urgent = "  "
+label-urgent = " ▤ "
 label-urgent-foreground = #828282
 label-urgent-padding = 1
 
