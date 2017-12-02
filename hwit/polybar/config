@@ -72,8 +72,7 @@ label-unfocused-padding = 1
 label-focused = ■
 label-focused-padding = 1
 
-label-urgent = ▤
-label-urgent-foreground = #828282
+label-urgent = ▣
 label-urgent-padding = 1
 
 [module/wlan]
