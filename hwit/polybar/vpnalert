@@ -5,7 +5,7 @@ vpnid=$(pgrep openvpn)
 
 if [[ ${#vpnid} -ne 0 ]]
 then
-  echo 
+  echo ◪
 else
   echo
 fi

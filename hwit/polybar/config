@@ -81,21 +81,10 @@ type = internal/network
 interface = wlan0
 interval = 3.0
 
-format-connected = <ramp-signal>
-format-connected-padding = 3
+format-connected = ◩
+format-connected-padding = 2
 
 format-disconnected =
-
-ramp-signal-0 = 
-ramp-signal-0-foreground = #474747
-ramp-signal-1 = 
-ramp-signal-1-foreground = #707070
-ramp-signal-2 = 
-ramp-signal-2-foreground = #999999
-ramp-signal-3 = 
-ramp-signal-3-foreground = #C2C2C2
-ramp-signal-4 = 
-ramp-signal-4-foreground = ${colors.foreground}
 
 [module/volume]
 type = internal/volume
@@ -116,7 +105,7 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = ◦<ramp-capacity>
+format-charging = ▣
 format-charging-padding = 2
 
 format-discharging = <ramp-capacity>
@@ -184,7 +173,7 @@ exec = ~/.config/polybar/mailalert
 type = custom/script
 interval = 5
 format = <label>
-format-padding = 3
+format-padding = 2
 exec = ~/.config/polybar/vpnalert
 
 [settings]
