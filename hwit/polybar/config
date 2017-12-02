@@ -21,7 +21,7 @@
 [colors]
 background = #2D2D2D
 foreground = #EBEBEB
-alert = #EBEBEB
+alert = #a85555
 poweritems = #DBDBDB
 
 [bar/statusbar]
@@ -116,21 +116,21 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = +<ramp-capacity>
-format-charging-padding = 3
+format-charging = ◦<ramp-capacity>
+format-charging-padding = 1
 
 format-discharging = <ramp-capacity>
-format-discharging-padding = 3
+format-discharging-padding = 1
 
 format-full =
 
-ramp-capacity-0 = 
+ramp-capacity-0 = □
 ramp-capacity-0-foreground = ${colors.alert}
-ramp-capacity-1 = 
+ramp-capacity-1 = ◫
 ramp-capacity-1-foreground = ${colors.alert}
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-2 = ◨
+ramp-capacity-3 = ◧
+ramp-capacity-4 = ■
 
 [module/powermenu]
 type = custom/menu
@@ -140,11 +140,11 @@ format-spacing = 0
 label-open = 
 label-open-padding = 3
 label-open-foreground = #252525
-label-open-background = ${colors.alert}
+label-open-background = ${colors.foreground}
 label-close = 
 label-close-padding = 3
 label-close-foreground = #252525
-label-close-background = ${colors.alert}
+label-close-background = ${colors.foreground}
 
 menu-0-0 = 
 menu-0-0-padding = 3
