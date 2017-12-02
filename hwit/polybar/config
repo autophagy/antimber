@@ -102,12 +102,13 @@ type = internal/volume
 
 format-volume = <ramp-volume>
 format-volume-padding = 3
-label-muted = 
+label-muted = □
 label-muted-padding = 3
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = ◱
+ramp-volume-1 = ◰
+ramp-volume-2 = ◳
+ramp-volume-3 = ◲
 
 [module/battery]
 type = internal/battery
