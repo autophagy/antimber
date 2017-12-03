@@ -37,7 +37,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_run -b -fn "Noto-10.5" -nb "#2D2D2D" -nf "#EBEBEB" -sf "#2D2D2D" -sb "#EBEBEB"
+bindsym $mod+d exec --no-startup-id dmenu_run -b -fn "Inconsolata-12" -nb "#2D2D2D" -nf "#EBEBEB" -sf "#2D2D2D" -sb "#EBEBEB"
 
 
 ###################
