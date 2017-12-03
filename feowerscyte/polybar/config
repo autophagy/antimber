@@ -21,7 +21,6 @@
 [colors]
 background = #2D2D2D
 foreground = #EBEBEB
-alert = #a85555
 poweritems = #DBDBDB
 
 [bar/statusbar]
@@ -113,9 +112,7 @@ format-discharging-padding = 1
 format-full =
 
 ramp-capacity-0 = □
-ramp-capacity-0-foreground = ${colors.alert}
 ramp-capacity-1 = ◫
-ramp-capacity-1-foreground = ${colors.alert}
 ramp-capacity-2 = ◧
 ramp-capacity-3 = ◨
 ramp-capacity-4 = ■
