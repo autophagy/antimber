@@ -44,11 +44,11 @@ virtualenv -p python3 .venv
 To list valid themes:
 
 ```
-.venv/bin/python install.py -l
+.venv/bin/python antimber.py -l
 ```
 
 To install a theme (for example, arboria):
 
 ```
-.venv/bin/python install.py -n arboria
+.venv/bin/python antimber.py -i arboria
 ```
