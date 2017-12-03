@@ -7,9 +7,8 @@ arboria:
   dotfiles: dunst // i3 // polybar // qutebrowser // .Xresources
   readme: https://github.com/autophagy/antimber/blob/master/arboria/README.md
 
-hwit:
-  dir: hwit
-  desc: Hwit is a theme based on Arboria, but with a stark, monochromatic colour
-        scheme.
+feowerscyte:
+  dir: feowerscyte
+  desc: Feowerscyte is a monochromatic, cubic theme.
   dotfiles: dunst // i3 // polybar // .Xresources
-  readme: https://github.com/autophagy/antimber/blob/master/hwit/README.md
+  readme: https://github.com/autophagy/feowerscyte/blob/master/hwit/README.md

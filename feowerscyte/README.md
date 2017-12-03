@@ -1,4 +1,4 @@
-# Antimber :: Hwit
+# Antimber :: Feówerscýte
 
 #### Clean
 ![hwit clean](screenshots/clean.jpg)
