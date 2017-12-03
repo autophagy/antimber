@@ -81,7 +81,7 @@ interface = wlan0
 interval = 3.0
 
 format-connected = ◩
-format-connected-padding = 2
+format-connected-padding = 1
 
 format-disconnected =
 
@@ -89,9 +89,9 @@ format-disconnected =
 type = internal/volume
 
 format-volume = <ramp-volume>
-format-volume-padding = 2
+format-volume-padding = 1
 label-muted = □
-label-muted-padding = 2
+label-muted-padding = 1
 
 ramp-volume-0 = ◱
 ramp-volume-1 = ◰
@@ -105,10 +105,10 @@ adapter = AC
 full-at = 98
 
 format-charging = ▣
-format-charging-padding = 2
+format-charging-padding = 1
 
 format-discharging = <ramp-capacity>
-format-discharging-padding = 2
+format-discharging-padding = 1
 
 format-full =
 
@@ -116,8 +116,8 @@ ramp-capacity-0 = □
 ramp-capacity-0-foreground = ${colors.alert}
 ramp-capacity-1 = ◫
 ramp-capacity-1-foreground = ${colors.alert}
-ramp-capacity-2 = ◨
-ramp-capacity-3 = ◧
+ramp-capacity-2 = ◧
+ramp-capacity-3 = ◨
 ramp-capacity-4 = ■
 
 [module/powermenu]
@@ -165,14 +165,14 @@ exec = ~/.config/polybar/revolutionary
 type = custom/script
 interval = 5
 format = <label>
-format-padding = 2
+format-padding = 1
 exec = ~/.config/polybar/mailalert
 
 [module/vpnalert]
 type = custom/script
 interval = 5
 format = <label>
-format-padding = 2
+format-padding = 1
 exec = ~/.config/polybar/vpnalert
 
 [settings]
