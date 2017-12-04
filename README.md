@@ -23,14 +23,21 @@ Elements :: i3wm // polybar // dunst
 [Arboria README](arboria/README.md)
 
 ### 0x02 :: Feówerscýte
+#### Clean
 
-In Progress...
+![feowerscyte clean](feowerscyte/screenshots/clean.jpg)
 
-...
+#### Busy
+
+![feowerscyte busy](feowerscyte/screenshots/busy.jpg)
+
+#### Lock Screen
+
+![feowerscyte i3lock](feowerscyte/screenshots/i3lock.jpg)
 
 Elements :: i3wm // polybar // dunst
 
-[Feówerscýte README](hwit/README.md)
+[Feówerscýte README](feowerscyte/README.md)
 
 ## Installation
 
