@@ -1,0 +1,9 @@
+#!/usr/bin/python
+# vi:syntax=python
+
+from datarum import wending
+from datetime import datetime as dt
+
+now = dt.now()
+wending_today = wending.today()
+print("{0} // {1}".format(wending_today.formatted(), now.strftime("%H.%M")))

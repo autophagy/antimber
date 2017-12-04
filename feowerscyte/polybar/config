@@ -50,7 +50,7 @@ font-1 = FontAwesome:pixelsize=14;2
 font-2 = DejaVuSansMonoforPowerline:pixelsize=17;1
 
 modules-left = i3
-modules-center = revolutionary
+modules-center = wending
 modules-right = mailalert vpnalert wlan battery volume powermenu
 
 [module/i3]
@@ -155,11 +155,11 @@ menu-0-3-background = ${colors.poweritems}
 menu-0-3-foreground = #252525
 menu-0-3-exec = i3-msg exit
 
-[module/revolutionary]
+[module/wending]
 type = custom/script
 interval = 10
 format = <label>
-exec = ~/.config/polybar/revolutionary
+exec = ~/.config/polybar/wending
 
 [module/mailalert]
 type = custom/script
