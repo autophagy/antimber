@@ -46,8 +46,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Interface:pixelsize=12;2
-font-1 = FontAwesome:pixelsize=14;2
-font-2 = DejaVuSansMonoforPowerline:pixelsize=17;1
+font-1 = DejaVuSansMonoforPowerline:pixelsize=17;1
 
 modules-left = i3
 modules-center = wending
@@ -125,31 +124,31 @@ type = custom/menu
 
 format-spacing = 0
 
-label-open = 
+label-open = ◼
 label-open-padding = 3
 label-open-foreground = #252525
 label-open-background = ${colors.foreground}
-label-close = 
+label-close = ◼
 label-close-padding = 3
 label-close-foreground = #252525
 label-close-background = ${colors.foreground}
 
-menu-0-0 = 
+menu-0-0 = □
 menu-0-0-padding = 3
 menu-0-0-background = ${colors.poweritems}
 menu-0-0-foreground = #252525
 menu-0-0-exec = shutdown -h now
-menu-0-1 = 
+menu-0-1 = ◲
 menu-0-1-padding = 3
 menu-0-1-background = ${colors.poweritems}
 menu-0-1-foreground = #252525
 menu-0-1-exec = reboot
-menu-0-2 = 
+menu-0-2 = ◫
 menu-0-2-padding = 3
 menu-0-2-background = ${colors.poweritems}
 menu-0-2-foreground = #252525
 menu-0-2-exec = ~/.config/i3/i3lock.sh && systemctl suspend
-menu-0-3 = 
+menu-0-3 = ◪
 menu-0-3-padding = 3
 menu-0-3-background = ${colors.poweritems}
 menu-0-3-foreground = #252525
