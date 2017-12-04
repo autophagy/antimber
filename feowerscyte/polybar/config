@@ -74,6 +74,9 @@ label-focused-padding = 1
 label-urgent = ▣
 label-urgent-padding = 1
 
+label-visible = ■
+label-visible-padding = 1
+
 [module/wlan]
 type = internal/network
 interface = wlp4s0 
