@@ -120,20 +120,20 @@ bindsym $mod+Shift+m move workspace to output left
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 # console
-set $ws1 1:
+set $ws1 1
 # net
-set $ws2 2:
+set $ws2 2
 # code
-set $ws3 3:
+set $ws3 3
 # comm
-set $ws4 4:
+set $ws4 4
 set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
 set $ws9 9
 # spotify
-set $ws10 10:
+set $ws10 10
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
