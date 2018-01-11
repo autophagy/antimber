@@ -1,14 +1,35 @@
-##  ▄▄▄· ▄• ▄▌▄▄▄▄▄       ▄▄▄· ▄ .▄ ▄▄▄·  ▄▄ •  ▄· ▄▌
-## ▐█ ▀█ █▪██▌•██  ▪     ▐█ ▄███▪▐█▐█ ▀█ ▐█ ▀ ▪▐█▪██▌
-## ▄█▀▀█ █▌▐█▌ ▐█.▪ ▄█▀▄  ██▀·██▀▐█▄█▀▀█ ▄█ ▀█▄▐█▌▐█▪
-## ▐█ ▪▐▌▐█▄█▌ ▐█▌·▐█▌.▐▌▐█▪·•██▌▐▀▐█ ▪▐▌▐█▄▪▐█ ▐█▀·.
-##  ▀  ▀  ▀▀▀  ▀▀▀  ▀█▄▀▪.▀   ▀▀▀ · ▀  ▀ ·▀▀▀▀   ▀ •
-## ·▄▄▄▄        ▄▄▄▄▄·▄▄▄▪  ▄▄▌  ▄▄▄ ..▄▄ ·
-## ██▪ ██ ▪     •██  ▐▄▄·██ ██•  ▀▄.▀·▐█ ▀.
-## ▐█· ▐█▌ ▄█▀▄  ▐█.▪██▪ ▐█·██▪  ▐▀▀▪▄▄▀▀▀█▄
-## ██. ██ ▐█▌.▐▌ ▐█▌·██▌.▐█▌▐█▌▐▌▐█▄▄▌▐█▄▪▐█
-## ▀▀▀▀▀•  ▀█▄▀▪ ▀▀▀ ▀▀▀ ▀▀▀.▀▀▀  ▀▀▀  ▀▀▀▀
-## Configfile for qutebrowser.
+##                           .,lkXNX0d:.
+##                        .:d0NMMMMMMMWXkl,.
+##                     'cxXWMMMWXkxk0NMMMMN0d:.
+##                  'oONMMMMWKd:.   .,lkXWMMMWXkc.
+##                 .kMMMMNOo,.          .:d0WMMMX:
+##                 .kMMMX:                 .xWMMN:
+##                 .kMMM0,                  oWMMN:
+##                 .kMMMK,                  oWMMNc
+##                 .kMMMK,                  oWMMNc
+##                 .xMMMK,                  oWMMNc
+##                 .xMMMNd.               .;OWMMNc
+##                 .oWMMMWXOo;.        .:xKWMMMMK;
+##                  .;d0NMMMMWKxc'..,lkXWMMMWKxc'
+##               .;,.  .'cxKWMMMWNXXNMMMMN0d;.   .,;.
+##           .,lOXWWKxc'   .;oONMMMMMWXkl'.   'ckKWWXkl,.
+##        .:d0NMMMMMMMMNOo;.   'cxkkd:.   .;oONWMMMMMMMN0d:.
+##    .'ckXWMMMWXkodONMMMMWKxc'        .:xKWMMMWNOookXWMMMWXkl,.
+##   lONWMMMN0d:.    'cxKWMMMMNO:    :kXWMMMWKxc'    .:d0NMMMMN0o
+##   NMMMNOo,.          .;o0WMMMO.  '0MMMW0d;.          .,lONMMMX
+##   NMMMx.                ,0MMMO.  '0MMM0'                .kMMMX
+##   NMMMx.                .OMMMO.  .OMMMO.                .xMMMX
+##   NMMMx.                .OMMMO.  .OMMMO.                .xMMMN
+##   XMMMx.                .OMMMO.  .OMMMO.                .xMMMN
+##   XMMMx.                .OMMM0'  .OMMM0'                .xMMMN
+##   XMMMKo'.            .;xXMMM0'  .OMMMXd,.            .,oKMMMN
+##   kNMMMMN0d:.      .cxKWMMMWXd.  .oNMMMMWKxc'      .:d0NMMMMNO
+##   .,lkXWMMMWXkl,;lOXWMMMWKxc'      'ckKWMMMWXOo;,ckXWMMMWXkl,.
+##       .:d0NMMMMWWMMMMN0o;.            .;oONMMMMWWMMMMN0d:.
+##          .,lkXWMMWXkc'.                  .'cxKWMMWXOo,.
+##             .;xXXx,                          'oKXk;.
+##
+##   Configfile for qutebrowser.
 
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
