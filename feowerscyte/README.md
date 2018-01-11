@@ -16,6 +16,24 @@ Work spaces are currently:
 #### Lock Screen
 ![feowerscyte i3lock](screenshots/i3lock.jpg)
 
+## Polybar Sigils
+
+In the upper right, power, wlan/vpn connectivity, volume and mail alerts
+are indicated. They are represented by:
+
+- wlan connected :: ◩
+- vpn connected :: ◪
+- mail alert :: ▤
+- volume level :: muted □ // volume level (lowest - highest) ◱ ◰ ◳ ◲
+- battery :: charging ▣ // battery level (lowest - highest) □ ◫ ◧ ◨ ■
+
+There is also a exit/suspend/restart/shutdown menu in the upper right:
+
+- shutdown :: □
+- reboot :: ◲
+- lock and suspend :: ◫
+- i3 exit :: ◪
+
 ## Components Used
 
  - [i3wm-gaps](https://github.com/Airblader/i3) :: tiling window manager
