@@ -254,6 +254,10 @@ exec --no-startup-id setxkbmap gb
 exec --no-startup-id xset b off
 exec --no-startup-id xinput disable "TPPS/2 IBM TrackPoint"
 
+# Rebind caps lock to escape
+exec --no-startup-id xmodmap -e 'clear Lock'
+exec --no-startup-id xmodmap -e 'keycode 0x42=Escape'
+
 # Lockscreen binding
 bindsym $mod+Shift+o exec --no-startup-id ~/.config/i3/i3lock.sh
 
