@@ -252,6 +252,9 @@ exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec --no-startup-id xrdb /home/mika/.Xresources
 exec --no-startup-id setxkbmap gb
 exec --no-startup-id xset b off
+exec --no-startup-id redshift-gtk
+
+# Disable the trackpoint
 exec --no-startup-id xinput disable "TPPS/2 IBM TrackPoint"
 
 # Rebind caps lock to escape

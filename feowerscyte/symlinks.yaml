@@ -35,6 +35,11 @@ polybar:
     src: polybar/vpnalert
     dst: ~/.config/polybar/vpnalert
 
+redshift:
+  config:
+    src: redshift/redshift.conf
+    dst: ~/.config/redshift.conf
+
 xresources:
   conf:
     src: Xresources
