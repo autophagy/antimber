@@ -70,7 +70,7 @@ font-1 = DejaVuSansMonoforPowerline:pixelsize=17;1
 
 modules-left = i3
 modules-center = wending
-modules-right = mailalert vpnalert wlan battery volume powermenu
+modules-right = mailalert vpnalert wlan battery pulseaudio powermenu
 
 [module/i3]
 type = internal/i3
@@ -106,8 +106,8 @@ format-connected-padding = 1
 
 format-disconnected =
 
-[module/volume]
-type = internal/volume
+[module/pulseaudio]
+type = internal/pulseaudio
 
 format-volume = <ramp-volume>
 format-volume-padding = 1
