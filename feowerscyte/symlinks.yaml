@@ -40,6 +40,10 @@ redshift:
     src: redshift/redshift.conf
     dst: ~/.config/redshift.conf
 
+qutebrowser:
+  config:
+    src: qutebrowser/config.py
+    dst: ~/.config/qutebrowser/config.py
 xresources:
   conf:
     src: Xresources
