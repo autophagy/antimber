@@ -18,8 +18,8 @@ URxvt.pasteCommand: xclip -o -selection clipboard
 ! Fonts
 
 !DejaVu Sans Mono (Powerline)
-URxvt.font: xft:Inconsolata for Powerline-14
-URxvt.boldFont: xft:Inconsolata for Powerline-14
+URxvt.font: xft:Inconsolata for Powerline:pixelsize=18
+URxvt.boldFont: xft:Inconsolata for Powerline:pixelsize=18:style=BoldForPowerline
 URxvt.internalBorder: 20
 
 URxvt.foreground: #EBEBEB
