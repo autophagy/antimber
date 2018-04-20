@@ -1,9 +1,8 @@
 #!/bin/bash
 # vi:syntax=sh
 
-vpnid=$(pgrep openvpn)
-
-if [[ ${#vpnid} -ne 0 ]]
+VPNPROCNUM=$(ps -ef | grep -i openvpn | grep -v grep | wc -l)
+if [[ ${VPNPROCNUM} -gt 0 ]]
 then
   echo ◪
 else
