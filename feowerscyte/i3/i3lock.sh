@@ -1,8 +1,8 @@
 #!/bin/sh
 COLORS=" --insidecolor=42424266 --ringcolor=424242ff --linecolor=00000000"
-VERCOLORS="--insidevercolor=42424266 --ringvercolor=94a895ff"
+VERCOLORS="--insidevercolor=42424266 --ringvercolor=2d2d2dff"
 WRONGCOLORS="--insidewrongcolor=a8949466 --ringwrongcolor=a89494ff"
-MISC="--keyhlcolor=94a895ff --textcolor=00000000 --bshlcolor=a89494ff"
+MISC="--keyhlcolor=94a895ff --bshlcolor=a89494ff"
 
 IMAGE=~/.config/i3/tmp.png
 ICON_WHITE=~/.config/i3/i3lock_icon_white.png
