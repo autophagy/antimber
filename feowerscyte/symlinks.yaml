@@ -8,12 +8,9 @@ i3:
   config:
     src: i3/config
     dst: ~/.config/i3/config
-  i3lock_icon_white:
-    src: i3/i3lock_icon_white.png
-    dst: ~/.config/i3/i3lock_icon_white.png
-  i3lock_icon_black:
-    src: i3/i3lock_icon_black.png
-    dst: ~/.config/i3/i3lock_icon_black.png
+  lockscreen:
+    src: i3/lockscreen.png
+    dst: ~/.config/i3/lockscreen.png
   i3lock_script:
     src: i3/i3lock.sh
     dst: ~/.config/i3/i3lock.sh
