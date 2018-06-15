@@ -1,8 +1,8 @@
 #!/bin/sh
-COLORS=" --insidecolor=42424266 --ringcolor=424242ff --linecolor=00000000"
-VERCOLORS="--insidevercolor=42424266 --ringvercolor=2d2d2dff"
+COLORS=" --insidecolor=d2d2d266 --ringcolor=d2d2d2ff --linecolor=00000000"
+VERCOLORS="--insidevercolor=d2d2d266 --ringvercolor=2d2d2dff"
 WRONGCOLORS="--insidewrongcolor=a8949466 --ringwrongcolor=a89494ff"
-MISC="--keyhlcolor=94a895ff --bshlcolor=a89494ff"
+MISC="--keyhlcolor=2d2d2dff --bshlcolor=a89494ff"
 
 IMAGE=~/.config/i3/lockscreen.png
 
