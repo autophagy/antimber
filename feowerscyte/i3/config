@@ -198,6 +198,7 @@ assign [class="Atom"] $ws3
 assign [class="Sublime_text"] $ws3
 assign [class="jetbrains-studio"] $ws3
 assign [class="jetbrains-idea-ce"] $ws3
+assign [class="openscad"] $ws3
 assign [class="Spotify"] $ws10
 
 # Open specific applications in floating mode
