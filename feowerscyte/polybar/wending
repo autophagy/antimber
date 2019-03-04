@@ -5,4 +5,4 @@ from datarum import wending
 
 
 now = wending.now()
-print(now.strftime("{daeg} {month} {gere} // {tid_zero}.{minute_zero}"))
+print(now.strftime("{daeg} {month} {gere} // {tid_zero}.{minute_zero}").upper())
