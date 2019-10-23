@@ -1,3 +1,11 @@
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 ! URxvt
 
 ! General settings
@@ -18,8 +26,8 @@ URxvt.pasteCommand: xclip -o -selection clipboard
 ! Fonts
 
 !DejaVu Sans Mono (Powerline)
-URxvt.font: xft:Inconsolata for Powerline:size=14
-URxvt.boldFont: xft:Inconsolata for Powerline:size=14:style=BoldForPowerline
+URxvt.font: xft:Inconsolata for Powerline:size=12
+URxvt.boldFont: xft:Inconsolata for Powerline:size=12:style=BoldForPowerline
 URxvt.internalBorder: 20
 
 URxvt.foreground: #EBEBEB

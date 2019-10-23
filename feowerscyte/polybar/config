@@ -44,9 +44,9 @@ foreground = #EBEBEB
 poweritems = #DBDBDB
 
 [bar/statusbar]
-monitor = eDP1
+monitor = eDP-1
 width = 100%
-height = 40
+height = 60
 radius = 0.0
 fixed-center = true
 
@@ -65,8 +65,8 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Interface:pixelsize=12;2
-font-1 = DejaVuSansMonoforPowerline:pixelsize=17;1
+font-0 = Interface:pixelsize=18;2
+font-1 = DejaVuSansMonoforPowerline:pixelsize=24;1
 
 modules-left = i3
 modules-center = wending
@@ -98,7 +98,7 @@ label-visible-padding = 1
 
 [module/wlan]
 type = internal/network
-interface = wlp4s0 
+interface = wlan0 
 interval = 3.0
 
 format-connected = ◩

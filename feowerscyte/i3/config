@@ -36,6 +36,7 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
+for_window [class="^.*"] border pixel 0
 new_window none
 new_float normal
 
@@ -72,8 +73,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 ################################################################################################
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 2
-bindsym XF86MonBrightnessDown exec xbacklight -dec 2
+bindsym XF86MonBrightnessUp exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
 
 # Start Applications
 bindsym $mod+F3 exec ranger
@@ -255,6 +256,7 @@ exec --no-startup-id xrdb /home/mika/.Xresources
 exec --no-startup-id setxkbmap gb
 exec --no-startup-id xset b off
 exec --no-startup-id redshift-gtk
+exec --no-startup-id compton
 
 # Disable the trackpoint
 exec --no-startup-id xinput disable "TPPS/2 IBM TrackPoint"
