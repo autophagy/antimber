@@ -12,6 +12,6 @@ To install the symlinks using `Stow`_:
 
 .. code-block:: console
 
-   stow -t ~/ dunst i3 nvim polybar qutebrowser xorg
+   stow -t ~/ dunst i3 nvim polybar qutebrowser xorg git zsh
 
 .. _Stow: https://www.gnu.org/software/stow/
