@@ -1,0 +1,74 @@
+Xft.dpi: 180
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! URxvt
+
+! General settings
+URxvt.saveLines: 2000
+URxvt.scrollBar: False
+URxvt.scrollstyle: rxvt
+URxvt.urgentOnBell: True
+URxvt.cursorBlink: False
+URxvt.internalBorder: 50
+
+! Extensions
+URxvt.url-launcher: xdg-open
+URxvt.matcher.button: 1
+URxvt.underlineURLs: True
+
+URxvt.copyCommand:  xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+
+! Fonts
+URxvt*font: xft:Inconsolata Nerd Font:size=13:antialias=true:style=Regular, xft:DejaVuSansMono Nerd Font Mono:style=Book:size=11
+URxvt*letterSpace: 0
+
+! Colours
+URxvt.foreground: #ffffff
+URxvt.background: #222222
+
+! special
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #333333
+*.color8:       #3d3d3d
+
+! red
+*.color1:       #8c4665
+*.color9:       #bf4d80
+
+! green
+*.color2:       #287373
+*.color10:      #53a6a6
+
+! yellow
+*.color3:       #7c7c99
+*.color11:      #9e9ecb
+
+! blue
+*.color4:       #395573
+*.color12:      #477ab3
+
+! magenta
+*.color5:       #5e468c
+*.color13:      #7e62b3
+
+! cyan
+*.color6:       #31658c
+*.color14:      #6096bf
+
+! white
+*.color7:       #899ca1
+*.color15:      #c0c0c0
+
+urxvt*perl-lib:         /usr/lib/urxvt/perl/
+urxvt*perl-ext-common:  default,matcher
