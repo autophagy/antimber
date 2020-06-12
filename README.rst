@@ -1,5 +1,7 @@
-Antimber
-========
+.. image:: antimber.png
+    :alt: antimber sigil
+    :align: center
+
 
 antimber
   noun: matter, materials, substance
