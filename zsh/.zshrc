@@ -1,0 +1,55 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="dd/mm/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+plugins=(ssh-agent git sublime zsh-syntax-highlighting git-open)
+
+source $ZSH/oh-my-zsh.sh
+
+export EDITOR='nvim'
+
+function wttr {
+  curl wttr.in/$1
+}
+
+function layout {
+  if [ "$1" = "home" ]; then
+    xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP1 --off --output DP1-1 --mode 1920x1080 --pos 3840x404 --scale 2x2 --rotate normal --output HDMI1 --off --output DP2 --off
+  else
+    xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP1 --off --output HDMI1 --off --output DP2 --off --output DP1-1 --off
+  fi
+}
+
+alias conn="connmanctl"
+alias up="startx"
+alias crate="cd ~/sandbox/crate"
+alias auto="cd ~/sandbox/autophagy"
+alias vim="nvim"
+alias v="nvim"
+
+DEFAULT_USER="mika"
+
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/myconfig
+
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+PURE_PROMPT_SYMBOL="::"
+prompt pure
+
+export HISTIGNORE=' *'
+
