@@ -134,3 +134,7 @@ c.url.start_pages = "https://ft.com"
 
 #  Enable high DPI mode in qt.
 c.qt.highdpi = True
+
+## Normal mode bindings
+
+config.bind(',m', 'spawn mpv --ytdl-format="bestvideo[height<=?1080]+bestaudio/best" {url}')
