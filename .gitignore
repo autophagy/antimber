@@ -1,5 +1,4 @@
-.venv
-nvim/.config/nvim/spell
-qutebrowser/.config/qutebrowser/autoconfig.yml
-qutebrowser/.config/qutebrowser/qsettings
-qutebrowser/.config/qutebrowser/quickmarks
+dotfiles/nvim/.config/nvim/spell
+dotfiles/qutebrowser/.config/qutebrowser/autoconfig.yml
+dotfiles/qutebrowser/.config/qutebrowser/qsettings
+dotfiles/qutebrowser/.config/qutebrowser/quickmarks
