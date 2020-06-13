@@ -1,0 +1,26 @@
+---
+- name: Verify Sandbox Exists
+  file:
+    path: ~/sandbox/autophagy
+    state: directory
+- name: Clone Personal Projects
+  git:
+    repo: https://github.com/autophagy/{{ item }}
+    dest: ~/sandbox/autophagy/{{ item | basename }}
+  loop:
+   - aerende              # Reminder app
+   - ametan               # Scrum poker android app
+   - andcwisa             # Solutions to textbook questions
+   - black                # Python code formatter
+   - byrgen               # Minimalist theme for Ghost
+   - datarum              # Custom calendar library
+   - faereld              # Time tracker
+   - forebodere           # Discord quote bot
+   - haefen               # autophagy.io
+   - heallreafes          # Talk presentations
+   - hraew                # Portfolio site
+   - insegel              # RTD theme
+   - scieldas             # Repo metadata badges
+   - tid                  # Cooking timer tool
+   - twitter-bg-restorer  # FF/Chrome addon to set Twitter background
+   - wisdomhord           # Flat-file DB
