@@ -2,4 +2,5 @@
 - hosts: localhost
   gather_facts: true
   roles:
+   - aur
    - nvim
