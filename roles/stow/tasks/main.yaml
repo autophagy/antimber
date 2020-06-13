@@ -1,0 +1,10 @@
+---
+- name: Install Stow
+  become: true
+  package:
+    name: stow
+    state: present
+- name: Stow Dotfiles
+  shell: stow -t ~/ dunst git i3 nvim polybar qutebrowser terminal
+  args:
+    chdir: ./dotfiles

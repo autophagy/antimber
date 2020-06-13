@@ -4,3 +4,4 @@
   roles:
    - aur
    - nvim
+   - stow
