@@ -80,7 +80,7 @@
    helper = cache --timeout=3600
 [core]
    excludesfile = /home/mika/.gitignore
-   editor = vim
+   editor = nvim
 [push]
    default = simple
 [commit]
