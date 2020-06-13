@@ -7,6 +7,7 @@
   git:
     repo: https://github.com/autophagy/{{ item }}
     dest: ~/sandbox/autophagy/{{ item | basename }}
+    update: no
   loop:
    - aerende              # Reminder app
    - ametan               # Scrum poker android app
@@ -27,5 +28,6 @@
   git:
     repo: https://github.com/{{ item }}
     dest: ~/sandbox/autophagy/{{ item | basename }}
+    update: no
   loop:
    - psf/black            # Python code formatter
