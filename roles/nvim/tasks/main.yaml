@@ -1,0 +1,17 @@
+- name: Install NVim Plugins
+  git:
+    repo: https://github.com/{{ item }}
+    dest: ~/.config/nvim/pack/plugins/start/{{ item | basename }}
+  loop:
+    - valloric/youcompleteme
+    - bronson/vim-trailing-whitespace
+    - vim-syntastic/syntastic
+    - scrooloose/nerdtree
+    - kien/ctrlp.vim
+    - tpope/vim-fugitive
+    - bling/vim-airline
+    - vim-airline/vim-airline-themes
+    - sheerun/vim-polyglot
+    - saltstack/salt-vim
+    - vim-test/vim-test
+
