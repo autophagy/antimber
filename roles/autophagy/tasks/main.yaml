@@ -11,7 +11,6 @@
    - aerende              # Reminder app
    - ametan               # Scrum poker android app
    - andcwisa             # Solutions to textbook questions
-   - black                # Python code formatter
    - byrgen               # Minimalist theme for Ghost
    - datarum              # Custom calendar library
    - faereld              # Time tracker
@@ -24,3 +23,9 @@
    - tid                  # Cooking timer tool
    - twitter-bg-restorer  # FF/Chrome addon to set Twitter background
    - wisdomhord           # Flat-file DB
+- name: Clone Non-Personal Projects
+  git:
+    repo: https://github.com/{{ item }}
+    dest: ~/sandbox/autophagy/{{ item | basename }}
+  loop:
+   - psf/black            # Python code formatter
