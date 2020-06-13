@@ -3,15 +3,15 @@
     repo: https://github.com/{{ item }}
     dest: ~/.config/nvim/pack/plugins/start/{{ item | basename }}
   loop:
-    - valloric/youcompleteme
-    - bronson/vim-trailing-whitespace
-    - vim-syntastic/syntastic
-    - scrooloose/nerdtree
-    - kien/ctrlp.vim
-    - tpope/vim-fugitive
-    - bling/vim-airline
-    - vim-airline/vim-airline-themes
-    - sheerun/vim-polyglot
-    - saltstack/salt-vim
-    - vim-test/vim-test
+    - valloric/youcompleteme            # Fuzzy-search code completion
+    - bronson/vim-trailing-whitespace   # Trailing whitespace highlighting
+    - vim-syntastic/syntastic           # Syntax checking
+    - scrooloose/nerdtree               # File system explorer
+    - kien/ctrlp.vim                    # Full path fuzzy file search
+    - tpope/vim-fugitive                # Git wrapper
+    - bling/vim-airline                 # Status bar
+    - vim-airline/vim-airline-themes    # Themes for said status bar
+    - sheerun/vim-polyglot              # Language packs for syntax highlighting
+    - saltstack/salt-vim                # Syntax highlighting for SaltStack
+    - vim-test/vim-test                 # Test runner
 
