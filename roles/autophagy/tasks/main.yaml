@@ -5,9 +5,11 @@
     state: directory
 - name: Clone Personal Projects
   git:
-    repo: https://github.com/autophagy/{{ item }}
+    repo: git@github.com:autophagy/{{ item }}
     dest: ~/sandbox/autophagy/{{ item | basename }}
     update: no
+  tags:
+    - projects
   loop:
    - aerende              # Reminder app
    - ametan               # Scrum poker android app
@@ -18,6 +20,7 @@
    - forebodere           # Discord quote bot
    - haefen               # autophagy.io
    - heallreafes          # Talk presentations
+   - hlaf                 # Meal planning
    - hraew                # Portfolio site
    - insegel              # RTD theme
    - scieldas             # Repo metadata badges
@@ -26,8 +29,10 @@
    - wisdomhord           # Flat-file DB
 - name: Clone Non-Personal Projects
   git:
-    repo: https://github.com/{{ item }}
+    repo: git@github.com:{{ item }}
     dest: ~/sandbox/autophagy/{{ item | basename }}
     update: no
+    tags:
+     - projects
   loop:
    - psf/black            # Python code formatter
