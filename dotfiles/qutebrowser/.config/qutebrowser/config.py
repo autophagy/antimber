@@ -137,5 +137,5 @@ c.qt.highdpi = True
 
 ## Normal mode bindings
 
-config.bind(',m', 'spawn mpv --ytdl-format="bestvideo[height<=?1080]+bestaudio/best" {url}')
-config.bind(',a', 'spawn mpv --no-video {url}')
+config.bind(',m', 'spawn -d mpv --ytdl-format="bestvideo[height<=?1080]+bestaudio/best" {url}')
+config.bind(',a', 'spawn -d mpv --no-video {url}')
