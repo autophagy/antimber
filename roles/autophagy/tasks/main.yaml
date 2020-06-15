@@ -30,7 +30,7 @@
 - name: Clone Non-Personal Projects
   git:
     repo: git@github.com:{{ item }}
-    dest: ~/sandbox/autophagy/{{ item | basename }}
+    dest: ~/sandbox/{{ item }}
     update: no
   tags:
      - projects
