@@ -32,7 +32,7 @@
     repo: git@github.com:{{ item }}
     dest: ~/sandbox/autophagy/{{ item | basename }}
     update: no
-    tags:
+  tags:
      - projects
   loop:
    - psf/black            # Python code formatter
