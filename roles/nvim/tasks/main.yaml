@@ -1,16 +1,18 @@
 - name: Install NVim Plugins
   git:
-    repo: https://github.com/{{ item }}
-    dest: ~/.config/nvim/pack/plugins/start/{{ item | basename }}
+    repo: https://github.com/{{ item.r }}
+    dest: ~/.config/nvim/pack/plugins/start/{{ item.r | basename }}
+    version: '{{ item.v }}'
   loop:
-    - bronson/vim-trailing-whitespace   # Trailing whitespace highlighting
-    - vim-syntastic/syntastic           # Syntax checking
-    - scrooloose/nerdtree               # File system explorer
-    - kien/ctrlp.vim                    # Full path fuzzy file search
-    - tpope/vim-fugitive                # Git wrapper
-    - bling/vim-airline                 # Status bar
-    - vim-airline/vim-airline-themes    # Themes for said status bar
-    - sheerun/vim-polyglot              # Language packs for syntax highlighting
-    - saltstack/salt-vim                # Syntax highlighting for SaltStack
-    - vim-test/vim-test                 # Test runner
+    - { r: 'bronson/vim-trailing-whitespace', v: 'master' }   # Trailing whitespace highlighting
+    - { r: 'vim-syntastic/syntastic', v: 'master' }           # Syntax checking
+    - { r: 'scrooloose/nerdtree', v: 'master' }               # File system explorer
+    - { r: 'kien/ctrlp.vim', v: 'master' }                    # Full path fuzzy file search
+    - { r: 'tpope/vim-fugitive', v: 'master' }                # Git wrapper
+    - { r: 'bling/vim-airline', v: 'master' }                 # Status bar
+    - { r: 'vim-airline/vim-airline-themes', v: 'master' }    # Themes for said status bar
+    - { r: 'sheerun/vim-polyglot', v: 'master' }              # Language packs for syntax highlighting
+    - { r: 'saltstack/salt-vim', v: 'master' }                # Syntax highlighting for SaltStack
+    - { r: 'vim-test/vim-test', v: 'master' }                 # Test runner
+    - { r: 'neoclide/coc.nvim', v: 'release' }                # Code completion
 
