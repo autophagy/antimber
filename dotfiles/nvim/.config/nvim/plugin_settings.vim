@@ -28,27 +28,6 @@ let g:airline_symbols.linenr = ''
 "let g:syntastic_mode_map = { 'mode': 'passive' }
 map <leader>check :SyntasticToggleMode<CR>
 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-let g:ycm_python_binary_path = 'python'
-
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar': 1,
-      \ 'notes': 1,
-      \ 'markdown': 1,
-      \ 'netrw': 1,
-      \ 'unite': 1,
-      \ 'text': 1,
-      \ 'vimwiki': 1,
-      \ 'pandoc': 1,
-      \ 'infolog': 1,
-      \ 'leaderf': 1,
-      \ 'mail': 1,
-      \ 'rst': 1
-      \}
-
-
 let NERDTreeIgnore=['\.pyc$', '\~$']
 map <C-n> :NERDTreeToggle<CR>
 
