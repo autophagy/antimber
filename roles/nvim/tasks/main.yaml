@@ -7,7 +7,6 @@
     - bronson/vim-trailing-whitespace   # Trailing whitespace highlighting
     - vim-syntastic/syntastic           # Syntax checking
     - scrooloose/nerdtree               # File system explorer
-    - kien/ctrlp.vim                    # Full path fuzzy file search
     - tpope/vim-fugitive                # Git wrapper
     - bling/vim-airline                 # Status bar
     - vim-airline/vim-airline-themes    # Themes for said status bar
@@ -15,4 +14,6 @@
     - saltstack/salt-vim                # Syntax highlighting for SaltStack
     - vim-test/vim-test                 # Test runner
     - neoclide/coc.nvim:release         # Code completion
+    - junegunn/fzf                      # Fuzzy finder
+    - junegunn/fzf.vim                  # Fzf vim plugin
 
