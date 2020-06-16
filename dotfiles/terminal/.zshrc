@@ -37,6 +37,7 @@ alias crate="cd ~/sandbox/crate"
 alias auto="cd ~/sandbox/autophagy"
 alias vim="nvim"
 alias v="nvim"
+alias f="fzf"
 
 DEFAULT_USER="mika"
 
@@ -52,4 +53,4 @@ PURE_PROMPT_SYMBOL="::"
 prompt pure
 
 export HISTIGNORE=' *'
-
+export FZF_DEFAULT_COMMAND="rg --files --hidden"
