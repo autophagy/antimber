@@ -3,3 +3,4 @@ dotfiles/nvim/.config/nvim/pack
 dotfiles/qutebrowser/.config/qutebrowser/autoconfig.yml
 dotfiles/qutebrowser/.config/qutebrowser/qsettings
 dotfiles/qutebrowser/.config/qutebrowser/quickmarks
+dotfiles/qutebrowser/.config/qutebrowser/bookmarks
