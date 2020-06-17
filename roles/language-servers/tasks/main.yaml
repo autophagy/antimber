@@ -8,3 +8,8 @@
   import_tasks: elm.yaml
   tags:
     - elm
+
+- name: Install Python Language Server
+  import_tasks: python.yaml
+  tags:
+    - python

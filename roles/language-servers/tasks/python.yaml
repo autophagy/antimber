@@ -1,0 +1,18 @@
+---
+- name: Install Python Language Server
+  pip:
+    name:
+      - python-language-server
+      - mccabe
+      - pycodestyle
+      - pydocstyle
+      - pyflakes
+      - rope
+    virtualenv: ~/tools/python-language-server
+    virtualenv_command: /usr/bin/python -m venv
+    state: latest
+- name: Link Python Language Server
+  file:
+    src: ~/tools/python-language-server/bin/pyls
+    dest: ~/.local/bin/pyls
+    state: link
