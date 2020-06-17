@@ -1,0 +1,9 @@
+---
+- name: Clone HLS
+  git:
+    repo: git@github.com:haskell/haskell-language-server.git
+    dest: ~/tools/haskell-language-server
+- name: Build HLS
+  command: stack install
+  args:
+    chdir: ~/tools/haskell-language-server
