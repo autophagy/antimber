@@ -1,0 +1,17 @@
+---
+- name: Clone Elm Language Server
+  git:
+    repo: git@github.com:elm-tooling/elm-language-server.git
+    dest: ~/tools/elm-language-server
+- name: Install Npm Dependencies for Elm Language Server
+  command: npm install
+  args:
+    chdir: ~/tools/elm-language-server
+- name: Compile Elm Language Server
+  command: npm run compile
+  args:
+    chdir: ~/tools/elm-language-server
+- name: Link Elm Language Server
+  command: npm link
+  args:
+    chdir: ~/tools/elm-language-server
