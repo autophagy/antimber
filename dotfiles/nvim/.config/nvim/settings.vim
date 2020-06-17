@@ -4,7 +4,7 @@ set encoding=utf-8
 
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za
+nnoremap f za
 
 syntax on
 
