@@ -1,0 +1,10 @@
+---
+- name: Install Haskell Language Server
+  import_tasks: haskell.yaml
+  tags:
+    - haskell
+
+- name: Install Elm Language Server
+  import_tasks: elm.yaml
+  tags:
+    - elm
