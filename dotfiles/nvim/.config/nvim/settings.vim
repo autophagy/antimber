@@ -8,10 +8,14 @@ nnoremap f za
 
 syntax on
 
+colorscheme gruvbox
+
 set cursorline
 set scrolloff=5
 
 set smartindent
+
+set background=dark
 
 if exists("&colorcolumn")
     augroup colorcol
