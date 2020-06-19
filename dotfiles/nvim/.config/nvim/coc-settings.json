@@ -1,8 +1,22 @@
 {
   "languageserver": {
+    "java": {
+      "command": "javals",
+      "filetypes": [
+        "java"
+      ],
+      "initializationOptions": {
+        "extendedClientCapabilities": {
+          "classFileContentsSupport": true
+        }
+      },
+      "settings": {}
+    },
     "haskell": {
       "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
+      "args": [
+        "--lsp"
+      ],
       "rootPatterns": [
         "stack.yaml",
         "cabal.config",
@@ -21,8 +35,12 @@
     },
     "elm": {
       "command": "elm-language-server",
-      "filetypes": ["elm"],
-      "rootPatterns": ["elm.json"],
+      "filetypes": [
+        "elm"
+      ],
+      "rootPatterns": [
+        "elm.json"
+      ],
       "initializationOptions": {
         "elmPath": "elm",
         "elmFormatPath": "elm-format",

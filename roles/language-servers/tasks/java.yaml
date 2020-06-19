@@ -1,0 +1,13 @@
+- name: Clone Java Language Server
+  git:
+    repo: git@github.com:eclipse/eclipse.jdt.ls.git
+    dest: ~/tools/java-language-server
+- name: Build Java Language Server
+  command: ./mvnw clean install -DskipTests
+  args:
+    chdir: ~/tools/java-language-server
+- name: Install Java Language Server Script
+  copy:
+    src: "javals"
+    mode: "0755"
+    dest: /home/mika/.local/bin/

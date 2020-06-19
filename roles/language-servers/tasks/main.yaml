@@ -13,3 +13,8 @@
   import_tasks: python.yaml
   tags:
     - python
+
+- name: Install Java Language Server
+  import_tasks: java.yaml
+  tags:
+    - java
