@@ -5,7 +5,7 @@
     version: "{{ item.split(':')[1] | d('master') }}"
   loop:
     - bronson/vim-trailing-whitespace   # Trailing whitespace highlighting
-    - vim-syntastic/syntastic           # Syntax checking
+    - dense-analysis/ale                # Syntax checking
     - scrooloose/nerdtree               # File system explorer
     - tpope/vim-fugitive                # Git wrapper
     - bling/vim-airline                 # Status bar

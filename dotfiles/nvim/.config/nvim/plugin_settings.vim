@@ -23,9 +23,6 @@ let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 let g:airline_symbols.linenr = ''
 
-"let g:syntastic_mode_map = { 'mode': 'passive' }
-map <leader>check :SyntasticToggleMode<CR>
-
 let NERDTreeIgnore=['\.pyc$', '\~$']
 map <C-n> :NERDTreeToggle<CR>
 
@@ -37,3 +34,13 @@ nmap <silent> t<C-g> :TestVisit<CR>
 
 let g:fzf_preview_window = ''
 nnoremap <silent> <C-p> :Files<CR>
+
+let g:ale_virtualenv_dir_names = get(g:, 'ale_virtualenv_dir_names', [
+\   '.env',
+\   '.venv',
+\   'env',
+\   've-py3',
+\   've',
+\   'virtualenv',
+\   'venv',
+\])
