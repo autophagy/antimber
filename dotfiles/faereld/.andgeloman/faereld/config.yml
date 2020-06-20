@@ -132,6 +132,9 @@ projects:
   geard:
     desc: Indoor Herb Garden
     name: Geard
+  hlaf:
+    desc: Meal Planning App
+    name: Hláf
 
 # general_areas :: Definitions For General Areas
 #
