@@ -45,6 +45,4 @@ let g:ale_virtualenv_dir_names = get(g:, 'ale_virtualenv_dir_names', [
 \   'venv',
 \])
 
-let g:ale_pattern_options = {
-\   '.*\.hs$': {'ale_enabled': 0},
-\}
+let g:ale_linters = {'haskell': ['hlint']}
