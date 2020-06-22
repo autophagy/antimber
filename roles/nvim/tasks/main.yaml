@@ -15,5 +15,6 @@
     - neoclide/coc.nvim:release         # Code completion
     - junegunn/fzf                      # Fuzzy finder
     - junegunn/fzf.vim                  # Fzf vim plugin
+    - monkoose/fzf-hoogle.vim           # Hoogle search
     - morhetz/gruvbox                   # Colour scheme
 

@@ -3,7 +3,15 @@
   git:
     repo: git@github.com:haskell/haskell-language-server.git
     dest: ~/tools/haskell-language-server
-- name: Build HLS
-  command: stack install
+- name: Build HLS (LTS15)
+  command: stack install --stack-yaml=stack-8.8.2.yaml
+  args:
+    chdir: ~/tools/haskell-language-server
+- name: Install Haskell Metatools
+  command: stack install --resolver lts-15.3 hoogle ormolu
+  args:
+    chdir: ~/
+- name: Generate Hoogle for HLS
+  command: stack exec hoogle generate
   args:
     chdir: ~/tools/haskell-language-server
