@@ -15,6 +15,8 @@ set scrolloff=5
 
 set smartindent
 
+set expandtab
+
 set background=dark
 
 if exists("&colorcolumn")
