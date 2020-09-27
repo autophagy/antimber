@@ -123,6 +123,7 @@ c.url.searchengines = {
     "g": "https://www.google.de/search?q={}",
     "y": "https://www.youtube.com/results?search_query={}",
     "m": "https://www.google.com/maps/search/{}",
+    "h": "https://hoogle.haskell.org/?hoogle={}&scope=set%3Astackage",
     "de:en": "https://www.deepl.com/translator#de/en/{}",
     "en:de": "https://www.deepl.com/translator#en/de/{}",
     "DEFAULT": "https://ecosia.org/search?q={}",
