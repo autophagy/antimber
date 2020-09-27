@@ -27,6 +27,7 @@
    - tid                  # Cooking timer tool
    - twitter-bg-restorer  # FF/Chrome addon to set Twitter background
    - wisdomhord           # Flat-file DB
+   - taelsum              # Android reminders
 - name: Clone Non-Personal Projects
   git:
     repo: git@github.com:{{ item }}
