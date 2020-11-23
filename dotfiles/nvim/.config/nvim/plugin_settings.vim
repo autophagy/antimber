@@ -33,7 +33,9 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
 let g:fzf_preview_window = ''
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <A-p> :Rg<CR>
 
 let g:ale_virtualenv_dir_names = get(g:, 'ale_virtualenv_dir_names', [
 \   '.env',

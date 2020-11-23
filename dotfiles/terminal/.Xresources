@@ -1,4 +1,4 @@
-Xft.dpi: 180
+Xft.dpi: 90 
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
@@ -14,7 +14,7 @@ URxvt.scrollBar: False
 URxvt.scrollstyle: rxvt
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: False
-URxvt.internalBorder: 50
+URxvt.internalBorder: 25
 
 ! Extensions
 URxvt.url-launcher: xdg-open

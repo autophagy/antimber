@@ -4,9 +4,9 @@ foreground = #EBEBEB
 poweritems = #DBDBDB
 
 [bar/statusbar]
-monitor = eDP1
+monitor = HDMI-0 
 width = 100%
-height = 60
+height = 30
 radius = 0.0
 fixed-center = true
 
@@ -27,10 +27,10 @@ separator = |
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Inconsolata:pixelsize=18;2
+font-0 = Inconsolata:pixelsize=9;2
 
 modules-left = i3 spotify
-modules-right = cpu memory battery pulseaudio wlan date
+modules-right = cpu memory pulseaudio eth date
 
 [module/i3]
 type = internal/i3
@@ -72,6 +72,15 @@ format-connected = <label-connected>
 
 label-connected = %local_ip% // %signal%%
 
+format-disconnected =
+
+[module/eth]
+type = internal/network
+interface = enp4s0
+interval = 3.0
+
+format-connected = <label-connected>
+label-connected = %local_ip%
 format-disconnected =
 
 [module/pulseaudio]
