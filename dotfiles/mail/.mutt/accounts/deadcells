@@ -1,0 +1,27 @@
+set from = "mail@deadcells.org"
+set sendmail = "msmtp -a deadcells"
+
+# Set folders
+set spoolfile = "+deadcells/INBOX"
+set mbox = "+deadcells/archive"
+set postponed = "+deadcells/drafts"
+set record = "+deadcells/sent"
+set trash = "+deadcells/trash"
+
+color status green default
+
+macro index o "<shell-escape>mbsync deadcells<enter>" "run mbsync to sync mail for this account"
+
+macro index,pager J \
+  "<enter-command>set my_old_resolve=\$resolve noresolve<enter>\
+  <tag-prefix><clear-flag>n<enter-command>set resolve=\$my_old_resolve<enter>\
+  <save-message>+deadcells/junk<enter>" \
+  "mark as read and move to junk folder"
+
+macro index,pager A \
+  "<save-message>+deadcells/archive<enter>"  \
+  "move message to the archive"
+
+macro index,pager I \
+  "<save-message>+deadcells/INBOX<enter>"  \
+  "move message to the inbox"

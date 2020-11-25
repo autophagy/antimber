@@ -1,0 +1,2 @@
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/plain; vim %s

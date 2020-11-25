@@ -1,0 +1,27 @@
+set from = "mail@autophagy.io"
+set sendmail = "msmtp -a autophagy"
+
+# Set folders
+set spoolfile = "+autophagy/INBOX"
+set mbox = "+autophagy/archive"
+set postponed = "+autophagy/drafts"
+set record = "+autophagy/sent"
+set trash = "+autophagy/trash"
+
+color status cyan default
+
+macro index o "<shell-escape>mbsync autophagy<enter>" "run mbsync to sync mail for this account"
+
+macro index,pager J \
+  "<enter-command>set my_old_resolve=\$resolve noresolve<enter>\
+  <tag-prefix><clear-flag>n<enter-command>set resolve=\$my_old_resolve<enter>\
+  <save-message>+autophagy/junk<enter>" \
+  "mark as read and move to junk folder"
+
+macro index,pager A \
+  "<save-message>+autophagy/archive<enter>"  \
+  "move message to the archive"
+
+macro index,pager I \
+  "<save-message>+autophagy/INBOX<enter>"  \
+  "move message to the inbox"

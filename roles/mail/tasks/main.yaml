@@ -1,0 +1,18 @@
+---
+- name: Verify Mail Folders Exist
+  file:
+    path: ~/mail/{{ item | basename }}
+    state: directory
+  loop:
+    - autophagy
+    - deadcells
+
+- name: Install Mail Tools
+  pacman:
+    name: "{{ item | basename }}"
+    state: present
+  loop:
+    - isync
+    - msmtp
+    - neomutt
+    - w3m

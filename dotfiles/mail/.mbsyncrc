@@ -1,0 +1,123 @@
+# mail@autophagy.io
+
+IMAPAccount autophagy
+Host mail.gandi.net
+User mail@autophagy.io
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-autophagy.gpg"
+SSLType IMAPS
+SSLVersions TLSv1.2
+
+# Remote storage
+IMAPStore autophagy-remote
+Account autophagy
+
+# Local storage
+MaildirStore autophagy-local
+Path ~/mail/autophagy/
+Inbox ~/mail/autophagy/INBOX
+
+Channel autophagy-inbox
+Master :autophagy-remote:"Inbox"
+Slave :autophagy-local:INBOX
+Create Both
+Expunge Both
+
+Channel autophagy-archive
+Master :autophagy-remote:"Archives"
+Slave :autophagy-local:archive
+Create Both
+Expunge Both
+
+Channel autophagy-drafts
+Master :autophagy-remote:"Drafts"
+Slave :autophagy-local:drafts
+Create Both
+Expunge Both
+
+Channel autophagy-sent
+Master :autophagy-remote:"Sent"
+Slave :autophagy-local:sent
+Create Both
+Expunge Both
+
+Channel autophagy-trash
+Master :autophagy-remote:"Trash"
+Slave :autophagy-local:trash
+Create Both
+Expunge Both
+
+Channel autophagy-junk
+Master :autophagy-remote:"Junk"
+Slave :autophagy-local:junk
+Create Both
+Expunge Both
+
+Group autophagy
+Channel autophagy-inbox
+Channel autophagy-archive
+Channel autophagy-drafts
+Channel autophagy-sent
+Channel autophagy-trash
+Channel autophagy-junk
+
+# mail@deadcells.org
+
+IMAPAccount deadcells
+Host mail.gandi.net
+User mail@deadcells.org
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-deadcells.gpg"
+SSLType IMAPS
+SSLVersions TLSv1.2
+
+# Remote storage
+IMAPStore deadcells-remote
+Account deadcells
+
+# Local storage
+MaildirStore deadcells-local
+Path ~/mail/deadcells/
+Inbox ~/mail/deadcells/INBOX
+
+Channel deadcells-inbox
+Master :deadcells-remote:"Inbox"
+Slave :deadcells-local:INBOX
+Create Both
+Expunge Both
+
+Channel deadcells-archive
+Master :deadcells-remote:"Archives"
+Slave :deadcells-local:archive
+Create Both
+Expunge Both
+
+Channel deadcells-drafts
+Master :deadcells-remote:"Drafts"
+Slave :deadcells-local:drafts
+Create Both
+Expunge Both
+
+Channel deadcells-sent
+Master :deadcells-remote:"Sent"
+Slave :deadcells-local:sent
+Create Both
+Expunge Both
+
+Channel deadcells-trash
+Master :deadcells-remote:"Trash"
+Slave :deadcells-local:trash
+Create Both
+Expunge Both
+
+Channel deadcells-junk
+Master :deadcells-remote:"Junk"
+Slave :deadcells-local:junk
+Create Both
+Expunge Both
+
+Group deadcells
+Channel deadcells-inbox
+Channel deadcells-archive
+Channel deadcells-drafts
+Channel deadcells-sent
+Channel deadcells-trash
+Channel deadcells-junk
