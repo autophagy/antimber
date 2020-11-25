@@ -71,13 +71,15 @@ auto_view text/html
 set sidebar_visible
 set sidebar_short_path
 set sidebar_folder_indent
-set sidebar_width = 25
+set sidebar_width = 30
 set sidebar_divider_char = ' | '
 set sidebar_indent_string = '  ''
 set sidebar_format="%D %?S?[%N/%S]?"
 
 # Mailboxes to show in the sidebar.
 named-mailboxes "autophagy" =autophagy/INBOX
+mailboxes =autophagy/INBOX/arch-announce
+mailboxes =autophagy/INBOX/github
 mailboxes =autophagy/archive =autophagy/sent =autophagy/drafts =autophagy/junk =autophagy/trash
 named-mailboxes " " =div
 named-mailboxes "deadcells" =deadcells/INBOX
