@@ -6,9 +6,10 @@
 antimber
   noun: matter, materials, substance
 
-These are a set of dotfiles for my Linux workspace.
+These are a set of dotfiles for my Linux workspace. Depends on `Ansible`_,
+`ansible-aur`_ and `Stow`_.
 
-To install the symlinks using `Stow`_:
+To install the symlinks:
 
 .. code-block:: console
 
@@ -22,3 +23,5 @@ To run the ansible playbook:
    ansible-playbook playbook.yaml -K
 
 .. _Stow: https://www.gnu.org/software/stow/
+.. _Ansible: https://www.ansible.com/
+.. _ansible-aur: https://aur.archlinux.org/packages/ansible-aur-git/
