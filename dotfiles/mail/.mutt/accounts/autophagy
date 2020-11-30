@@ -10,8 +10,6 @@ set trash = "+autophagy/trash"
 
 color status cyan default
 
-macro index o "<shell-escape>mbsync autophagy<enter>" "run mbsync to sync mail for this account"
-
 macro index,pager J \
   "<enter-command>set my_old_resolve=\$resolve noresolve<enter>\
   <tag-prefix><clear-flag>n<enter-command>set resolve=\$my_old_resolve<enter>\

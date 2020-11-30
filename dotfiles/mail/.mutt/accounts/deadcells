@@ -10,7 +10,6 @@ set trash = "+deadcells/trash"
 
 color status green default
 
-macro index o "<shell-escape>mbsync deadcells<enter>" "run mbsync to sync mail for this account"
 
 macro index,pager J \
   "<enter-command>set my_old_resolve=\$resolve noresolve<enter>\

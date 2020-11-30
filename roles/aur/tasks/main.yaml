@@ -2,7 +2,6 @@
 - name: Install AUR Packages
   aur:
     name:
-      - github-cli-bin
       - nerd-fonts-dejavu-complete
       - nerd-fonts-inconsolata
       - oh-my-zsh-git
