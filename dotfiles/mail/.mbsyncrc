@@ -23,6 +23,12 @@ Slave :autophagy-local:INBOX
 Create Both
 Expunge Both
 
+Channel autophagy-sifetha
+Master :autophagy-remote:"Sifetha"
+Slave :autophagy-local:sifetha
+Create Both
+Expunge Both
+
 Channel autophagy-arch-announce
 Master :autophagy-remote:"Inbox/arch-announce"
 Slave :autophagy-local:INBOX/arch-announce
@@ -73,6 +79,7 @@ Expunge Both
 
 Group autophagy
 Channel autophagy-inbox
+Channel autophagy-sifetha
 Channel autophagy-arch-announce
 Channel autophagy-github
 Channel autophagy-newsletters

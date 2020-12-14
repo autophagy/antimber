@@ -81,7 +81,9 @@ named-mailboxes "autophagy" =autophagy/INBOX
 mailboxes =autophagy/INBOX/arch-announce
 mailboxes =autophagy/INBOX/github
 mailboxes =autophagy/INBOX/newsletters
-mailboxes =autophagy/archive =autophagy/sent =autophagy/drafts =autophagy/junk =autophagy/trash
+mailboxes =autophagy/archive
+named-mailboxes "sifeþa" =autophagy/sifetha
+mailboxes =autophagy/sent =autophagy/drafts =autophagy/junk =autophagy/trash
 named-mailboxes " " =div
 named-mailboxes "deadcells" =deadcells/INBOX
 mailboxes =deadcells/archive =deadcells/sent =deadcells/drafts =deadcells/junk =deadcells/trash
