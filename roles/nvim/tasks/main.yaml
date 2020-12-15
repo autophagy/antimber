@@ -1,3 +1,9 @@
+- name: Install dictionary
+  become: true
+  package:
+    name: words
+    state: present
+
 - name: Install NVim Plugins
   git:
     repo: https://github.com/{{ item.split(':')[0] }}
