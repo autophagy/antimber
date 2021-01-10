@@ -28,6 +28,7 @@
    - twitter-bg-restorer  # FF/Chrome addon to set Twitter background
    - wisdomhord           # Flat-file DB
    - taelsum              # Android reminders
+   - notas                # Notes
 - name: Clone Non-Personal Projects
   git:
     repo: git@github.com:{{ item }}
