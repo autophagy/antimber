@@ -35,7 +35,7 @@ set spelllang=en
 
 augroup nvim_opts
     au!
-    au FileType markdown,rst,text,mail setlocal spell
+    au FileType markdown,rst,text,mail,tex setlocal spell
 augroup end
 
 nnoremap <C-J> <C-W><C-J>
