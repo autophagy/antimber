@@ -8,7 +8,7 @@
   args:
     chdir: ~/tools/haskell-language-server
 - name: Install Haskell Metatools
-  command: stack install --resolver lts-15.3 hoogle ormolu hlint
+  command: stack install --resolver lts-16.27 hoogle ormolu hlint
   args:
     chdir: ~/
 - name: Generate Hoogle for HLS

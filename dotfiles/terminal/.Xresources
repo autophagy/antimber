@@ -1,4 +1,4 @@
-Xft.dpi: 90 
+Xft.dpi: 96
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
@@ -25,7 +25,7 @@ URxvt.copyCommand:  xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
 
 ! Fonts
-URxvt*font: xft:Inconsolata Nerd Font:size=13:antialias=true:style=Regular, xft:DejaVuSansMono Nerd Font Mono:style=Book:size=11
+URxvt*font: xft:Inconsolata Nerd Font:size=12:antialias=true:style=Regular, xft:DejaVuSansMono Nerd Font Mono:style=Book:size=10
 URxvt*letterSpace: 0
 
 ! gruvbox (dark)
