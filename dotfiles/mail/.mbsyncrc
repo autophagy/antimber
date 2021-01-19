@@ -29,9 +29,30 @@ Slave :autophagy-local:sifetha
 Create Both
 Expunge Both
 
+
+# Mailing Lists
+
+Channel autophagy-mailing-lists
+Master :autophagy-remote:"Inbox/mailing-lists"
+Slave :autophagy-local:INBOX/mailing-lists
+Create Both
+Expunge Both
+
 Channel autophagy-arch-announce
-Master :autophagy-remote:"Inbox/arch-announce"
-Slave :autophagy-local:INBOX/arch-announce
+Master :autophagy-remote:"Inbox/mailing-lists/arch-announce"
+Slave :autophagy-local:INBOX/mailing-lists/arch-announce
+Create Both
+Expunge Both
+
+Channel autophagy-haskell-announce
+Master :autophagy-remote:"Inbox/mailing-lists/haskell-announce"
+Slave :autophagy-local:INBOX/mailing-lists/haskell-announce
+Create Both
+Expunge Both
+
+Channel autophagy-haskell-cafe
+Master :autophagy-remote:"Inbox/mailing-lists/haskell-cafe"
+Slave :autophagy-local:INBOX/mailing-lists/haskell-cafe
 Create Both
 Expunge Both
 
@@ -80,7 +101,10 @@ Expunge Both
 Group autophagy
 Channel autophagy-inbox
 Channel autophagy-sifetha
+Channel autophagy-mailing-lists
 Channel autophagy-arch-announce
+Channel autophagy-haskell-announce
+Channel autophagy-haskell-cafe
 Channel autophagy-github
 Channel autophagy-newsletters
 Channel autophagy-archive
