@@ -78,9 +78,9 @@ set sidebar_format="%D %?S?[%N/%S]?"
 
 # Mailboxes to show in the sidebar.
 named-mailboxes "autophagy" =autophagy/INBOX
-mailboxes =autophagy/INBOX/mailing-lists =autophagy/INBOX/mailing-lists/arch-announce =autophagy/INBOX/mailing-lists/haskell-announce =autophagy/INBOX/mailing-lists/haskell-cafe
 mailboxes =autophagy/INBOX/github
 mailboxes =autophagy/INBOX/newsletters
+mailboxes =autophagy/INBOX/mailing-lists =autophagy/INBOX/mailing-lists/arch-announce =autophagy/INBOX/mailing-lists/haskell-announce =autophagy/INBOX/mailing-lists/haskell-cafe
 mailboxes =autophagy/archive
 named-mailboxes "sifeþa" =autophagy/sifetha
 mailboxes =autophagy/sent =autophagy/drafts =autophagy/junk =autophagy/trash
