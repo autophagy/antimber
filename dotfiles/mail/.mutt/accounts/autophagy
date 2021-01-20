@@ -9,6 +9,8 @@ set record = "+autophagy/sent"
 set trash = "+autophagy/trash"
 
 color status cyan default
+color index cyan default "~N"
+color index red default "~D"
 
 macro index,pager J \
   "<enter-command>set my_old_resolve=\$resolve noresolve<enter>\
