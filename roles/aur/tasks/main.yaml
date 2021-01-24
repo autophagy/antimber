@@ -4,6 +4,7 @@
     name:
       - nerd-fonts-dejavu-complete
       - nerd-fonts-inconsolata
+      - otf-symbola
       - oh-my-zsh-git
       - polybar
       - stack-static
