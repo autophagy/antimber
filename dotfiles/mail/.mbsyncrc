@@ -56,6 +56,12 @@ Slave :autophagy-local:INBOX/mailing-lists/haskell-cafe
 Create Both
 Expunge Both
 
+Channel autophagy-qutebrowser
+Master :autophagy-remote:"Inbox/mailing-lists/qutebrowser"
+Slave :autophagy-local:INBOX/mailing-lists/qutebrowser
+Create Both
+Expunge Both
+
 Channel autophagy-github
 Master :autophagy-remote:"Inbox/github"
 Slave :autophagy-local:INBOX/github
@@ -105,6 +111,7 @@ Channel autophagy-mailing-lists
 Channel autophagy-arch-announce
 Channel autophagy-haskell-announce
 Channel autophagy-haskell-cafe
+Channel autophagy-qutebrowser
 Channel autophagy-github
 Channel autophagy-newsletters
 Channel autophagy-archive
