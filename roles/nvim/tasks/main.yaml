@@ -23,4 +23,5 @@
     - junegunn/fzf.vim                  # Fzf vim plugin
     - monkoose/fzf-hoogle.vim           # Hoogle search
     - morhetz/gruvbox                   # Colour scheme
+    - vmchale/dhall-vim                 # Dhall syntax highlighting
 
