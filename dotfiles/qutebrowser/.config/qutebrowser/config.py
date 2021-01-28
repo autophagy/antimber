@@ -140,3 +140,5 @@ c.qt.highdpi = True
 
 config.bind(',m', 'spawn -d mpv --ytdl-format="bestvideo[height<=?1080]+bestaudio/best" {url}')
 config.bind(',a', 'spawn -d mpv --no-video {url}')
+
+config.load_autoconfig(False)
