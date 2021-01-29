@@ -1,5 +1,7 @@
 ##   Configfile for qutebrowser.
 
+
+
 ## Background color of the completion widget category headers.
 ## Type: QssColor
 c.colors.completion.category.bg = "#F2F2F2"
