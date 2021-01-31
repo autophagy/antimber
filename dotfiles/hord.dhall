@@ -39,7 +39,7 @@ let i3 =
       ]
 
 let mail =
-      [ { src = "mail/mbsyncrc"
+      [ { src = "mail/mbsync.dhall"
         , dest = "/home/mika/.mbsyncrc"
         }
       , { src = "mail/msmtprc"
