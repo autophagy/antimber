@@ -42,7 +42,7 @@ let mail =
       [ { src = "mail/mbsync.dhall"
         , dest = "/home/mika/.mbsyncrc"
         }
-      , { src = "mail/msmtprc"
+      , { src = "mail/msmtprc.dhall"
         , dest = "/home/mika/.msmtprc"
         }
       , { src = "mail/signature"
