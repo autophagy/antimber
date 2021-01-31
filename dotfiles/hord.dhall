@@ -5,7 +5,7 @@ let dunst =
       ]
 
 let faereld =
-      [ { src = "faereld/config.yml"
+      [ { src = "faereld/config.dhall"
         , dest =
             "/home/mika/.andgeloman/faereld/config.yml"
         }
@@ -65,7 +65,7 @@ let mail =
       ]
 
 let nvim =
-      [ { src = "nvim/coc-settings.json"
+      [ { src = "nvim/coc-settings.dhall"
         , dest =
             "/home/mika/.config/nvim/coc-settings.json"
         }
