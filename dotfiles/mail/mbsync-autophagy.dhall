@@ -8,7 +8,7 @@ let maildir =
       mbsync.MaildirStore::{
       , name = "autophagy-local"
       , path = Some "~/mail/autophagy/"
-      , inbox = "~/mail/autophagy/INBOX"
+      , inbox = "~/mail/autophagy/Inbox"
       , subFolders = Some mbsync.Subfolders.Verbatim
       }
 
@@ -26,42 +26,32 @@ let account =
 let imapStore =
       mbsync.IMAPStore::{ name = "autophagy-remote", account = "autophagy" }
 
-let ChannelDef = { r : Text, l : Text }
-
 let createChannel =
-      \(c : ChannelDef) ->
+      \(channel : Text) ->
         mbsync.Channel::{
-        , name = "autophagy-" ++ Prelude.Text.replace "/" "!" c.l
-        , master = ":autophagy-remote:" ++ Text/show c.r
-        , slave = ":autophagy-local:" ++ c.l
+        , name = "autophagy-" ++ Prelude.Text.replace "/" "!" channel
+        , master = ":autophagy-remote:" ++ Text/show channel
+        , slave = ":autophagy-local:" ++ channel
         , create = mbsync.MasterSlave.Both
         , expunge = mbsync.MasterSlave.None
         , syncState = "*"
         }
 
 let channels =
-      [ { r = "Inbox", l = "INBOX" }
-      , { r = "Sifetha", l = "sifetha" }
-      , { r = "Inbox/mailing-lists", l = "INBOX/mailing-lists" }
-      , { r = "Inbox/mailing-lists/arch-announce"
-        , l = "INBOX/mailing-lists/arch-announce"
-        }
-      , { r = "Inbox/mailing-lists/haskell-announce"
-        , l = "INBOX/mailing-lists/haskell-announce"
-        }
-      , { r = "Inbox/mailing-lists/haskell-cafe"
-        , l = "INBOX/mailing-lists/haskell-cafe"
-        }
-      , { r = "Inbox/mailing-lists/qutebrowser"
-        , l = "INBOX/mailing-lists/qutebrowser"
-        }
-      , { r = "Inbox/github", l = "INBOX/github" }
-      , { r = "Inbox/newsletters", l = "INBOX/newsletters" }
-      , { r = "Archives", l = "archive" }
-      , { r = "Drafts", l = "drafts" }
-      , { r = "Sent", l = "sent" }
-      , { r = "Trash", l = "trash" }
-      , { r = "Junk", l = "junk" }
+      [ "Inbox"
+      , "Sifetha"
+      , "Inbox/mailing-lists"
+      , "Inbox/mailing-lists/arch-announce"
+      , "Inbox/mailing-lists/haskell-announce"
+      , "Inbox/mailing-lists/haskell-cafe"
+      , "Inbox/mailing-lists/qutebrowser"
+      , "Inbox/github"
+      , "Inbox/newsletters"
+      , "Archives"
+      , "Drafts"
+      , "Sent"
+      , "Trash"
+      , "Junk"
       ]
 
 let group =
@@ -69,11 +59,9 @@ let group =
       , name = "autophagy"
       , channels =
           Prelude.List.map
-            ChannelDef
             Text
-            ( \(c : ChannelDef) ->
-                "autophagy-" ++ Prelude.Text.replace "/" "!" c.l
-            )
+            Text
+            (\(c : Text) -> "autophagy-" ++ Prelude.Text.replace "/" "!" c)
             channels
       }
 
@@ -82,6 +70,6 @@ in  mbsync.Mbsync::{
     , accounts = [ account ]
     , imapStores = [ imapStore ]
     , channels =
-        Prelude.List.map ChannelDef mbsync.Channel.Type createChannel channels
+        Prelude.List.map Text mbsync.Channel.Type createChannel channels
     , groups = [ group ]
     }
