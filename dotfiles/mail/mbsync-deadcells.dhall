@@ -29,7 +29,7 @@ let imapStore =
 let ChannelDef = { r : Text, l : Text }
 
 let createChannel =
-      \(c : ChannelDef) ->
+      λ(c : ChannelDef) →
         mbsync.Channel::{
         , name = "deadcells-" ++ Prelude.Text.replace "/" "!" c.l
         , master = ":deadcells-remote:" ++ Text/show c.r
@@ -55,7 +55,7 @@ let group =
           Prelude.List.map
             ChannelDef
             Text
-            ( \(c : ChannelDef) ->
+            ( λ(c : ChannelDef) →
                 "deadcells-" ++ Prelude.Text.replace "/" "!" c.l
             )
             channels

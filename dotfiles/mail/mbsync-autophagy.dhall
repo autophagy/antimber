@@ -27,7 +27,7 @@ let imapStore =
       mbsync.IMAPStore::{ name = "autophagy-remote", account = "autophagy" }
 
 let createChannel =
-      \(channel : Text) ->
+      λ(channel : Text) →
         mbsync.Channel::{
         , name = "autophagy-" ++ Prelude.Text.replace "/" "!" channel
         , master = ":autophagy-remote:" ++ Text/show channel
@@ -61,7 +61,7 @@ let group =
           Prelude.List.map
             Text
             Text
-            (\(c : Text) -> "autophagy-" ++ Prelude.Text.replace "/" "!" c)
+            (λ(c : Text) → "autophagy-" ++ Prelude.Text.replace "/" "!" c)
             channels
       }
 
