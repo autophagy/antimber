@@ -54,4 +54,9 @@
     , `trace.server` = "verbose"
     }
   }
+  , rust =
+    { command = "rls"
+    , filetypes = [ "rust" ]
+    , settings = {=}
+    }
 }
