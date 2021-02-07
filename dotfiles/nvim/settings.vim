@@ -7,6 +7,8 @@ set foldlevel=99
 nnoremap f za
 
 syntax on
+filetype on
+filetype plugin indent on
 
 colorscheme gruvbox
 
