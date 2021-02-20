@@ -82,6 +82,7 @@ mailboxes =autophagy/Inbox/github
 mailboxes =autophagy/Inbox/newsletters
 mailboxes =autophagy/Inbox/mailing-lists =autophagy/Inbox/mailing-lists/arch-announce =autophagy/Inbox/mailing-lists/haskell-announce =autophagy/Inbox/mailing-lists/haskell-cafe
 mailboxes =autophagy/Inbox/mailing-lists/qutebrowser
+mailboxes =autophagy/Inbox/mailing-lists/nixos
 mailboxes =autophagy/Archives
 named-mailboxes "sifeþa" =autophagy/Sifetha
 mailboxes =autophagy/Sent =autophagy/Drafts =autophagy/Junk =autophagy/Trash
