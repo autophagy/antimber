@@ -128,6 +128,7 @@ c.url.searchengines = {
     "h": "https://hoogle.haskell.org/?hoogle={}&scope=set%3Astackage",
     "de:en": "https://www.deepl.com/translator#de/en/{}",
     "en:de": "https://www.deepl.com/translator#en/de/{}",
+    "n": "https://search.nixos.org/packages?channel=20.09&from=0&size=50&sort=relevance&query={}",
     "DEFAULT": "https://ecosia.org/search?q={}",
 }
 
