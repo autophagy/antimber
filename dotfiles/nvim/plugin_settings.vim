@@ -47,7 +47,7 @@ let g:ale_virtualenv_dir_names = get(g:, 'ale_virtualenv_dir_names', [
 \   'venv',
 \])
 
-let g:ale_linters = {'haskell': ['hlint']}
+let g:ale_linters = {'haskell': ['hlint'], 'nim': []}
 
 let g:idris_indent_if = 3
 let g:idris_indent_case = 5

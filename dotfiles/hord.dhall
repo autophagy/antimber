@@ -27,8 +27,8 @@ let i3 =
       [ { src = "i3/config"
         , dest = "/home/mika/.config/i3/config"
         }
-      , { src = "i3/i3lock.sh"
-        , dest = "/home/mika/.config/i3/i3lock.sh"
+      , { src = "i3/i3lock.nims"
+        , dest = "/home/mika/.config/i3/i3lock.nims"
         }
       , { src = "i3/polybar.sh"
         , dest = "/home/mika/.config/i3/polybar.sh"

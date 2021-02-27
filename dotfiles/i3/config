@@ -237,7 +237,7 @@ exec --no-startup-id xmodmap -e 'clear Lock'
 exec --no-startup-id xmodmap -e 'keycode 0x42=Escape'
 
 # Lockscreen binding
-bindsym $mod+Shift+o exec --no-startup-id ~/.config/i3/i3lock.sh
+bindsym $mod+Shift+o exec --no-startup-id nim ~/.config/i3/i3lock.nims
 
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
