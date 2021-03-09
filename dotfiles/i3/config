@@ -47,8 +47,8 @@ bindsym XF86MonBrightnessDown exec light -U 2
 
 # Start Applications
 bindsym $mod+F3 exec ranger
-bindsym Print exec --no-startup-id scrot ~/images/screenshots/%b%d::%H%M%S.png
-bindsym Shift+Print exec --no-startup-id scrot -s ~/images/screenshots/%b%d::%H%M%S.png
+bindsym $mod+p exec --no-startup-id scrot ~/images/screenshots/%b%d::%H%M%S.png
+bindsym $mod+Shift+p exec --no-startup-id scrot -s ~/images/screenshots/%b%d::%H%M%S.png
 
 # focus_follows_mouse no
 
