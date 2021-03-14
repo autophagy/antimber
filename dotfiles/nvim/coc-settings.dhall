@@ -54,9 +54,13 @@
     , `trace.server` = "verbose"
     }
   }
-  , rust =
-    { command = "rls"
-    , filetypes = [ "rust" ]
-    , settings = {=}
-    }
+, rust = { command = "rls", filetypes = [ "rust" ], settings = {=} }
+, purescript =
+  { command = "purescript-language-server"
+  , args = [ "--stdio" ]
+  , filetypes = [ "purescript" ]
+  , `trace.server` = "off"
+  , rootPatterns = [ "bower.json", "psc-package.json", "spago.dhall" ]
+  , settings.purescript.addSpagoSources = True
+  }
 }

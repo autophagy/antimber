@@ -1,0 +1,17 @@
+---
+- name: Clone Purescript Language Server
+  git:
+    repo: git@github.com:nwolverson/purescript-language-server.git
+    dest: ~/tools/purescript-language-server
+- name: Install Npm Dependencies for Purescript Language Server
+  command: npm install
+  args:
+    chdir: ~/tools/purescript-language-server
+- name: Build Purescript Language Server
+  command: npm run build
+  args:
+    chdir: ~/tools/purescript-language-server
+- name: Link Purescript Language Server
+  command: npm link
+  args:
+    chdir: ~/tools/purescript-language-server
