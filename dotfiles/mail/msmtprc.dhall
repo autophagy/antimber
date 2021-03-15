@@ -16,5 +16,4 @@ let mkMsmtprc =
 
 in  ''
     ${mkMsmtprc "autophagy" "mail@autophagy.io"}
-    ${mkMsmtprc "deadcells" "mail@deadcells.org"}
     ''

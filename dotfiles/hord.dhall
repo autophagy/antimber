@@ -58,10 +58,6 @@ let mail =
         , dest =
             "/home/mika/.mutt/accounts/autophagy"
         }
-      , { src = "mail/mutt/deadcells"
-        , dest =
-            "/home/mika/.mutt/accounts/deadcells"
-        }
       ]
 
 let nvim =

@@ -77,18 +77,15 @@ set sidebar_indent_string = '  ''
 set sidebar_format="%D %?S?[%N/%S]?"
 
 # Mailboxes to show in the sidebar.
-named-mailboxes "autophagy" =autophagy/Inbox
-mailboxes =autophagy/Inbox/github
-mailboxes =autophagy/Inbox/newsletters
-mailboxes =autophagy/Inbox/mailing-lists =autophagy/Inbox/mailing-lists/arch-announce =autophagy/Inbox/mailing-lists/haskell-announce =autophagy/Inbox/mailing-lists/haskell-cafe
-mailboxes =autophagy/Inbox/mailing-lists/qutebrowser
-mailboxes =autophagy/Inbox/mailing-lists/nixos
+named-mailboxes "autophagy" =autophagy/INBOX
+mailboxes =autophagy/INBOX/github
+mailboxes =autophagy/INBOX/newsletters
+mailboxes =autophagy/INBOX/mailing-lists =autophagy/INBOX/mailing-lists/arch-announce =autophagy/INBOX/mailing-lists/haskell-announce =autophagy/INBOX/mailing-lists/haskell-cafe
+mailboxes =autophagy/INBOX/mailing-lists/qutebrowser
+mailboxes =autophagy/INBOX/mailing-lists/nixos
 mailboxes =autophagy/Archives
 named-mailboxes "sifeþa" =autophagy/Sifetha
 mailboxes =autophagy/Sent =autophagy/Drafts =autophagy/Junk =autophagy/Trash
-named-mailboxes " " =div
-named-mailboxes "deadcells" =deadcells/INBOX
-mailboxes =deadcells/archive =deadcells/sent =deadcells/drafts =deadcells/junk =deadcells/trash
 
 # Keybindings
 bind index,pager k previous-entry
@@ -118,10 +115,9 @@ bind index <tab> sync-mailbox
 bind index <space> collapse-thread
 
 set realname = "Mika Naylor"
-set spoolfile = "+autophagy/Inbox"
+set spoolfile = "+autophagy/INBOX"
 source ~/.mutt/accounts/autophagy
 
 folder-hook autophagy/* source ~/.mutt/accounts/autophagy
-folder-hook deadcells/* source ~/.mutt/accounts/deadcells
 
 color sidebar_new   default cyan

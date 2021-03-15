@@ -1,17 +1,76 @@
+let Prelude =
+      https://prelude.dhall-lang.org/v20.0.0/package.dhall sha256:21754b84b493b98682e73f64d9d57b18e1ca36a118b81b33d0a243de8455814b
+
 let mbsync =
       https://raw.githubusercontent.com/autophagy/dhall-mbsync/main/package.dhall sha256:2f8ebc728c7384a86b2735783eabfd582c0f94d9fc73ad29f83cb5662307a9a8
 
-let autophagy = ./mbsync-autophagy.dhall
+let maildir =
+      mbsync.MaildirStore::{
+      , name = "autophagy-local"
+      , path = Some "~/mail/autophagy/"
+      , inbox = "~/mail/autophagy/INBOX"
+      , subFolders = Some mbsync.Subfolders.Verbatim
+      }
 
-let deadcells = ./mbsync-deadcells.dhall
+let account =
+      mbsync.Account::{
+      , name = "autophagy"
+      , host = Some "mail.gandi.net"
+      , user = "mail@autophagy.io"
+      , passCmd = Some
+          "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-autophagy.gpg"
+      , sslType = mbsync.SSLType.IMAPS
+      , sslVersions = [ mbsync.SSLVersion.TLSv1_2 ]
+      }
 
-in  ''
-    # mail@autophagy.io
+let imapStore =
+      mbsync.IMAPStore::{ name = "autophagy-remote", account = "autophagy" }
 
-    ${mbsync.mkMbsync autophagy}
+let createChannel =
+      λ(channel : Text) →
+        mbsync.Channel::{
+        , name = "autophagy-" ++ Prelude.Text.replace "/" "!" channel
+        , master = ":autophagy-remote:" ++ Text/show channel
+        , slave = ":autophagy-local:" ++ channel
+        , create = mbsync.MasterSlave.Both
+        , expunge = mbsync.MasterSlave.None
+        , syncState = "*"
+        }
 
+let channels =
+      [ "INBOX"
+      , "Sifetha"
+      , "INBOX/mailing-lists"
+      , "INBOX/mailing-lists/arch-announce"
+      , "INBOX/mailing-lists/haskell-announce"
+      , "INBOX/mailing-lists/haskell-cafe"
+      , "INBOX/mailing-lists/qutebrowser"
+      , "INBOX/mailing-lists/nixos"
+      , "INBOX/github"
+      , "INBOX/newsletters"
+      , "Archives"
+      , "Drafts"
+      , "Sent"
+      , "Trash"
+      , "Junk"
+      ]
 
-    # mail@deadcells.org
+let group =
+      mbsync.Group::{
+      , name = "autophagy"
+      , channels =
+          Prelude.List.map
+            Text
+            Text
+            (λ(c : Text) → "autophagy-" ++ Prelude.Text.replace "/" "!" c)
+            channels
+      }
 
-    ${mbsync.mkMbsync deadcells}
-    ''
+in mbsync.mkMbsync mbsync.Mbsync::{
+    , maildirStores = [ maildir ]
+    , accounts = [ account ]
+    , imapStores = [ imapStore ]
+    , channels =
+        Prelude.List.map Text mbsync.Channel.Type createChannel channels
+    , groups = [ group ]
+    }
