@@ -2,7 +2,7 @@ let Prelude =
       https://prelude.dhall-lang.org/v20.0.0/package.dhall sha256:21754b84b493b98682e73f64d9d57b18e1ca36a118b81b33d0a243de8455814b
 
 let mbsync =
-      https://raw.githubusercontent.com/autophagy/dhall-mbsync/main/package.dhall sha256:2f8ebc728c7384a86b2735783eabfd582c0f94d9fc73ad29f83cb5662307a9a8
+      https://raw.githubusercontent.com/autophagy/dhall-mbsync/main/package.dhall sha256:22bfeccc3e38a478b254d8566be3e932189d4c57831ba432378b3d35ecc30269
 
 let maildir =
       mbsync.MaildirStore::{
@@ -30,10 +30,10 @@ let createChannel =
       λ(channel : Text) →
         mbsync.Channel::{
         , name = "autophagy-" ++ Prelude.Text.replace "/" "!" channel
-        , master = ":autophagy-remote:" ++ Text/show channel
-        , slave = ":autophagy-local:" ++ channel
-        , create = mbsync.MasterSlave.Both
-        , expunge = mbsync.MasterSlave.None
+        , far = ":autophagy-remote:" ++ Text/show channel
+        , near = ":autophagy-local:" ++ channel
+        , create = mbsync.FarNear.Both
+        , expunge = mbsync.FarNear.None
         , syncState = "*"
         }
 
@@ -66,11 +66,12 @@ let group =
             channels
       }
 
-in mbsync.mkMbsync mbsync.Mbsync::{
-    , maildirStores = [ maildir ]
-    , accounts = [ account ]
-    , imapStores = [ imapStore ]
-    , channels =
-        Prelude.List.map Text mbsync.Channel.Type createChannel channels
-    , groups = [ group ]
-    }
+in  mbsync.mkMbsync
+      mbsync.Mbsync::{
+      , maildirStores = [ maildir ]
+      , accounts = [ account ]
+      , imapStores = [ imapStore ]
+      , channels =
+          Prelude.List.map Text mbsync.Channel.Type createChannel channels
+      , groups = [ group ]
+      }
