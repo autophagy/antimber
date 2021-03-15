@@ -83,6 +83,9 @@ let nvim =
         , dest =
             "/home/mika/.config/nvim/settings.vim"
         }
+      , { src = "nvim/syntax.vim"
+        , dest = "/home/mika/.config/nvim/syntax.vim"
+        }
       ]
 
 let polybar =
