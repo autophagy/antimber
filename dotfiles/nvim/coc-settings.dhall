@@ -17,7 +17,7 @@
     , initializationOptions.languageServerHaskell
       =
       { formattingProvider = "ormolu", hlintOn = True }
-    , rootPatterns = [ "stack.yaml", "cabal.config", "package.yaml" ]
+    , rootPatterns = ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"]
     }
   , java =
     { command = "javals"
