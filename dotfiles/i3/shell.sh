@@ -20,7 +20,7 @@ if [ -n "$PID" ]; then
   fi
 fi
 if [ -n "$CWD" ]; then
-  cd $CWD && $CMD
+  $CMD -cd $CWD
 else
   $CMD
 fi
