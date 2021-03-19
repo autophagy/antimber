@@ -49,7 +49,7 @@ export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/myconfig
 
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
-PURE_PROMPT_SYMBOL="::"
+PURE_PROMPT_SYMBOL="λ"
 prompt pure
 
 export HISTIGNORE=' *'
