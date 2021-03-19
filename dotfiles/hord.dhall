@@ -115,6 +115,18 @@ let terminal =
         }
       ]
 
+let xmonad =
+      [ { src = "xmonad/xmonad.hs"
+        , dest = "/home/mika/.xmonad/xmonad.hs"
+        }
+      ]
+
+let xmobar =
+      [ { src = "xmobar/xmobarrc"
+        , dest = "/home/mika/.xmobarrc"
+        }
+      ]
+
 in  { hord =
           dunst
         # faereld
@@ -126,4 +138,6 @@ in  { hord =
         # polybar
         # qutebrowser
         # terminal
+        # xmonad
+        # xmobar
     }
