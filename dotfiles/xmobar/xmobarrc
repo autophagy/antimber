@@ -1,4 +1,5 @@
 Config { font = "xft:Inconsolata Nerd Font:size=9:antialias=true:style=Regular"
+        , additionalFonts = [ "xft:DejaVuSansMono Nerd Font Mono:style=Book:size=8" ]
         , borderColor = "#282828"
         , border = TopB
         , bgColor = "#282828"
@@ -12,5 +13,5 @@ Config { font = "xft:Inconsolata Nerd Font:size=9:antialias=true:style=Regular"
                         ]
         , sepChar = "!"
         , alignSep = "}{"
-        , template = "  >>= !StdinReader! }{ !cpu! | !memory! | !volume!% | !date!  "
+        , template = "  <fn=1>λ</fn> !StdinReader! }{ !cpu! | !memory! | !volume!% | !date!  "
         }
