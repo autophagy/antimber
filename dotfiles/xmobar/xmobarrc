@@ -13,5 +13,5 @@ Config { font = "xft:Inconsolata Nerd Font:size=9:antialias=true:style=Regular"
                         ]
         , sepChar = "!"
         , alignSep = "}{"
-        , template = "  <fn=1>λ</fn> !StdinReader! }{ !cpu! | !memory! | !volume!% | !date!  "
+        , template = "  <fn=1>∀</fn> !StdinReader! }{ !cpu! | !memory! | !volume!% | !date!  "
         }

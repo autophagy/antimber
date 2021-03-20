@@ -48,7 +48,7 @@ myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@XConfig {XMonad.modMask = modm} =
   M.fromList $
     -- launch a terminal
-    [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf),
+    [ ((modm .|. shiftMask, xK_Return), spawn "~/.xmonad/shell.sh"),
       -- launch dmenu
       ((modm, xK_d), spawn "dmenu_run -i -b -fn \"Inconsolata Nerd Font Mono\" -nb \"#1E1E1E\" -nf \"#588F7A\" -sf \"#FFFFFF\" -sb \"#588F7A\""),
       -- launch gmrun
@@ -97,7 +97,7 @@ myKeys conf@XConfig {XMonad.modMask = modm} =
       -- Restart xmonad
       ((modm, xK_q), spawn "xmonad --recompile; xmonad --restart"),
 
-      ((modm .|. shiftMask, xK_o), spawn "nim lock ~/.config/i3/i3lock.nims")
+      ((modm .|. shiftMask, xK_o), spawn "nim lock ~/.xmonad/lock.nims")
     ]
       ++
       --
@@ -155,7 +155,11 @@ myManageHook =
       className =? "Pavucontrol" --> doFloat,
       className =? "KeePassXC" --> doFloat,
       className =? "zoom" --> doFloat,
-      className =? "Gimp" --> doFloat
+      className =? "Gimp" --> doFloat,
+      className =? "Slack" --> doShift "0",
+      className =? "qutebrowser" --> doShift "2",
+      className =? "firefox" --> doShift "2",
+      className =? "Chromium" --> doShift "2"
     ]
 
 myEventHook :: Event -> X All
