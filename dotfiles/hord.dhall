@@ -53,6 +53,8 @@ let terminal =
 
 let xmonad =
       [ { src = "xmonad/xmonad.hs", dest = "/home/mika/.xmonad/xmonad.hs" }
+      , { src = "xmonad/stack.dhall", dest = "/home/mika/.xmonad/stack.yaml" }
+      , { src = "xmonad/build", dest = "/home/mika/.xmonad/build" }
       , { src = "xmonad/lock.nims", dest = "/home/mika/.xmonad/lock.nims" }
       , { src = "xmonad/shell.sh", dest = "/home/mika/.xmonad/shell.sh" }
       ]
