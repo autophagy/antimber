@@ -169,7 +169,9 @@ myLogHook :: X ()
 myLogHook = return ()
 
 myStartupHook :: X ()
-myStartupHook = spawnOnce "nitrogen --restore &"
+myStartupHook = do
+  spawnOnce "~/.xmonad/screenlayout.sh"
+  spawnOnce "nitrogen --restore &"
 
 ------------------------------------------------------------------------
 -- Custom PP

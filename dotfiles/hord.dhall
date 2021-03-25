@@ -57,6 +57,9 @@ let xmonad =
       , { src = "xmonad/build", dest = "/home/mika/.xmonad/build" }
       , { src = "xmonad/lock.nims", dest = "/home/mika/.xmonad/lock.nims" }
       , { src = "xmonad/shell.sh", dest = "/home/mika/.xmonad/shell.sh" }
+      , { src = "xmonad/screenlayout.sh"
+        , dest = "/home/mika/.xmonad/screenlayout.sh"
+        }
       ]
 
 let xmobar = [ { src = "xmobar/xmobarrc", dest = "/home/mika/.xmobarrc" } ]
