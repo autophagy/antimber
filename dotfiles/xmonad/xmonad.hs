@@ -139,7 +139,7 @@ myMouseBindings XConfig {XMonad.modMask = modm} =
     ]
 
 myLayout =
-  smartBorders $ spacing 4 $ avoidStruts $
+  smartBorders $ spacingRaw True (Border 0 4 4 4) True (Border 4 4 4 4) True $ avoidStruts $
         tiled
         ||| Mirror tiled
         ||| Full
