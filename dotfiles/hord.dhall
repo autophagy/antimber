@@ -45,7 +45,7 @@ let qutebrowser =
       ]
 
 let terminal =
-      [ { src = "terminal/Xresources", dest = "/home/mika/.Xresources" }
+      [ { src = "terminal/Xresources.dhall", dest = "/home/mika/.Xresources" }
       , { src = "terminal/rgignore", dest = "/home/mika/.rgignore" }
       , { src = "terminal/xinitrc", dest = "/home/mika/.xinitrc" }
       , { src = "terminal/zshrc", dest = "/home/mika/.zshrc" }
@@ -68,7 +68,7 @@ let rofi =
       [ { src = "rofi/config.rasi"
         , dest = "/home/mika/.config/rofi/config.rasi"
         }
-      , { src = "rofi/theme.rasi", dest = "/home/mika/.config/rofi/theme.rasi" }
+      , { src = "rofi/theme.dhall", dest = "/home/mika/.config/rofi/theme.rasi" }
       ]
 
 in  { hord =

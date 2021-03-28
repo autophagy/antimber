@@ -1,7 +1,10 @@
+let Colours = ../common/colours.dhall
+
+in ''
 * {
     font:                        "Inconsolata 12";
     selected-normal-foreground:  @background;
-    foreground:                  rgba ( 235, 219, 178, 100 % );
+    foreground:                  ${Colours.foreground};
     normal-foreground:           @foreground;
     alternate-normal-background: @background;
     red:                         rgba ( 220, 50, 47, 100 % );
@@ -13,7 +16,7 @@
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 129, 91, 164, 100 % );
     alternate-active-background: rgba ( 47, 30, 46, 18 % );
-    background:                  rgba ( 28, 28, 28, 100 % );
+    background:                  ${Colours.background};
     bordercolor:                 rgba ( 235, 219, 178, 100 % );
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
@@ -136,3 +139,4 @@
     margin:     0px 0.3em 0em 0em ;
     text-color: @normal-foreground;
 }
+''

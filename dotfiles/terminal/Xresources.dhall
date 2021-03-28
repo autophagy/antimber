@@ -1,3 +1,6 @@
+let Colours = ../common/colours.dhall
+
+in ''
 Xft.dpi: 96
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
@@ -30,9 +33,9 @@ URxvt*letterSpace: 0
 
 ! gruvbox (dark)
 ! special
-*.foreground:   #ebdbb2
-*.background:   #282828
-*.cursorColor:  #ebdbb2
+*.foreground:   ${Colours.foreground}
+*.background:   ${Colours.background}
+*.cursorColor:  ${Colours.foreground}
 
 ! black
 *.color0:       #282828
@@ -68,3 +71,4 @@ URxvt*letterSpace: 0
 
 urxvt*perl-lib:         /usr/lib/urxvt/perl/
 urxvt*perl-ext-common:  default,matcher
+''
