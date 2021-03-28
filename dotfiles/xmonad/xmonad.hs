@@ -172,6 +172,7 @@ myStartupHook :: X ()
 myStartupHook = do
   spawnOnce "~/.xmonad/screenlayout.sh"
   spawnOnce "nitrogen --restore &"
+  spawnOnce "picom &"
 
 ------------------------------------------------------------------------
 -- Custom PP
@@ -179,7 +180,7 @@ myStartupHook = do
 -- Determines what is written out to xmobar.
 myTitleColor = "#eeeeee" -- color of window title
 
-myCurrentWSColor = "#eeeeee" -- color of active workspace
+myCurrentWSColor = "#ebdbb2" -- color of active workspace
 
 myUrgentWSColor = "#cc0000" -- color of workspace with 'urgent' window
 

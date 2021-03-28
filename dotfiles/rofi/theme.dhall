@@ -6,7 +6,7 @@ in ''
     selected-normal-foreground:  @background;
     foreground:                  ${Colours.foreground};
     normal-foreground:           @foreground;
-    alternate-normal-background: @background;
+    alternate-normal-background: #00000000;
     red:                         rgba ( 220, 50, 47, 100 % );
     selected-urgent-foreground:  rgba ( 239, 97, 85, 100 % );
     blue:                        rgba ( 38, 139, 210, 100 % );
@@ -16,10 +16,10 @@ in ''
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 129, 91, 164, 100 % );
     alternate-active-background: rgba ( 47, 30, 46, 18 % );
-    background:                  ${Colours.background};
+    background:                  ${Colours.background}CC;
     bordercolor:                 rgba ( 235, 219, 178, 100 % );
     alternate-normal-foreground: @foreground;
-    normal-background:           @background;
+    normal-background:           #00000000;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
     selected-normal-background:  @foreground;
     border-color:                @bordercolor;

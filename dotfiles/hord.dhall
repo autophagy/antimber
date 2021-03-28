@@ -71,6 +71,8 @@ let rofi =
       , { src = "rofi/theme.dhall", dest = "/home/mika/.config/rofi/theme.rasi" }
       ]
 
+let picom = [ { src = "picom/picom.conf", dest = "/home/mika/.config/picom.conf" } ]
+
 in  { hord =
           dunst
         # faereld
@@ -83,4 +85,5 @@ in  { hord =
         # xmonad
         # xmobar
         # rofi
+        # picom
     }
