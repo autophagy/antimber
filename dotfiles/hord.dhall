@@ -64,7 +64,12 @@ let xmonad =
 
 let xmobar = [ { src = "xmobar/xmobarrc", dest = "/home/mika/.xmobarrc" } ]
 
-let rofi = [ { src = "rofi/config.rasi", dest = "/home/mika/.config/rofi/config.rasi" } ]
+let rofi =
+      [ { src = "rofi/config.rasi"
+        , dest = "/home/mika/.config/rofi/config.rasi"
+        }
+      , { src = "rofi/theme.rasi", dest = "/home/mika/.config/rofi/theme.rasi" }
+      ]
 
 in  { hord =
           dunst

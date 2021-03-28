@@ -2,5 +2,5 @@ configuration {
 	modi: "drun";
 	width: 25;
 	lines: 10;
-	theme: "/usr/share/rofi/themes/gruvbox-dark-soft.rasi";
+	theme: "~/.config/rofi/theme.rasi";
 }
