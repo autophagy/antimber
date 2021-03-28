@@ -64,6 +64,8 @@ let xmonad =
 
 let xmobar = [ { src = "xmobar/xmobarrc", dest = "/home/mika/.xmobarrc" } ]
 
+let rofi = [ { src = "rofi/config.rasi", dest = "/home/mika/.config/rofi/config.rasi" } ]
+
 in  { hord =
           dunst
         # faereld
@@ -75,4 +77,5 @@ in  { hord =
         # terminal
         # xmonad
         # xmobar
+        # rofi
     }

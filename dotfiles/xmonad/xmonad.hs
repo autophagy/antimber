@@ -49,8 +49,8 @@ myKeys conf@XConfig {XMonad.modMask = modm} =
   M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn "~/.xmonad/shell.sh"),
-      -- launch dmenu
-      ((modm, xK_d), spawn "dmenu_run -i -b -fn \"Inconsolata Nerd Font Mono\" -nb \"#1E1E1E\" -nf \"#588F7A\" -sf \"#FFFFFF\" -sb \"#588F7A\""),
+      -- launch rofi
+      ((modm, xK_d), spawn "rofi -show drun"),
       -- launch gmrun
       ((modm .|. shiftMask, xK_d), spawn "gmrun"),
       -- close focused window
