@@ -1,9 +1,12 @@
+let Colours = ../common/colours.dhall
+
+in ''
 Config { font = "xft:Inconsolata Nerd Font:size=9:antialias=true:style=Regular"
         , additionalFonts = [ "xft:DejaVuSansMono Nerd Font Mono:style=Book:size=8" ]
-        , borderColor = "#282828"
+        , borderColor = "${Colours.background}"
         , border = TopB
-        , bgColor = "#282828"
-        , fgColor = "white"
+        , bgColor = "${Colours.background}"
+        , fgColor = "${Colours.foreground}"
         , position = TopSize L 100 25
         , commands =    [ Run Cpu ["-t", "CPU <total>%"] 10
                         , Run Memory ["-t","MEM <usedratio>%"] 10
@@ -15,3 +18,4 @@ Config { font = "xft:Inconsolata Nerd Font:size=9:antialias=true:style=Regular"
         , alignSep = "}{"
         , template = "  <fn=1>∀</fn> !StdinReader! }{ !cpu! | !memory! | !volume!% | !date!  "
         }
+''
