@@ -68,5 +68,10 @@
     , filetypes = [ "sh" ]
     , ignoredRootPaths = [ "~" ]
     }
+  , terraform =
+    { command = "terraform-ls"
+    , args = [ "serve" ]
+    , filetypes = [ "terraform", "tf" ]
+    }
   }
 }
