@@ -10,7 +10,7 @@ Config { font = "xft:Inconsolata Nerd Font:size=9:antialias=true:style=Regular"
         , position = TopSize L 100 25
         , commands =    [ Run Cpu ["-t", "CPU <total>%"] 10
                         , Run Memory ["-t","MEM <usedratio>%"] 10
-                        , Run Date "%_d %b %Y // %H.%M" "date" 10
+                        , Run Date "%d %b %Y // %H.%M" "date" 10
                         , Run StdinReader
                         , Run Com "pamixer" ["--get-volume"] "volume" 5
                         ]
