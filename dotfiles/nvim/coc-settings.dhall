@@ -53,14 +53,20 @@
       }
     , `trace.server` = "verbose"
     }
-  }
-, rust = { command = "rls", filetypes = [ "rust" ], settings = {=} }
-, purescript =
-  { command = "purescript-language-server"
-  , args = [ "--stdio" ]
-  , filetypes = [ "purescript" ]
-  , `trace.server` = "off"
-  , rootPatterns = [ "bower.json", "psc-package.json", "spago.dhall" ]
-  , settings.purescript.addSpagoSources = True
+  , rust = { command = "rls", filetypes = [ "rust" ], settings = {=} }
+  , purescript =
+    { command = "purescript-language-server"
+    , args = [ "--stdio" ]
+    , filetypes = [ "purescript" ]
+    , `trace.server` = "off"
+    , rootPatterns = [ "bower.json", "psc-package.json", "spago.dhall" ]
+    , settings.purescript.addSpagoSources = True
+    }
+  , bash =
+    { command = "bash-language-server"
+    , args = [ "start" ]
+    , filetypes = [ "sh" ]
+    , ignoredRootPaths = [ "~" ]
+    }
   }
 }
