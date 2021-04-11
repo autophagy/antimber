@@ -42,7 +42,6 @@ let channels =
       , "Sifetha"
       , "INBOX/mailing-lists"
       , "INBOX/mailing-lists/arch-announce"
-      , "INBOX/mailing-lists/haskell-announce"
       , "INBOX/mailing-lists/haskell-cafe"
       , "INBOX/mailing-lists/qutebrowser"
       , "INBOX/mailing-lists/nixos"
