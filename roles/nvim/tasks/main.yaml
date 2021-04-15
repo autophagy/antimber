@@ -25,4 +25,5 @@
     - morhetz/gruvbox                   # Colour scheme
     - vmchale/dhall-vim                 # Dhall syntax highlighting
     - edwinb/idris2-vim                 # Idris2 mode
+    - Yggdroot/indentLine               # Identation indication
 
