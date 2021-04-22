@@ -54,7 +54,7 @@ myKeys conf@XConfig {XMonad.modMask = modm} =
       -- launch gmrun
       ((modm .|. shiftMask, xK_d), spawn "gmrun"),
       -- close focused window
-      ((modm .|. shiftMask, xK_c), kill),
+      ((modm, xK_c), kill),
       -- Rotate through the available layout algorithms
       ((modm, xK_space), sendMessage NextLayout),
       --  Reset the layouts on the current workspace to default
