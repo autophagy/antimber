@@ -13,6 +13,7 @@ import System.Exit
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.Spacing
 import XMonad.Layout.Grid (Grid(..))
@@ -173,6 +174,7 @@ myStartupHook = do
   spawnOnce "~/.xmonad/screenlayout.sh"
   spawnOnce "nitrogen --restore &"
   spawnOnce "picom &"
+  setWMName "LG3D"
 
 ------------------------------------------------------------------------
 -- Custom PP
