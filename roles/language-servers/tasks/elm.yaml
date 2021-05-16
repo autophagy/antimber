@@ -2,6 +2,7 @@
 - name: Clone Elm Language Server
   git:
     repo: git@github.com:elm-tooling/elm-language-server.git
+    version: main
     dest: ~/tools/elm-language-server
 - name: Install Npm Dependencies for Elm Language Server
   command: npm install
