@@ -37,18 +37,6 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <A-p> :Rg<CR>
 
-let g:ale_virtualenv_dir_names = get(g:, 'ale_virtualenv_dir_names', [
-\   '.env',
-\   '.venv',
-\   'env',
-\   've-py3',
-\   've',
-\   'virtualenv',
-\   'venv',
-\])
-
-let g:ale_linters = {'haskell': ['hlint'], 'sh': ['shellcheck']}
-
 let g:idris_indent_if = 3
 let g:idris_indent_case = 5
 let g:idris_indent_let = 4
