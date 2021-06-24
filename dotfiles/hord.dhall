@@ -49,6 +49,7 @@ let terminal =
       , { src = "terminal/rgignore", dest = "/home/mika/.rgignore" }
       , { src = "terminal/xinitrc", dest = "/home/mika/.xinitrc" }
       , { src = "terminal/zshrc", dest = "/home/mika/.zshrc" }
+      , { src = "terminal/nushell.toml", dest = "/home/mika/.config/nu/config.toml" }
       ]
 
 let xmonad =
