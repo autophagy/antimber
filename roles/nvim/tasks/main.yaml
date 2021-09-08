@@ -25,4 +25,5 @@
     - vmchale/dhall-vim                 # Dhall syntax highlighting
     - edwinb/idris2-vim                 # Idris2 mode
     - Yggdroot/indentLine               # Identation indication
+    - ziglang/zig.vim                   # Zig file detection & syntax highlighting
 
