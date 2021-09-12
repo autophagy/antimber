@@ -38,6 +38,8 @@ in ''
     background-color: @background;
     border:           2;
     padding:          30;
+    width:            30%;
+    height:           350px;
 }
 #mainbox {
     border:  0;
@@ -59,43 +61,43 @@ in ''
     scrollbar:    true;
     padding:      15px 0px 0px ;
 }
-#element {
+#element-text {
     border:  0;
     padding: 1px ;
 }
-#element.normal.normal {
+#element-text.normal.normal {
     background-color: @normal-background;
     text-color:       @normal-foreground;
 }
-#element.normal.urgent {
+#element-text.normal.urgent {
     background-color: @urgent-background;
     text-color:       @urgent-foreground;
 }
-#element.normal.active {
+#element-text.normal.active {
     background-color: @active-background;
     text-color:       @active-foreground;
 }
-#element.selected.normal {
+#element-text.selected.normal {
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
 }
-#element.selected.urgent {
+#element-text.selected.urgent {
     background-color: @selected-urgent-background;
     text-color:       @selected-urgent-foreground;
 }
-#element.selected.active {
+#element-text.selected.active {
     background-color: @selected-active-background;
     text-color:       @selected-active-foreground;
 }
-#element.alternate.normal {
+#element-text.alternate.normal {
     background-color: @alternate-normal-background;
     text-color:       @alternate-normal-foreground;
 }
-#element.alternate.urgent {
+#element-text.alternate.urgent {
     background-color: @alternate-urgent-background;
     text-color:       @alternate-urgent-foreground;
 }
-#element.alternate.active {
+#element-text.alternate.active {
     background-color: @alternate-active-background;
     text-color:       @alternate-active-foreground;
 }
