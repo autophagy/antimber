@@ -7,7 +7,7 @@
     userName = "Mika Naylor";
     extraConfig = {
       rebase = { autosquash = true; };
-      user = { signingKey = "BEEP"; };
+      user = { signingKey = "F7236FBA"; };
       credential = { helper = "cache --timeout=3600"; };
       core = { editor = "nvim"; };
       push = { default = "simple"; };
