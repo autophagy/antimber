@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./zsh.nix ./git.nix ];
+  imports = [ ./zsh.nix ./git.nix ./nvim.nix ];
 
   programs.home-manager.enable = true;
   home.username = "mika";
