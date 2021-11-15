@@ -45,6 +45,8 @@ let channels =
       , "INBOX/mailing-lists/haskell-cafe"
       , "INBOX/mailing-lists/qutebrowser"
       , "INBOX/mailing-lists/nixos"
+      , "INBOX/mailing-lists/flink-dev"
+      , "INBOX/mailing-lists/flink-user"
       , "INBOX/github"
       , "INBOX/newsletters"
       , "Archives"
