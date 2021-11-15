@@ -19,6 +19,7 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.Grid (Grid(..))
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.SpawnOnce
+import XMonad.Hooks.EwmhDesktops
 import qualified XMonad.StackSet as W
 
 myTerminal :: String
@@ -213,7 +214,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 -- Now run xmonad with all the defaults we set up.
 
 main :: IO ()
-main = xmonad =<< statusBar "xmobar" myPP toggleStrutsKey (docks defaults)
+main = xmonad =<< statusBar "xmobar" myPP toggleStrutsKey (docks $ ewmh defaults)
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
