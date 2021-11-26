@@ -72,6 +72,9 @@
    sh  = "!sh -c 'if [[ $0 =~ ^[0-9]+$ ]]; then LINE=$(($0-1)); else LINE=0; fi; git show HEAD~$(($LINE))'"
 
    ctags = !.git/hooks/ctag
+
+   recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+   cr = "!sh -c 'git recent | fzf | xargs git checkout $1 ' -"
 [user]
    name = Mika Naylor
    email = mail@autophagy.io
