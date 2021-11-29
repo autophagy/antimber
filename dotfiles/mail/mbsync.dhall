@@ -47,6 +47,7 @@ let channels =
       , "INBOX/mailing-lists/nixos"
       , "INBOX/mailing-lists/flink-dev"
       , "INBOX/mailing-lists/flink-user"
+      , "INBOX/mailing-lists/tla-plus"
       , "INBOX/github"
       , "INBOX/newsletters"
       , "Archives"

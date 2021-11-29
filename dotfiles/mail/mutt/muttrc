@@ -84,6 +84,7 @@ mailboxes =autophagy/INBOX/mailing-lists =autophagy/INBOX/mailing-lists/arch-ann
 mailboxes =autophagy/INBOX/mailing-lists/qutebrowser
 mailboxes =autophagy/INBOX/mailing-lists/nixos
 mailboxes =autophagy/INBOX/mailing-lists/flink-dev =autophagy/INBOX/mailing-lists/flink-user
+mailboxes =autophagy/INBOX/mailing-lists/tla-plus
 mailboxes =autophagy/Archives
 named-mailboxes "sifeþa" =autophagy/Sifetha
 mailboxes =autophagy/Sent =autophagy/Drafts =autophagy/Junk =autophagy/Trash
