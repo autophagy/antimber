@@ -27,7 +27,7 @@
   boot.initrd.luks.devices."luks-a49798c8-95a6-4e7d-993b-5f223edbf853".device = "/dev/disk/by-uuid/a49798c8-95a6-4e7d-993b-5f223edbf853";
   boot.initrd.luks.devices."luks-a49798c8-95a6-4e7d-993b-5f223edbf853".keyFile = "/crypto_keyfile.bin";
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "heorot"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
