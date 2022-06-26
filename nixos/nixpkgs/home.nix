@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./zsh.nix ./git.nix ./nvim.nix ./qutebrowser.nix ./rofi.nix ./i3.nix ];
+  imports = [ ./git.nix ./nvim.nix ./qutebrowser.nix ./rofi.nix ./i3.nix ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
