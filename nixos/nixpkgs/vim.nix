@@ -8,39 +8,39 @@
     withNodeJs = true;
 
     coc = {
-        enable = true;
+      enable = true;
 
-        package = pkgs.vimUtils.buildVimPluginFrom2Nix {
-            pname = "coc.nvim";
-            version = "2022-05-21";
-            src = pkgs.fetchFromGitHub {
-                owner = "neoclide";
-                repo = "coc.nvim";
-                rev = "791c9f673b882768486450e73d8bda10e391401d";
-                sha256 = "sha256-MobgwhFQ1Ld7pFknsurSFAsN5v+vGbEFojTAYD/kI9c=";
-            };
-            meta.homepage = "https://github.com/neoclide/coc.nvim/";
+      package = pkgs.vimUtils.buildVimPluginFrom2Nix {
+        pname = "coc.nvim";
+        version = "2022-05-21";
+        src = pkgs.fetchFromGitHub {
+          owner = "neoclide";
+          repo = "coc.nvim";
+          rev = "791c9f673b882768486450e73d8bda10e391401d";
+          sha256 = "sha256-MobgwhFQ1Ld7pFknsurSFAsN5v+vGbEFojTAYD/kI9c=";
         };
+        meta.homepage = "https://github.com/neoclide/coc.nvim/";
+      };
 
-        settings = {
-            "languageserver" = {
-                "nix" = {
-                    "command" = "rnix-lsp";
-                    "filetypes" = [ "nix" ];
-                };
-                "bash" = {
-                    "command" = "bash-language-server";
-                    "args" = [ "start" ];
-                    "filetypes" = [ "sh" ];
-                    "ignoredRootPaths" = [ "~" ];
-                };
-                "terraform" = {
-                    "command" = "terraform-ls";
-                    "args" = [ "serve" ];
-                    "filetypes" = [ "terraform" "tf" ];
-                };
-            };
+      settings = {
+        "languageserver" = {
+          "nix" = {
+            "command" = "rnix-lsp";
+            "filetypes" = [ "nix" ];
+          };
+          "bash" = {
+            "command" = "bash-language-server";
+            "args" = [ "start" ];
+            "filetypes" = [ "sh" ];
+            "ignoredRootPaths" = [ "~" ];
+          };
+          "terraform" = {
+            "command" = "terraform-ls";
+            "args" = [ "serve" ];
+            "filetypes" = [ "terraform" "tf" ];
+          };
         };
+      };
     };
 
     plugins = with pkgs.vimPlugins; [
@@ -55,12 +55,12 @@
       dhall-vim
       indentLine
       vim-nix
-  ];
+    ];
 
     extraPackages = with pkgs; [
-        terraform-lsp
-        nodePackages.bash-language-server
-        rnix-lsp
+      terraform-lsp
+      nodePackages.bash-language-server
+      rnix-lsp
     ];
 
     extraConfig = ''

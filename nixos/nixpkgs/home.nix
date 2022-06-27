@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./git.nix ./nvim.nix ./qutebrowser.nix ./rofi.nix ./i3.nix ./terminal.nix ];
+  imports = [ ./git.nix ./vim.nix ./qutebrowser.nix ./rofi.nix ./i3.nix ./terminal.nix ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -38,18 +38,31 @@
     symbola
 
     # Browsers
-    firefox qutebrowser
+    firefox
+    qutebrowser
 
     # Communication
-    irssi slack discord zoom-us
+    irssi
+    slack
+    discord
+    zoom-us
 
     # Media
-    gimp mpv pavucontrol spotify
+    gimp
+    mpv
+    pavucontrol
+    spotify
 
     # Devops
-    kubectl kubectx awscli2
+    kubectl
+    kubectx
+    awscli2
 
     # Utilities
-    wget bat arandr ripgrep keepassxc
+    wget
+    bat
+    arandr
+    ripgrep
+    keepassxc
   ];
 }
