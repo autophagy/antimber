@@ -17,6 +17,7 @@ in
     history = {
       size = 10000;
       path = "$HOME/.zsh_history";
+      ignoreSpace = true;
     };
     initExtra = ''
       autoload -U promptinit; promptinit
