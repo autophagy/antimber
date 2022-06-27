@@ -67,5 +67,6 @@
     arandr
     ripgrep
     keepassxc
+    scrot
   ];
 }
