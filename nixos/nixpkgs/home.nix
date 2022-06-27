@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./git.nix ./nvim.nix ./qutebrowser.nix ./rofi.nix ./i3.nix ];
+  imports = [ ./git.nix ./nvim.nix ./qutebrowser.nix ./rofi.nix ./i3.nix ./terminal.nix ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -50,6 +50,6 @@
     kubectl kubectx awscli2
 
     # Utilities
-    wget bat arandr ripgrep keepassxc fzf
+    wget bat arandr ripgrep keepassxc
   ];
 }

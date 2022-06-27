@@ -62,7 +62,7 @@
     isNormalUser = true;
     description = "Mika Naylor";
     extraGroups = [ "networkmanager" "wheel" "audio" ];
-    packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
