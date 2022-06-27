@@ -58,6 +58,9 @@
     kubectx
     awscli2
 
+    # Languages/Language Tools
+    nixpkgs-fmt
+
     # Utilities
     wget
     bat
