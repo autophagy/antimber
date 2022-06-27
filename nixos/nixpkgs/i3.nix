@@ -2,9 +2,14 @@
 
 let
   mod = "Mod4";
+  background-image = ".background-image.jpg";
+  lock-image = ".lock.png";
 in
 {
-  home.packages = with pkgs; [ feh ];
+  home.packages = with pkgs; [ feh i3lock ];
+
+  home.file."${background-image}".source = ../static/background-image.jpg;
+  home.file."${lock-image}".source = ../static/lock.png;
 
   xsession.windowManager.i3 = {
     enable = true;
@@ -17,7 +22,7 @@ in
       defaultWorkspace = "workspace number 1";
 
       startup = [
-        { command = "${pkgs.feh}/bin/feh --bg-fill ~/.background-image.jpg"; }
+        { command = "${pkgs.feh}/bin/feh --bg-fill ~/${background-image}"; }
       ];
 
       gaps = {
@@ -43,6 +48,8 @@ in
 
         "Print" = "exec --no-startup-id scrot ~/images/screenshots/%b%d::%H%M%S.png";
         "Shift+Print" = "exec --no-startup-id scrot -s ~/images/screenshots/%b%d::%H%M%S.png";
+
+        "${mod}+Shift+o" = "exec --no-startup-id i3lock -i ~/${lock-image}";
       };
     };
   };
