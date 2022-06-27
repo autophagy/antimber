@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
-let
-  mod = "Mod4";
-in
 {
-
   home.packages = with pkgs; [ pure-prompt ];
 
   programs.zsh = {
