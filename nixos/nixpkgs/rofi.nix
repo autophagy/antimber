@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 let
   themePath = ".config/rofi/theme.rasi";
-  foreground = "#EBDBB2";
-  background = "#282828";
+  common = import ./common.nix;
   prompt = "λ";
 in
 {
@@ -16,7 +15,7 @@ in
     * {
         font:                        "Inconsolata 12";
         selected-normal-foreground:  @background;
-        foreground:                  ${foreground};
+        foreground:                  ${common.colours.foreground};
         normal-foreground:           @foreground;
         alternate-normal-background: #00000000;
         red:                         rgba ( 220, 50, 47, 100 % );
@@ -28,7 +27,7 @@ in
         lightbg:                     rgba ( 238, 232, 213, 100 % );
         selected-active-foreground:  rgba ( 129, 91, 164, 100 % );
         alternate-active-background: rgba ( 47, 30, 46, 18 % );
-        background:                  ${background}CC;
+        background:                  ${common.colours.background}CC;
         bordercolor:                 rgba ( 235, 219, 178, 100 % );
         alternate-normal-foreground: @foreground;
         normal-background:           #00000000;

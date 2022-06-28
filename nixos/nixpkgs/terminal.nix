@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  common = import ./common.nix;
+in
 {
   home.packages = with pkgs; [ pure-prompt ];
 
@@ -52,9 +54,9 @@
     extraConfig = {
       "internalBorder" = "25";
 
-      "foreground" = "#ebdbb2";
-      "background" = "#282828";
-      "cursorColor" = "#ebdbb2";
+      "foreground" = "${common.colours.foreground}";
+      "background" = "${common.colours.background}";
+      "cursorColor" = "${common.colours.foreground}";
 
       # black
       "color0" = "#282828";
