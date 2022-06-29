@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  common = import ./common.nix;
+in
 {
   home.packages = with pkgs.python39Packages; [
     adblock
@@ -17,9 +20,37 @@
     };
 
     settings = {
-      tabs = {
-        last_close = "startpage";
+      colors = {
+        completion.category.bg = "${common.colours.background}";
+        completion.category.border.bottom = "${common.colours.background}";
+        completion.category.border.top = "${common.colours.background}";
+        completion.category.fg = "${common.colours.foreground}";
+        completion.even.bg = "${common.colours.background}";
+        completion.fg = "${common.colours.foreground}";
+        completion.item.selected.bg = "${common.colours.background}";
+        completion.item.selected.fg = "${common.colours.foreground}";
+        hints.bg = "${common.colours.foreground}";
+        hints.fg = "${common.colours.background}";
+        statusbar.insert.bg = "#588F7A";
+        statusbar.insert.fg = "#FFFFFF";
+        statusbar.normal.bg = "${common.colours.background}";
+        statusbar.normal.fg = "${common.colours.foreground}";
+        statusbar.url.error.fg = "#a62626";
+        statusbar.url.fg = "${common.colours.foreground}";
+        statusbar.url.hover.fg = "#1287a4";
+        statusbar.url.success.http.fg = "${common.colours.foreground}";
+        statusbar.url.success.https.fg = "${common.colours.foreground}";
+        statusbar.url.warn.fg = "#a27f2b";
+        tabs.even.bg = "#111111";
+        tabs.even.fg = "${common.colours.foreground}";
+        tabs.odd.bg = "${common.colours.background}";
+        tabs.odd.fg = "${common.colours.foreground}";
+        tabs.selected.even.bg = "${common.colours.foreground}";
+        tabs.selected.odd.bg = "${common.colours.foreground}";
+        tabs.selected.even.fg = "${common.colours.background}";
+        tabs.selected.odd.fg = "${common.colours.background}";
       };
+      tabs.last_close = "startpage";
       url = {
         default_page = "https://ft.com";
         start_pages = "https://ft.com";
