@@ -54,9 +54,9 @@ in
     extraConfig = {
       "internalBorder" = "25";
 
-      "foreground" = "${common.colours.foreground}";
-      "background" = "${common.colours.background}";
-      "cursorColor" = "${common.colours.foreground}";
+      "foreground" = common.colours.foreground;
+      "background" = common.colours.background;
+      "cursorColor" = common.colours.foreground;
 
       # black
       "color0" = "#282828";
