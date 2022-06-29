@@ -20,6 +20,7 @@ in
       terminal = "${pkgs.rxvt-unicode}/bin/urxvt";
       workspaceAutoBackAndForth = true;
       defaultWorkspace = "workspace number 1";
+      bars = [ ];
 
       startup = [
         { command = "${pkgs.feh}/bin/feh --bg-fill ~/${background-image}"; }
