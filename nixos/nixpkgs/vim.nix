@@ -199,6 +199,7 @@
       dhall-vim
       indentLine
       vim-nix
+      coc-yaml
     ];
 
     extraPackages = with pkgs; [
