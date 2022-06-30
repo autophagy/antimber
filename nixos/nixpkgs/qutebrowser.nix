@@ -42,13 +42,13 @@ in
         statusbar.url.success.https.fg = common.colours.foreground;
         statusbar.url.warn.fg = "#a27f2b";
         tabs.even.bg = "#111111";
-        tabs.even.fg = common.colours.foreground;
+        tabs.even.fg = common.colours.bgFgBlended;
         tabs.odd.bg = common.colours.background;
-        tabs.odd.fg = common.colours.foreground;
-        tabs.selected.even.bg = common.colours.foreground;
-        tabs.selected.odd.bg = common.colours.foreground;
-        tabs.selected.even.fg = common.colours.background;
-        tabs.selected.odd.fg = common.colours.background;
+        tabs.odd.fg = common.colours.bgFgBlended;
+        tabs.selected.even.bg = common.colours.background;
+        tabs.selected.odd.bg = common.colours.background;
+        tabs.selected.even.fg = common.colours.foreground;
+        tabs.selected.odd.fg = common.colours.foreground;
       };
       tabs.last_close = "startpage";
       url = {
