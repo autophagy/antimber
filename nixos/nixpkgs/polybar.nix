@@ -24,27 +24,26 @@ in
         line-color = "#F00";
         border-size = 0;
         border-color = "#00000000";
-        padding-left = 1;
-        padding-right = 1;
+        padding-left = 2;
+        padding-right = 2;
         separator = "|";
         module-margin-left = 1;
         module-margin-right = 1;
         font-0 = "Inconsolata:pixelsize=9;2";
         modules-left = "i3";
-        modules-right = "wlan pulseaudio battery cpu memory date";
+        modules-right = "wlan battery cpu memory pulseaudio date";
       };
 
       "module/i3" = {
         type = "internal/i3";
-        format = "<label-state> <label-mode>";
+        format = "∀ <label-state> <label-mode>";
         index-sort = true;
         wrapping-scroll = true;
         strip-wsnumbers = true;
         pin-workspaces = true;
         label-unfocused-padding = 1;
-        label-unfocused-foreground = common.colours.foreground;
+        label-unfocused-foreground = common.colours.bgFgBlended;
         label-focused-foreground = common.colours.foreground;
-        label-focused = " •";
         label-focused-padding = 1;
         label-urgent-foreground = "#29615A";
         label-urgent-padding = 1;
@@ -63,7 +62,7 @@ in
       "module/pulseaudio" = {
         type = "internal/pulseaudio";
         format-volume = "<label-volume>";
-        label-muted = "-%";
+        label-muted = "--%";
         label-volume = "%percentage%%";
       };
 
