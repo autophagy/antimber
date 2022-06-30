@@ -15,7 +15,7 @@ in
       y = "https://www.youtube.com/results?search_query={}";
       m = "https://www.google.com/maps/search/{}";
       h = "https://hoogle.haskell.org/?hoogle={}&scope=set%3Astackage";
-      n = "https://search.nixos.org/packages?channel=21.05&from=0&size=50&sort=relevance&query={}";
+      n = "https://search.nixos.org/packages?channel=${common.versions.nix}&from=0&size=50&sort=relevance&query={}";
       DEFAULT = "https://www.google.de/search?q={}";
     };
 
