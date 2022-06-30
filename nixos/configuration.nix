@@ -14,6 +14,10 @@
   # Sound.
   hardware.pulseaudio.enable = true;
 
+  # Bluetooth.
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
