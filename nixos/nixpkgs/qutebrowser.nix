@@ -21,10 +21,10 @@ in
 
     settings = {
       colors = {
-        completion.category.bg = common.colours.background;
-        completion.category.border.bottom = common.colours.background;
-        completion.category.border.top = common.colours.background;
-        completion.category.fg = common.colours.foreground;
+        completion.category.bg = common.colours.foreground;
+        completion.category.border.bottom = common.colours.foreground;
+        completion.category.border.top = common.colours.foreground;
+        completion.category.fg = common.colours.background;
         completion.even.bg = common.colours.background;
         completion.fg = common.colours.foreground;
         completion.item.selected.bg = common.colours.background;
