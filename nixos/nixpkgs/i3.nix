@@ -40,6 +40,12 @@ in
         "10" = [{ class = "slack"; }];
       };
 
+      floating.criteria = [
+        { class = "Pavucontrol"; }
+        { class = "Keepassx2"; }
+        { class = "zoom"; }
+      ];
+
       keybindings = lib.mkOptionDefault {
         "XF86MonBrightnessUp" = "exec light -A 2";
         "XF86MonBrightnessDown" = "exec light -U 2";
