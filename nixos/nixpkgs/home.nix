@@ -21,6 +21,7 @@
   services.picom.enable = true;
   programs.vscode.enable = true;
   fonts.fontconfig.enable = true;
+  services.keybase.enable = true;
 
   xdg.mimeApps = {
     enable = true;

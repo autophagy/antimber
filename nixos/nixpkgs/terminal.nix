@@ -91,4 +91,9 @@ in
       "color15" = "#ebdbb2";
     };
   };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
