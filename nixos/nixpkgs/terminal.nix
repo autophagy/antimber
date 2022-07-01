@@ -42,6 +42,7 @@ in
 
   programs.urxvt = {
     enable = true;
+    scroll.bar.enable = false;
     keybindings = {
       "Shift-Control-C" = "eval:selection_to_clipboard";
       "Shift-Control-V" = "eval:paste_clipboard";
