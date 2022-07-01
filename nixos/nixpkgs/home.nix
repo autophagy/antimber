@@ -54,6 +54,7 @@
     mpv
     pavucontrol
     spotify
+    obs-studio
 
     # Devops
     kubectl
