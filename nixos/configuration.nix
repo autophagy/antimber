@@ -15,8 +15,10 @@
   hardware.pulseaudio.enable = true;
 
   # Bluetooth.
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = pkgs.lib.mkForce false;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
