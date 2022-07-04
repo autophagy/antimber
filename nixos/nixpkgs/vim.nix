@@ -35,7 +35,7 @@
             "ignoredRootPaths" = [ "~" ];
           };
           "terraform" = {
-            "command" = "terraform-ls";
+            "command" = "terraform-lsp";
             "args" = [ "serve" ];
             "filetypes" = [ "terraform" "tf" ];
           };
