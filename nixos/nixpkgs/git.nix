@@ -28,6 +28,7 @@
       cf = "commit --fixup";
       cfh = "commit --fixup HEAD";
       cp = "cherry-pick";
+      cr = "!sh -c 'git recent | fzf | xargs git checkout $1 ' -";
       d = "diff";
       dc = "diff --cached";
       ds = "diff --staged";
@@ -57,6 +58,7 @@
       r = "rebase";
       ra = "rebase --abort";
       rc = "rebase --continue";
+      recent = "for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'";
       ri = "rebase --interactive --autosquash";
       ro = "rebase --onto";
       rs = "rebase --skip";

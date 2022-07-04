@@ -11,6 +11,14 @@
       ./hardware-configuration.nix
     ];
 
+  # Enable nix flakes.
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   # Sound.
   hardware.pulseaudio.enable = true;
 
