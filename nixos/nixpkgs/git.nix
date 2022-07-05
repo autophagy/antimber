@@ -12,6 +12,7 @@
       core = { editor = "nvim"; };
       push = { default = "simple"; };
       pull = { rebase = false; };
+      init = { defaultBranch = "main"; };
     };
     aliases = {
       a = "add";
