@@ -20,16 +20,15 @@
         config = { allowUnfree = true; };
       };
 
-      lib = nixpkgs.lib;
     in
     {
-      homeConfigurations."mika" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.mika = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./homemanager/home.nix
         ];
       };
-      nixosConfigurations."heorot" = lib.nixosSystem {
+      nixosConfigurations.heorot = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./system/configuration.nix
