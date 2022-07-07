@@ -61,6 +61,8 @@
     kubectl
     kubectx
     awscli2
+    fluxcd
+    minikube
 
     # Languages/Language Tools
     nixpkgs-fmt
