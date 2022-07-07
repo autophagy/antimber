@@ -1,4 +1,4 @@
-.. image:: antimber.png
+.. image:: static/antimber.png
     :alt: antimber sigil
     :align: center
 
