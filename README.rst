@@ -6,10 +6,10 @@
 antimber
   noun: matter, materials, substance
 
-These are a set of dotfiles for my Linux workspace. Depends on `Ansible`_,
+These are a set of legacy dotfiles for my Linux workspace. Depends on `Ansible`_,
 `ansible-aur`_ and `Hord`_.
 
-Currently using `Arch Linux`_, with `Xmonad`_ as my window manager and
+These were made for use with `Arch Linux`_, with `Xmonad`_ as my window manager and
 `Neovim`_ as my primary development environment.
 
 To install the symlinks:
