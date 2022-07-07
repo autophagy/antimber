@@ -5,6 +5,6 @@
     bgFgBlended = "#8A826D";
   };
   versions = {
-    nix = "22.05";
+    nix = "unstable";
   };
 }
