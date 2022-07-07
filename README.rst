@@ -12,8 +12,13 @@ on `home-manager`_.
 Currently using `NixOS`_, with `i3`_ as my window manager and
 `Neovim`_ as my primary development environment.
 
-The top level directory contains my NixOS configuration, and `home-manager` contains
-my home-manager configuration.
+My configuration is described by a nix flake. To build/switch the NixOS configuration::
+
+    λ sudo nixos-rebuild switch --flake .#
+
+To build/switch home-manager::
+
+    λ home-manager switch --flake .
 
 *My legacy Arch Linux dotfiles are available on the* `arch`_ *branch.*
 
