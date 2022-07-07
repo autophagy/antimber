@@ -6,27 +6,18 @@
 antimber
   noun: matter, materials, substance
 
-These are a set of dotfiles for my Linux workspace. Depends on `Ansible`_,
-`ansible-aur`_ and `Hord`_.
+These are a set of nix expressions and dotfiles for my Linux workspace. Depends
+on `home-manager`_.
 
-Currently using `Arch Linux`_, with `Xmonad`_ as my window manager and
+Currently using `NixOS`_, with `i3`_ as my window manager and
 `Neovim`_ as my primary development environment.
 
-To install the symlinks:
+The top level directory contains my NixOS configuration, and `home-manager` contains
+my home-manager configuration.
 
-.. code-block:: console
+*My legacy Arch Linux dotfiles are available on the `arch`_ branch.*
 
-   hord dotfiles
-
-To run the ansible playbook:
-
-.. code-block:: console
-
-   ansible-playbook playbook.yaml -K
-
-.. _Hord: https://github.com/autophagy/hord
-.. _Ansible: https://www.ansible.com/
-.. _ansible-aur: https://aur.archlinux.org/packages/ansible-aur-git/
-.. _Arch Linux: https://archlinux.org/
-.. _Xmonad: https://hackage.haskell.org/package/xmonad
-.. _Neovim: https://neovim.io/
+.. _NixOS: https://nixos.org/
+.. _home-manager: https://github.com/nix-community/home-manager
+.. _i3: https://i3wm.org/⎋
+.. _arch: https://github.com/autophagy/antimber/tree/arch
