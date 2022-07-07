@@ -21,7 +21,7 @@ jobs:
       - name: Link nixpkgs
         run: |
           mkdir -p $HOME/.config
-          ln -s $GITHUB_WORKSPACE/nixos/nixpkgs $HOME/.config/nixpkgs
+          ln -s $GITHUB_WORKSPACE/nixpkgs $HOME/.config/nixpkgs
 
       - name: Install Home Manager
         run: |
@@ -39,4 +39,4 @@ jobs:
           nix_path: "nixpkgs=channel:nixos-22.05"
 
       - name: Lint
-        run: nix-shell -p nixpkgs-fmt --run "find nixos -name '*.nix' | xargs nixpkgs-fmt --check"
+        run: nix-shell -p nixpkgs-fmt --run "find . -name '*.nix' | xargs nixpkgs-fmt --check"
