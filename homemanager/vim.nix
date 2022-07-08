@@ -5,7 +5,29 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+    vimdiffAlias = true;
     withNodeJs = true;
+
+    plugins = with pkgs.vimPlugins; [
+      vim-trailing-whitespace
+      nerdtree
+      vim-fugitive
+      vim-airline
+      vim-polyglot
+      vim-test
+      fzf-vim
+      gruvbox
+      dhall-vim
+      indentLine
+      vim-nix
+      coc-yaml
+    ];
+
+    extraPackages = with pkgs; [
+      terraform-lsp
+      nodePackages.bash-language-server
+      rnix-lsp
+    ];
 
     coc = {
       enable = true;
@@ -174,28 +196,6 @@
         nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
       '';
     };
-
-    plugins = with pkgs.vimPlugins; [
-      coc-nvim
-      vim-trailing-whitespace
-      nerdtree
-      vim-fugitive
-      vim-airline
-      vim-polyglot
-      vim-test
-      fzf-vim
-      gruvbox
-      dhall-vim
-      indentLine
-      vim-nix
-      coc-yaml
-    ];
-
-    extraPackages = with pkgs; [
-      terraform-lsp
-      nodePackages.bash-language-server
-      rnix-lsp
-    ];
 
     extraConfig = ''
       set number
