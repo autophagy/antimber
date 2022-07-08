@@ -54,18 +54,15 @@
     libinput.enable = true;
   };
 
-  virtualisation.docker = {
+  virtualisation.podman = {
     enable = true;
-    autoPrune = {
-      enable = true;
-      dates = "weekly";
-    };
+    dockerCompat = true;
   };
 
   users.users.mika = {
     isNormalUser = true;
     description = "Mika Naylor";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
     shell = pkgs.zsh;
   };
 
