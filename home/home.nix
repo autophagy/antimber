@@ -3,9 +3,9 @@
 {
   imports = [
     ./git.nix
-    ./vim.nix
     ./rofi.nix
     ./i3.nix
+    ./editors
     ./browsers
     ./services
     ./terminal
