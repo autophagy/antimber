@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  common = import ./common.nix;
+  common = import ../common.nix;
 in
 {
   home.packages = with pkgs.python39Packages; [

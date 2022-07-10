@@ -4,9 +4,9 @@
   imports = [
     ./git.nix
     ./vim.nix
-    ./qutebrowser.nix
     ./rofi.nix
     ./i3.nix
+    ./browsers
     ./services
     ./terminal
   ];
