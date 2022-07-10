@@ -7,8 +7,8 @@
     ./qutebrowser.nix
     ./rofi.nix
     ./i3.nix
-    ./polybar.nix
-    ./terminal.nix
+    ./services
+    ./terminal
   ];
 
   home.username = "mika";
@@ -18,10 +18,8 @@
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
   xsession.enable = true;
-  services.picom.enable = true;
   programs.vscode.enable = true;
   fonts.fontconfig.enable = true;
-  services.keybase.enable = true;
 
   xdg.mimeApps = {
     enable = true;

@@ -1,45 +1,8 @@
 { config, pkgs, ... }:
 let
-  common = import ./common.nix;
+  common = import ../common.nix;
 in
 {
-  home.packages = with pkgs; [ pure-prompt ];
-
-  programs.zsh = {
-    enable = true;
-    dotDir = ".config/zsh";
-    shellAliases = {
-      ll = "ls -l";
-      g = "git";
-    };
-    history = {
-      size = 10000;
-      path = "$HOME/.zsh_history";
-      ignoreSpace = true;
-    };
-    initExtra = ''
-      autoload -U promptinit; promptinit
-      PURE_PROMPT_SYMBOL="λ"
-      prompt pure
-    '';
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "ssh-agent" "git" ];
-    };
-    plugins = [
-      {
-        name = "zsh-syntax-highlighting";
-        src = pkgs.zsh-syntax-highlighting;
-        file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
-      }
-    ];
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
   programs.urxvt = {
     enable = true;
     scroll.bar.enable = false;
@@ -91,10 +54,5 @@ in
       "color7" = "#a89984";
       "color15" = "#ebdbb2";
     };
-  };
-
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
   };
 }
