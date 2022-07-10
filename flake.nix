@@ -25,7 +25,7 @@
       homeConfigurations.mika = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./homemanager/home.nix
+          ./home/home.nix
         ];
       };
       nixosConfigurations.heorot = nixpkgs.lib.nixosSystem {
