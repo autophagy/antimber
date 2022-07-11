@@ -7,6 +7,7 @@
     ./browsers
     ./services
     ./terminal
+    ./virtualisation
   ];
 
   home.username = "mika";
