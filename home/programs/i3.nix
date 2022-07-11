@@ -8,8 +8,8 @@ in
 {
   home.packages = with pkgs; [ feh i3lock ];
 
-  home.file."${background-image}".source = ../static/background-image.jpg;
-  home.file."${lock-image}".source = ../static/lock.png;
+  home.file."${background-image}".source = ../../static/background-image.jpg;
+  home.file."${lock-image}".source = ../../static/lock.png;
 
   xsession.windowManager.i3 = {
     enable = true;

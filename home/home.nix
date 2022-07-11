@@ -2,9 +2,7 @@
 
 {
   imports = [
-    ./git.nix
-    ./rofi.nix
-    ./i3.nix
+    ./programs
     ./editors
     ./browsers
     ./services
@@ -15,10 +13,8 @@
   home.homeDirectory = "/home/mika";
   home.stateVersion = "22.05";
 
-  programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
   xsession.enable = true;
-  programs.vscode.enable = true;
   fonts.fontconfig.enable = true;
 
   xdg.mimeApps = {
