@@ -36,7 +36,9 @@
         ];
         specialArgs = { inherit inputs; };
       };
-
+      devShells.${system}.ci = pkgs.mkShell {
+        buildInputs = with pkgs; [ nixpkgs-fmt nix-linter ];
+      };
     };
 }
 

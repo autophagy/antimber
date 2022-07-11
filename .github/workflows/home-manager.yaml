@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+concurrency:
+  group: ci
+  cancel-in-progress: true
 jobs:
   home-manager-build:
     name: Home Manager Build
@@ -38,15 +41,13 @@ jobs:
         run: nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
 
   fmt:
-    name: Nixpkgs Fmt
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
       - name: Install Nix
         uses: cachix/install-nix-action@v17
-        with:
-          nix_path: "nixpkgs=channel:nixos-unstable"
 
-      - name: Lint
-        run: nix-shell -p nixpkgs-fmt --run "find . -name '*.nix' | xargs nixpkgs-fmt --check"
+      - name: Fmt
+        run: nix develop .#ci -c nixpkgs-fmt --check ./
