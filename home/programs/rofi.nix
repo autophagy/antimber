@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 let
   themePath = ".config/rofi/theme.rasi";
   common = import ../common.nix;

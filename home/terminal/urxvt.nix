@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 let
   common = import ../common.nix;
 in
