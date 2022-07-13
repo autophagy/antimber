@@ -56,7 +56,7 @@
     kubectl
     kubectx
     awscli2
-    fluxcd
+    argocd
     minikube
 
     # Languages/Language Tools
