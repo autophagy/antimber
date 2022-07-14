@@ -70,5 +70,6 @@
     keepassxc
     scrot
     zathura
+    bind
   ];
 }
