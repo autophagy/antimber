@@ -27,6 +27,7 @@
       terraform-lsp
       nodePackages.bash-language-server
       rnix-lsp
+      rls
     ];
 
     coc = {
@@ -48,6 +49,10 @@
             "command" = "terraform-lsp";
             "args" = [ "serve" ];
             "filetypes" = [ "terraform" "tf" ];
+          };
+          "rust" = {
+            "command" = "rls";
+            "filetypes" = [ "rust" ];
           };
         };
       };
