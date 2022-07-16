@@ -28,6 +28,7 @@
       nodePackages.bash-language-server
       rnix-lsp
       rls
+      nodePackages.vscode-css-languageserver-bin
     ];
 
     coc = {
@@ -53,6 +54,12 @@
           "rust" = {
             "command" = "rls";
             "filetypes" = [ "rust" ];
+          };
+          "css" = {
+            "command" = "css-languageserver";
+            "args" = [ "--stdio" ];
+            "filetypes" = [ "css" ];
+            "roots" = [ "package.json" ];
           };
         };
       };
