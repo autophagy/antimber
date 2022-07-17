@@ -54,6 +54,7 @@
           "rust" = {
             "command" = "rls";
             "filetypes" = [ "rust" ];
+            "rootPatterns" = [ "Cargo.toml" ".git" ];
           };
           "css" = {
             "command" = "css-languageserver";
