@@ -35,32 +35,32 @@
       enable = true;
 
       settings = {
-        "languageserver" = {
-          "nix" = {
-            "command" = "rnix-lsp";
-            "filetypes" = [ "nix" ];
+        languageserver = {
+          nix = {
+            command = "rnix-lsp";
+            filetypes = [ "nix" ];
           };
-          "bash" = {
-            "command" = "bash-language-server";
-            "args" = [ "start" ];
-            "filetypes" = [ "sh" ];
-            "ignoredRootPaths" = [ "~" ];
+          bash = {
+            command = "bash-language-server";
+            args = [ "start" ];
+            filetypes = [ "sh" ];
+            ignoredRootPaths = [ "~" ];
           };
-          "terraform" = {
-            "command" = "terraform-lsp";
-            "args" = [ "serve" ];
-            "filetypes" = [ "terraform" "tf" ];
+          terraform = {
+            command = "terraform-lsp";
+            args = [ "serve" ];
+            filetypes = [ "terraform" "tf" ];
           };
-          "rust" = {
-            "command" = "rls";
-            "filetypes" = [ "rust" ];
-            "rootPatterns" = [ "Cargo.toml" ".git" ];
+          rust = {
+            command = "rls";
+            filetypes = [ "rust" ];
+            rootPatterns = [ "Cargo.toml" ".git" ];
           };
-          "css" = {
-            "command" = "css-languageserver";
-            "args" = [ "--stdio" ];
-            "filetypes" = [ "css" ];
-            "roots" = [ "package.json" ];
+          css = {
+            command = "css-languageserver";
+            args = [ "--stdio" ];
+            filetypes = [ "css" ];
+            roots = [ "package.json" ];
           };
         };
       };
