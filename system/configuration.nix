@@ -31,6 +31,24 @@
     powerOnBoot = pkgs.lib.mkForce false;
   };
 
+  hardware.opengl = {
+    enable = true;
+    package = pkgs.mesa.drivers;
+
+    extraPackages = with pkgs; [
+      libGL
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-media-driver
+    ];
+    setLdLibraryPath = true;
+
+    package32 = pkgs.pkgsi686Linux.mesa.drivers;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -52,6 +70,7 @@
     windowManager.i3.enable = true;
 
     libinput.enable = true;
+    videoDrivers = [ "modesetting" "intel" "libvulkan1" "mesa-vulkan-drivers" "vulkan-utils" ];
   };
 
   virtualisation.podman = {
