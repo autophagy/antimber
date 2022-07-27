@@ -13,7 +13,6 @@
       nerdtree
       vim-fugitive
       vim-airline
-      vim-polyglot
       vim-test
       fzf-vim
       gruvbox
@@ -21,6 +20,7 @@
       indentLine
       vim-nix
       coc-yaml
+      (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
     ];
 
     extraPackages = with pkgs; [
