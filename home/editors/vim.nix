@@ -9,18 +9,25 @@
     withNodeJs = true;
 
     plugins = with pkgs.vimPlugins; [
-      vim-trailing-whitespace
-      nerdtree
-      vim-fugitive
-      vim-airline
-      vim-test
-      fzf-vim
+      # Themes
       gruvbox
-      dhall-vim
+
+      # Completion/Linting/Highlighting
+      vim-trailing-whitespace
       indentLine
-      vim-nix
       coc-yaml
       (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+
+      # Languages
+      dhall-vim
+      vim-nix
+
+      # Utils
+      nerdtree # File system tree
+      vim-fugitive # Git wrapper
+      vim-airline # Status line
+      vim-test # Test wrapper
+      fzf-vim # Fuzzyfinder
     ];
 
     extraPackages = with pkgs; [
