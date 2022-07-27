@@ -42,7 +42,6 @@
     # Communication
     irssi
     slack
-    discord
     zoom-us
 
     # Media
