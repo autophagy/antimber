@@ -16,7 +16,7 @@
       vim-trailing-whitespace
       indentLine
       coc-yaml
-      (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
 
       # Languages
       dhall-vim
