@@ -15,7 +15,6 @@
       # Completion/Linting/Highlighting
       vim-trailing-whitespace
       indentLine
-      coc-yaml
       {
         plugin = (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars));
         config = ''
@@ -74,6 +73,11 @@
             args = [ "--stdio" ];
             filetypes = [ "css" ];
             roots = [ "package.json" ];
+          };
+          yaml = {
+            command = "${nodePackages.yaml-language-server}/bin/yaml-language-server";
+            args = [ "--stdio" ];
+            filetypes = [ "yaml" "yml" ];
           };
         };
       };
