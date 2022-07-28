@@ -46,6 +46,7 @@
       rnix-lsp
       rls
       nodePackages.vscode-css-languageserver-bin
+      shellcheck
     ];
 
     coc = {
