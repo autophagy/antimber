@@ -41,41 +41,36 @@
     ];
 
     extraPackages = with pkgs; [
-      terraform-lsp
-      nodePackages.bash-language-server
-      rnix-lsp
-      rls
-      nodePackages.vscode-css-languageserver-bin
       shellcheck
     ];
 
-    coc = {
+    coc = with pkgs; {
       enable = true;
 
       settings = {
         languageserver = {
           nix = {
-            command = "rnix-lsp";
+            command = "${rnix-lsp}/bin/rnix-lsp";
             filetypes = [ "nix" ];
           };
           bash = {
-            command = "bash-language-server";
+            command = "${nodePackages.bash-language-server}/bin/bash-language-server";
             args = [ "start" ];
             filetypes = [ "sh" ];
             ignoredRootPaths = [ "~" ];
           };
           terraform = {
-            command = "terraform-lsp";
+            command = "${terraform-lsp}/bin/terraform-lsp";
             args = [ "serve" ];
             filetypes = [ "terraform" "tf" ];
           };
           rust = {
-            command = "rls";
+            command = "${rls}/bin/rls";
             filetypes = [ "rust" ];
             rootPatterns = [ "Cargo.toml" ".git" ];
           };
           css = {
-            command = "css-languageserver";
+            command = "${nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
             args = [ "--stdio" ];
             filetypes = [ "css" ];
             roots = [ "package.json" ];
