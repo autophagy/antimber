@@ -69,5 +69,6 @@
     scrot
     zathura
     bind
+    htop
   ];
 }
