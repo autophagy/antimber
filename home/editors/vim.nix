@@ -16,7 +16,17 @@
       vim-trailing-whitespace
       indentLine
       coc-yaml
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+      {
+        plugin = (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars));
+        config = ''
+          lua <<EOF
+            require'nvim-treesitter.configs'.setup {
+              indent = { enable = true },
+              highlight = { enable = true },
+            }
+          EOF
+        '';
+      }
 
       # Languages
       dhall-vim
@@ -226,7 +236,6 @@
       set foldlevel=99
       nnoremap f za
 
-      syntax on
       filetype on
       filetype plugin indent on
 
