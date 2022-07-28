@@ -63,7 +63,6 @@
 
     # Utilities
     wget
-    bat
     arandr
     ripgrep
     keepassxc
