@@ -1,16 +1,4 @@
 { pkgs, ... }:
-let
-  mkLuaPlugin = { plugin, file }: (
-    {
-      inherit plugin;
-      config = ''
-        lua <<EOF
-        ${builtins.readFile file}
-        EOF
-      '';
-    }
-  );
-in
 {
   programs.neovim = {
     enable = true;
@@ -33,18 +21,18 @@ in
       cmp_luasnip
       cmp-treesitter
       lsp-status-nvim
-      (mkLuaPlugin {
+      {
         plugin = nvim-cmp;
-        file = ./cmp.lua;
-      })
-      (mkLuaPlugin {
+        config = "luafile ${toString ./cmp.lua}";
+      }
+      {
         plugin = (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars));
-        file = ./treesitter.lua;
-      })
-      (mkLuaPlugin {
+        config = "luafile ${toString ./treesitter.lua}";
+      }
+      {
         plugin = nvim-lspconfig;
-        file = ./lspconfig.lua;
-      })
+        config = "luafile ${toString ./lspconfig.lua}";
+      }
       {
         plugin = lspsaga-nvim;
         config = ''
@@ -71,10 +59,10 @@ in
       # Utils
       nerdtree # File system tree
       vim-fugitive # Git wrapper
-      (mkLuaPlugin {
+      {
         plugin = lualine-nvim;
-        file = ./lualine.lua;
-      })
+        config = "luafile ${toString ./lualine.lua}";
+      }
       vim-test # Test wrapper
       fzf-vim # Fuzzyfinder
     ];
