@@ -9,7 +9,7 @@
 
     plugins = with pkgs.vimPlugins; [
       # Themes
-      gruvbox
+      gruvbox-nvim
 
       # Completion/Linting/Highlighting
       vim-trailing-whitespace
