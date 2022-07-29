@@ -60,6 +60,10 @@
         plugin = null-ls-nvim;
         config = "luafile ${toString ./null_ls.lua}";
       }
+      {
+        plugin = cmp-spell;
+        config = "luafile ${toString ./spell.lua}";
+      }
 
       # Languages
       dhall-vim
@@ -121,17 +125,6 @@
         autocmd InsertLeave * set colorcolumn=""
       augroup end
       endif
-
-
-      " Spelling settings
-
-      set dictionary=/usr/share/dict/words
-      set spelllang=en
-
-      augroup nvim_opts
-      au!
-      au FileType markdown,rst,text,mail,tex setlocal spell
-      augroup end
 
       nnoremap <C-J> <C-W><C-J>
       nnoremap <C-K> <C-W><C-K>

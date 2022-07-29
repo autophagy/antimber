@@ -2,7 +2,6 @@
     :alt: antimber sigil
     :align: center
 
-
 antimber
   noun: matter, materials, substance
 
@@ -24,6 +23,6 @@ To build/switch home-manager::
 
 .. _NixOS: https://nixos.org/
 .. _home-manager: https://github.com/nix-community/home-manager
-.. _i3: https://i3wm.org/⎋
+.. _i3: https://i3wm.org/
 .. _Neovim: https://neovim.io/
 .. _arch: https://github.com/autophagy/antimber/tree/arch

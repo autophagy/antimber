@@ -34,8 +34,17 @@ cmp.setup({
                 buffer = "[BUF]",
                 path = "[PTH]",
                 treesitter = "[TS]",
+                spell = "[SPL]",
             })[entry.source.name]
             return vim_item
         end
     },
+})
+
+cmp.setup.filetype({ 'markdown', 'rst', 'text', 'mail', 'tex' }, {
+    sources = cmp.config.sources({
+        { name = 'spell' },
+        { name = 'treesitter' },
+        { name = 'buffer' }
+    })
 })
