@@ -82,6 +82,12 @@
           vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
           vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
 
+          local signs = { Error = "XX", Warn = "!!", Hint = "??", Info = "??" }
+          for type, icon in pairs(signs) do
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+          end
+
           require'lspconfig'.rnix.setup{}
           require'lspconfig'.bashls.setup{}
           require'lspconfig'.terraform_lsp.setup{}
