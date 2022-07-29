@@ -30,7 +30,7 @@
         config = "luafile ${toString ./cmp.lua}";
       }
       {
-        plugin = (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars));
+        plugin = nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars);
         config = "luafile ${toString ./treesitter.lua}";
       }
       {
@@ -54,6 +54,11 @@
           " scroll up hover doc
           nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
         '';
+      }
+      plenary-nvim
+      {
+        plugin = null-ls-nvim;
+        config = "luafile ${toString ./null_ls.lua}";
       }
 
       # Languages
@@ -79,6 +84,8 @@
       rls
       nodePackages.vscode-css-languageserver-bin
       yaml-language-server
+      statix
+      yamllint
     ];
 
     extraConfig = ''

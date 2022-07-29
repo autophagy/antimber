@@ -18,8 +18,8 @@ in
         height = 30;
         radius = 0.0;
         fixed-center = true;
-        background = common.colours.background;
-        foreground = common.colours.foreground;
+        inherit (common.colours) background;
+        inherit (common.colours) foreground;
         line-size = 3;
         line-color = "#F00";
         border-size = 0;

@@ -5,7 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = github:nix-community/home-manager;
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -37,7 +37,7 @@
         specialArgs = { inherit inputs; };
       };
       devShells.${system}.ci = pkgs.mkShell {
-        buildInputs = with pkgs; [ nixpkgs-fmt nix-linter ];
+        buildInputs = with pkgs; [ nixpkgs-fmt statix ];
       };
     };
 }

@@ -1,3 +1,4 @@
+---
 name: CI
 on:
   push:
@@ -53,4 +54,4 @@ jobs:
         run: nix develop .#ci -c nixpkgs-fmt --check ./
 
       - name: Lint
-        run: nix develop .#ci -c nix-linter -r .
+        run: nix develop .#ci -c statix check .
