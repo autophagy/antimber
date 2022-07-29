@@ -26,4 +26,16 @@ cmp.setup({
         { name = 'path' },
         { name = 'treesitter' },
     }),
+    formatting = {
+        format = function(entry, vim_item)
+            vim_item.menu = ({
+                nvim_lsp = "[LSP]",
+                luasnip = "[LS]",
+                buffer = "[BUF]",
+                path = "[PTH]",
+                treesitter = "[TS]",
+            })[entry.source.name]
+            return vim_item
+        end
+    },
 })
