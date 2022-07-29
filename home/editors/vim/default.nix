@@ -1,5 +1,16 @@
 { pkgs, ... }:
-
+let
+  mkLuaPlugin = { plugin, file }: (
+    {
+      inherit plugin;
+      config = ''
+        lua <<EOF
+        ${builtins.readFile file}
+        EOF
+      '';
+    }
+  );
+in
 {
   programs.neovim = {
     enable = true;
@@ -22,94 +33,18 @@
       cmp_luasnip
       cmp-treesitter
       lsp-status-nvim
-      {
+      (mkLuaPlugin {
         plugin = nvim-cmp;
-        config = ''
-          set completeopt=menu,menuone,noselect
-
-          lua <<EOF
-            -- Setup nvim-cmp.
-            local cmp = require'cmp'
-
-            cmp.setup({
-              snippet = {
-                expand = function(args)
-                  require('luasnip').lsp_expand(args.body)
-                end,
-              },
-              window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
-              },
-              mapping = cmp.mapping.preset.insert({
-                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                ['<C-Space>'] = cmp.mapping.complete(),
-                ['<C-e>'] = cmp.mapping.abort(),
-                ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-                ['<Tab>'] = cmp.mapping.select_next_item(),
-                ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-              }),
-              sources = cmp.config.sources({
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
-                { name = 'buffer' },
-                { name = 'path' },
-                { name = 'treesitter' },
-              }),
-            })
-          EOF
-        '';
-      }
-      {
+        file = ./cmp.lua;
+      })
+      (mkLuaPlugin {
         plugin = (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars));
-        config = ''
-          lua <<EOF
-            require'nvim-treesitter.configs'.setup {
-              indent = { enable = true },
-              highlight = { enable = true },
-            }
-          EOF
-        '';
-      }
-      {
+        file = ./treesitter.lua;
+      })
+      (mkLuaPlugin {
         plugin = nvim-lspconfig;
-        config = ''
-          lua << EOF
-          vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
-          vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
-          vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
-          vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
-          vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
-
-          local signs = { Error = "XX", Warn = "!!", Hint = "??", Info = "??" }
-          for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-          end
-
-          require'lspconfig'.rnix.setup{}
-          require'lspconfig'.bashls.setup{}
-          require'lspconfig'.terraform_lsp.setup{}
-          require'lspconfig'.rls.setup{}
-          require'lspconfig'.cssls.setup {}
-          require('lspconfig').yamlls.setup {
-            settings = {
-              yaml = {
-                schemas = {
-                  ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
-                },
-              },
-              redhat = {
-                telemetry = {
-                  disabled = false
-                }
-              },
-            }
-          }
-          EOF
-        '';
-      }
+        file = ./lspconfig.lua;
+      })
       {
         plugin = lspsaga-nvim;
         config = ''

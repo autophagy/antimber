@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  imports = [ ./vim.nix ];
+  imports = [ ./vim ];
 
   programs.vscode.enable = true;
 }
