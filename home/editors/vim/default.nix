@@ -22,6 +22,10 @@
       cmp-treesitter
       lsp-status-nvim
       {
+        plugin = lsp_lines-nvim;
+        config = "luafile ${toString ./lsplines.lua}";
+      }
+      {
         plugin = nvim-cmp;
         config = "luafile ${toString ./cmp.lua}";
       }
