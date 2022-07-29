@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  imports = [ ./vim ];
+  imports = [ ./neovim ];
 
   programs.vscode.enable = true;
 }
