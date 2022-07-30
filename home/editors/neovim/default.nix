@@ -13,7 +13,13 @@
 
       # Completion/Linting/Highlighting
       vim-trailing-whitespace
-      indentLine
+      {
+        plugin = indentLine;
+        config = ''
+          let g:indentLine_char = ':'
+          let g:indentLine_fileTypeExclude = ['markdown', 'rst']
+        '';
+      }
       cmp-buffer
       cmp-nvim-lsp
       cmp-path
@@ -70,14 +76,37 @@
       vim-nix
 
       # Utils
-      nerdtree # File system tree
+      {
+        plugin = nerdtree;
+        config = ''
+          let NERDTreeIgnore=['\.pyc$', '\~$']
+          map <C-n> :NERDTreeToggle<CR>
+        '';
+      }
       vim-fugitive # Git wrapper
       {
         plugin = lualine-nvim;
         config = "luafile ${toString ./lualine.lua}";
       }
-      vim-test # Test wrapper
-      fzf-vim # Fuzzyfinder
+      {
+        plugin = vim-test;
+        config = ''
+          nmap <silent> t<C-n> :TestNearest<CR>
+          nmap <silent> t<C-f> :TestFile<CR>
+          nmap <silent> t<C-s> :TestSuite<CR>
+          nmap <silent> t<C-l> :TestLast<CR>
+          nmap <silent> t<C-g> :TestVisit<CR>
+        '';
+      }
+      {
+        plugin = fzf-vim;
+        config = ''
+          let g:fzf_preview_window = ""
+          let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+          nnoremap <silent> <C-p> :Files<CR>
+          nnoremap <silent> <A-p> :Rg<CR>
+        '';
+      }
     ];
 
     extraPackages = with pkgs; [
@@ -132,24 +161,6 @@
       nnoremap <C-H> <C-W><C-H>
 
       vnoremap <leader>y "+y
-
-      let NERDTreeIgnore=['\.pyc$', '\~$']
-      map <C-n> :NERDTreeToggle<CR>
-
-      nmap <silent> t<C-n> :TestNearest<CR>
-      nmap <silent> t<C-f> :TestFile<CR>
-      nmap <silent> t<C-s> :TestSuite<CR>
-      nmap <silent> t<C-l> :TestLast<CR>
-      nmap <silent> t<C-g> :TestVisit<CR>
-
-      let g:fzf_preview_window = ""
-      let g:fzf_preview_window = ['right:50%', 'ctrl-/']
-      nnoremap <silent> <C-p> :Files<CR>
-      nnoremap <silent> <A-p> :Rg<CR>
-
-      let g:indentLine_char = ':'
-
-      let g:indentLine_fileTypeExclude = ['markdown', 'rst']
     '';
   };
 }
