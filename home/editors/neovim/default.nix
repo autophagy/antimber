@@ -126,7 +126,8 @@
 
       set encoding=utf-8
 
-      set foldmethod=indent
+      set foldmethod=expr
+      set foldexpr=nvim_treesitter#foldexpr()
       set foldlevel=99
       nnoremap f za
 
