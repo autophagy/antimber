@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nvimPlugins, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -105,6 +105,13 @@
           let g:fzf_preview_window = ['right:50%', 'ctrl-/']
           nnoremap <silent> <C-p> :Files<CR>
           nnoremap <silent> <A-p> :Rg<CR>
+        '';
+      }
+      {
+        plugin = nvimPlugins.nvim-scrollbar;
+        type = "lua";
+        config = ''
+          require("scrollbar").setup()
         '';
       }
     ];

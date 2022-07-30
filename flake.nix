@@ -9,9 +9,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nvim-scrollbar = {
+      url = "github:petertriho/nvim-scrollbar";
+      flake = false;
+    };
+
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nvim-scrollbar, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -19,14 +24,21 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-
     in
     {
+      nvimPlugins = {
+        nvim-scrollbar = pkgs.vimUtils.buildVimPluginFrom2Nix {
+          pname = "nvim-scrollbar";
+          version = "main";
+          src = nvim-scrollbar;
+        };
+      };
       homeConfigurations.mika = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./home/home.nix
         ];
+        extraSpecialArgs = { inherit (inputs.self) nvimPlugins; };
       };
       nixosConfigurations.heorot = nixpkgs.lib.nixosSystem {
         inherit system;

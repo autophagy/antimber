@@ -36,10 +36,27 @@
         "type": "indirect"
       }
     },
+    "nvim-scrollbar": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1657545514,
+        "narHash": "sha256-EqHoR/vdifrN3uhrA0AoJVXKf5jKxznJEgKh8bXm2PQ=",
+        "owner": "petertriho",
+        "repo": "nvim-scrollbar",
+        "rev": "ce0df6954a69d61315452f23f427566dc1e937ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "petertriho",
+        "repo": "nvim-scrollbar",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nvim-scrollbar": "nvim-scrollbar"
       }
     },
     "utils": {
