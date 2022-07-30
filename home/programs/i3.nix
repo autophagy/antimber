@@ -18,7 +18,7 @@ in
       bars = [ ];
 
       startup = [
-        { command = "${pkgs.feh}/bin/feh --bg-fill ${toString ../../static/lock.png}"; }
+        { command = "${pkgs.feh}/bin/feh --bg-fill ${toString ../../static/background-image.jpg}"; }
       ];
 
       gaps = {
