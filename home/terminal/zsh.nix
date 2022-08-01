@@ -25,5 +25,8 @@
       enable = true;
       plugins = [ "ssh-agent" "git" ];
     };
+    sessionVariables = {
+      EDITOR = "vim";
+    };
   };
 }
