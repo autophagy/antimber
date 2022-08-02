@@ -1,3 +1,5 @@
+local lspconfig = require'lspconfig'
+
 vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
 vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
 vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
@@ -9,12 +11,12 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-require'lspconfig'.rnix.setup{}
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.terraform_lsp.setup{}
-require'lspconfig'.rls.setup{}
-require'lspconfig'.cssls.setup {}
-require('lspconfig').yamlls.setup {
+lspconfig.rnix.setup{}
+lspconfig.bashls.setup{}
+lspconfig.terraform_lsp.setup{}
+lspconfig.rls.setup{}
+lspconfig.cssls.setup {}
+lspconfig.yamlls.setup {
     settings = {
         yaml = {
             schemas = {
@@ -28,3 +30,4 @@ require('lspconfig').yamlls.setup {
         },
     }
 }
+lspconfig.dhall_lsp_server.setup{}

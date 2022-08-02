@@ -126,6 +126,7 @@
       yaml-language-server
       statix
       yamllint
+      dhall-lsp-server
     ];
 
     extraConfig = ''
