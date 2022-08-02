@@ -10,6 +10,9 @@
     shellAliases = {
       ll = "ls -l";
       g = "git";
+      k = "kubectl";
+      kctx = "kubectx";
+      kns = "kubens";
     };
     history = {
       size = 10000;
