@@ -14,9 +14,13 @@
       flake = false;
     };
 
+    herbz-theme = {
+      url = "https://raw.githubusercontent.com/irssi-import/themes/gh-pages/h3rbz.theme";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nvim-scrollbar, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -38,7 +42,7 @@
         modules = [
           ./home/home.nix
         ];
-        extraSpecialArgs = { inherit (inputs.self) nvimPlugins; };
+        extraSpecialArgs = { inherit (inputs.self) nvimPlugins; inherit herbz-theme; };
       };
       nixosConfigurations.heorot = nixpkgs.lib.nixosSystem {
         inherit system;

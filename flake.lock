@@ -1,5 +1,17 @@
 {
   "nodes": {
+    "herbz-theme": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-n/XwzPAKu5lTUkoi02pAMPIL6tU+Qq/nCNFrF3yUkeY=",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/irssi-import/themes/gh-pages/h3rbz.theme"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/irssi-import/themes/gh-pages/h3rbz.theme"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -54,6 +66,7 @@
     },
     "root": {
       "inputs": {
+        "herbz-theme": "herbz-theme",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nvim-scrollbar": "nvim-scrollbar"

@@ -1,4 +1,4 @@
-_:
+{ herbz-theme, ... }:
 {
   programs.irssi = {
     enable = true;
@@ -23,4 +23,6 @@ _:
       };
     };
   };
+
+  home.file.".irssi/default.theme".source = herbz-theme;
 }
