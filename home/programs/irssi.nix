@@ -12,8 +12,6 @@
         };
         channels = {
           nixos.autoJoin = true;
-          nixos-chat.autoJoin = true;
-          nixos-dev.autoJoin = true;
           rust.autoJoin = true;
           bash.autoJoin = true;
           haskell.autoJoin = true;
