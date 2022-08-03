@@ -40,7 +40,6 @@
     qutebrowser
 
     # Communication
-    irssi
     slack
     zoom-us
 

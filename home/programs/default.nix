@@ -7,6 +7,7 @@
     ./rofi.nix
     ./discord.nix
     ./bat.nix
+    ./irssi.nix
   ];
 
   programs.home-manager.enable = true;
