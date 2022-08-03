@@ -53,6 +53,9 @@ in
         "Shift+Print" = "exec --no-startup-id scrot -s ~/images/screenshots/%b%d::%H%M%S.png";
 
         "${mod}+Shift+o" = "exec --no-startup-id i3lock -i ${toString ../../static/lock.png}";
+
+        "${mod}+m" = "move workspace to output right";
+        "${mod}+Shift+m" = "move workspace to output left";
       };
     };
   };
