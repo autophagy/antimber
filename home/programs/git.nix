@@ -5,9 +5,12 @@ _:
     enable = true;
     userEmail = "mail@autophagy.io";
     userName = "Mika Naylor";
+    signing = {
+      key = null;
+      signByDefault = true;
+    };
     extraConfig = {
       rebase = { autosquash = true; };
-      user = { signingKey = "F7236FBA"; };
       credential = { helper = "cache --timeout=3600"; };
       core = { editor = "nvim"; };
       push = { default = "simple"; };
