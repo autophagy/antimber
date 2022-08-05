@@ -47,6 +47,7 @@ _:
       lo = "!sh -c 'git log --oneline --abbrev-commit --all --graph --decorate --color'";
       m = "merge";
       mnf = "merge --no-ff";
+      p = "remote prune origin";
       ph = "push";
       pho = "push origin";
       phu = "!sh -c 'git push -u origin $(git rev-parse --abbrev-ref HEAD)'";
