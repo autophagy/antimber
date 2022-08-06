@@ -3,7 +3,19 @@ _:
 {
   accounts.email = {
     accounts.immerok = {
+      primary = true;
+      realName = "Mika Naylor";
+      passwordCommand = "gpg -d --quiet $HOME/immer_cred.gpg";
       address = "mika@immerok.com";
+      userName = "mika@immerok.com";
+      signature = {
+        showSignature = "append";
+        text = ''
+          Mika Naylor
+          Site Reliability Engineer
+          immerok GmbH ✭ immerok.com
+        '';
+      };
       imap = {
         host = "imap.gmail.com";
         port = 993;
@@ -27,21 +39,9 @@ _:
         '';
         extraMailboxes = [ "[Gmail]/Sent Mail" "[Gmail]/Trash" ];
       };
-      primary = true;
-      realName = "Mika Naylor";
-      passwordCommand = "gpg -d --quiet $HOME/immer_cred.gpg";
       smtp = {
         host = "smtp.gmail.com";
         port = 465;
-      };
-      userName = "mika@immerok.com";
-      signature = {
-        showSignature = "append";
-        text = ''
-          Mika Naylor
-          Site Reliability Engineer
-          immerok GmbH ✭ immerok.com
-        '';
       };
     };
   };
