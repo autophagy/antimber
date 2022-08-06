@@ -22,6 +22,9 @@ _:
     extraConfig = ''
       set sort_aux = reverse-last-date-received
       set wait_key = no
+      set timeout = 3
+      set mail_check = 0
+      set mail_check_stats
     '';
   };
 }
