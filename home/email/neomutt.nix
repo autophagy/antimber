@@ -19,12 +19,12 @@ _:
     };
     vimKeys = true;
     sort = "threads";
-    extraConfig = ''
-      set sort_aux = reverse-last-date-received
-      set wait_key = no
-      set timeout = 3
-      set mail_check = 0
-      set mail_check_stats
-    '';
+    settings = {
+      sort_aux = "reverse-last-date-received";
+      wait_key = "no";
+      timeout = "3";
+      mail_check = "0";
+      mail_check_stats = "yes";
+    };
   };
 }
