@@ -8,6 +8,7 @@
     ./services
     ./terminal
     ./virtualisation
+    ./email
   ];
 
   home.username = "mika";
