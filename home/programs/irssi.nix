@@ -19,6 +19,17 @@
           python.autoJoin = true;
         };
       };
+      otfc = {
+        nick = "autophagian";
+        server = {
+          address = "irc.oftc.net";
+          port = 6697;
+          autoConnect = true;
+        };
+        channels = {
+          home-manager.autoJoin = true;
+        };
+      };
     };
   };
 
