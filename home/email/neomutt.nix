@@ -1,10 +1,12 @@
-_:
+{ pkgs, ... }:
 
 {
   programs.neomutt = {
     enable = true;
     macros = [
       { map = [ "index" ]; key = "o"; action = "<shell-escape>mbsync -a -q &<enter>"; }
+      { map = [ "index" "pager" ]; key = "B"; action = "<pipe-message> ${pkgs.urlscan}/bin/urlscan<Enter>"; }
+      { map = [ "attach" "compose" ]; key = "B"; action = "<pipe-entry> ${pkgs.urlscan}/bin/urlscan<Enter>"; }
     ];
     binds = [
       { map = [ "index" "pager" ]; key = "<tab>"; action = "sync-mailbox"; }
