@@ -23,21 +23,22 @@ _:
       mbsync = {
         enable = true;
         create = "both";
-        patterns = [ "*" "![Gmail]*" "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail" ];
+        patterns = [ "*" "![Gmail]*" "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail" "[Gmail]/Spam" "[Gmail]/Trash" ];
         expunge = "both";
       };
       msmtp.enable = true;
       neomutt = {
         enable = true;
+        mailboxName = "> immerok";
         extraConfig = ''
-          color status cyan default
-          color index cyan default "~N"
+          color status magenta default
+          color index magenta default "~N"
           color index red default "~D"
           set record="+[Gmail]/Sent Mail"
           set postponed="+[Gmail]/Drafts"
           set trash="+[Gmail]/Trash"
         '';
-        extraMailboxes = [ "[Gmail]/Sent Mail" "[Gmail]/Trash" ];
+        extraMailboxes = [ "[Gmail]/Sent Mail" "[Gmail]/Trash" "[Gmail]/Spam" ];
       };
       smtp = {
         host = "smtp.gmail.com";
