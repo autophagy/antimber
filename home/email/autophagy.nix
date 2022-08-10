@@ -36,8 +36,6 @@ _:
         extraMailboxes = [
           "Inbox/github"
           "Inbox/mailing-lists/arch-announce"
-          "Inbox/mailing-lists/haskell-announce"
-          "Inbox/mailing-lists/haskell-cafe"
           "Inbox/mailing-lists/nixos"
           "Inbox/mailing-lists/qutebrowser"
           "Inbox/mailing-lists/tla-plus"
