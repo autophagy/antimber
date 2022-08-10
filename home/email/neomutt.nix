@@ -27,6 +27,7 @@
       timeout = "3";
       mail_check = "0";
       mail_check_stats = "yes";
+      mark_old = "no";
     };
   };
 }
