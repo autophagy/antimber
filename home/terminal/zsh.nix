@@ -13,6 +13,7 @@
       k = "kubectl";
       kctx = "kubectx";
       kns = "kubens";
+      mail = "neomutt";
     };
     history = {
       size = 10000;
