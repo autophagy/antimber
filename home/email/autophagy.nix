@@ -11,8 +11,7 @@ _:
         showSignature = "append";
         text = ''
           Mika Naylor
-          Site Reliability Engineer
-          immerok GmbH ✭ immerok.com
+          autophagy.io
         '';
       };
       imap = {
