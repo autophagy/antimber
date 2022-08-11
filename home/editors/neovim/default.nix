@@ -29,19 +29,23 @@
       lsp-status-nvim
       {
         plugin = lsp_lines-nvim;
-        config = "luafile ${toString ./lsplines.lua}";
+        type = "lua";
+        config = builtins.readFile ./lsplines.lua;
       }
       {
         plugin = nvim-cmp;
-        config = "luafile ${toString ./cmp.lua}";
+        type = "lua";
+        config = builtins.readFile ./cmp.lua;
       }
       {
         plugin = nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars);
-        config = "luafile ${toString ./treesitter.lua}";
+        type = "lua";
+        config = builtins.readFile ./treesitter.lua;
       }
       {
         plugin = nvim-lspconfig;
-        config = "luafile ${toString ./lspconfig.lua}";
+        type = "lua";
+        config = builtins.readFile ./lspconfig.lua;
       }
       {
         plugin = lspsaga-nvim;
@@ -64,11 +68,13 @@
       plenary-nvim
       {
         plugin = null-ls-nvim;
-        config = "luafile ${toString ./null_ls.lua}";
+        type = "lua";
+        config = builtins.readFile ./null_ls.lua;
       }
       {
         plugin = cmp-spell;
-        config = "luafile ${toString ./spell.lua}";
+        type = "lua";
+        config = builtins.readFile ./spell.lua;
       }
 
       # Languages
@@ -86,7 +92,8 @@
       vim-fugitive # Git wrapper
       {
         plugin = lualine-nvim;
-        config = "luafile ${toString ./lualine.lua}";
+        type = "lua";
+        config = builtins.readFile ./lualine.lua;
       }
       {
         plugin = vim-test;
