@@ -14,6 +14,7 @@
       kctx = "kubectx";
       kns = "kubens";
       mail = "neomutt";
+      wttr = "curl v2.wttr.in";
     };
     history = {
       size = 10000;
