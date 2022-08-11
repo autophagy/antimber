@@ -1,10 +1,22 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 
 let
   mod = "Mod4";
 in
 {
   home.packages = with pkgs; [ feh i3lock ];
+
+  home.file = {
+    backgroundImage = {
+      source = ../../static/background-image.jpg;
+      target = ".config/background.jpg";
+    };
+
+    lockImage = {
+      source = ../../static/lock.png;
+      target = ".config/lock.png";
+    };
+  };
 
   xsession.windowManager.i3 = {
     enable = true;
@@ -18,7 +30,7 @@ in
       bars = [ ];
 
       startup = [
-        { command = "${pkgs.feh}/bin/feh --bg-fill ${toString ../../static/background-image.jpg}"; }
+        { command = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/${config.home.file.backgroundImage.target}"; }
       ];
 
       gaps = {
@@ -52,7 +64,7 @@ in
         "Print" = "exec --no-startup-id scrot ~/images/screenshots/%b%d::%H%M%S.png";
         "Shift+Print" = "exec --no-startup-id scrot -s ~/images/screenshots/%b%d::%H%M%S.png";
 
-        "${mod}+Shift+o" = "exec --no-startup-id i3lock -i ${toString ../../static/lock.png}";
+        "${mod}+Shift+o" = "exec --no-startup-id i3lock -i ${config.home.homeDirectory}/${config.home.file.lockImage.target}";
 
         "${mod}+m" = "move workspace to output right";
         "${mod}+Shift+m" = "move workspace to output left";
