@@ -70,8 +70,11 @@ in
         type = "internal/battery";
         battery = "BAT0";
         adapter = "AC";
+        full-at = 99;
+        low-at = 10;
         format-discharging = "BAT <label-discharging>";
         format-charging = "BAT +<label-charging>";
+        format-low = "%{F${common.colours.alert}}BAT <label-low>%{F-}";
         label-full = "";
       };
 
