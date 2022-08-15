@@ -70,5 +70,6 @@
     zathura
     bind
     htop
+    sops
   ];
 }

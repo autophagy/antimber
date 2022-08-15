@@ -1,11 +1,10 @@
-_:
-
+{ pkgs, credPath, ... }:
 {
   accounts.email = {
     accounts.immerok = {
       primary = true;
       realName = "Mika Naylor";
-      passwordCommand = "gpg -d --quiet $HOME/immer_cred.gpg";
+      passwordCommand = "${pkgs.sops}/bin/sops --decrypt --extract \"['immerok']\" ${credPath}";
       address = "mika@immerok.com";
       userName = "mika@immerok.com";
       signature = {

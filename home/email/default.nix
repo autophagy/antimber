@@ -1,7 +1,13 @@
-{ pkgs, ... }:
-
+{ pkgs, config, ... }:
+let
+  credPath = "${config.home.homeDirectory}/.config/emailCredentials.yaml";
+in
 {
-  imports = [ ./neomutt.nix ./immerok.nix ./autophagy.nix ];
+  imports = [
+    ./neomutt.nix
+    (import ./immerok.nix { inherit pkgs credPath; })
+    (import ./autophagy.nix { inherit pkgs credPath; })
+  ];
 
   home.file.".mailcap".text = ''
     text/html; ${pkgs.w3m}/bin/w3m -I %{charset} -T text/html; copiousoutput;

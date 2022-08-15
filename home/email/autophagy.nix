@@ -1,10 +1,9 @@
-_:
-
+{ pkgs, credPath, ... }:
 {
   accounts.email = {
     accounts.autophagy = {
       realName = "Mika Naylor";
-      passwordCommand = "gpg -d --quiet $HOME/auto_cred.gpg";
+      passwordCommand = "${pkgs.sops}/bin/sops --decrypt --extract \"['autophagy']\" ${credPath}";
       address = "mail@autophagy.io";
       userName = "mail@autophagy.io";
       signature = {
