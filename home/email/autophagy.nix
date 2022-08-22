@@ -32,6 +32,7 @@
           color index red default "~D"
         '';
         extraMailboxes = [
+          "Inbox/newsletters"
           "Inbox/github"
           "Inbox/mailing-lists/arch-announce"
           "Inbox/mailing-lists/nixos"
