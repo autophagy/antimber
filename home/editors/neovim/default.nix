@@ -121,6 +121,7 @@
           require("scrollbar").setup()
         '';
       }
+      vim-sleuth
     ];
 
     extraPackages = with pkgs; [
