@@ -2,6 +2,7 @@
 
 let
   mod = "Mod4";
+  common = import ../common.nix;
 in
 {
   home.packages = with pkgs; [ feh i3lock ];
@@ -28,6 +29,16 @@ in
       workspaceAutoBackAndForth = true;
       defaultWorkspace = "workspace number 1";
       bars = [ ];
+
+      colors = {
+        focused = {
+          inherit (common.colours) background;
+          border = common.colours.foreground;
+          childBorder = common.colours.foreground;
+          indicator = common.colours.foreground;
+          text = common.colours.foreground;
+        };
+      };
 
       startup = [
         { command = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/${config.home.file.backgroundImage.target}"; }
