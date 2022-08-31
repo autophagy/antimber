@@ -3,11 +3,11 @@
 {
 
   nix = {
-    # Automatic weekly garbage collection
+    # Automatic monthly garbage collection
     gc = {
       automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
+      dates = "monthly";
+      options = "--delete-older-than 30d";
     };
 
     package = pkgs.nixFlakes;
