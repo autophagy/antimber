@@ -40,7 +40,7 @@ in
         index-sort = true;
         wrapping-scroll = true;
         strip-wsnumbers = true;
-        pin-workspaces = true;
+        pin-workspaces = false;
         label-unfocused-padding = 1;
         label-unfocused-foreground = common.colours.bgFgBlended;
         label-focused-foreground = common.colours.foreground;
