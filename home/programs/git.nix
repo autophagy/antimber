@@ -27,6 +27,8 @@ _:
       cob = "checkout -b";
       cam = "commit -am";
       cm = "commit -m";
+      cmh = "!f() { git commit -m \"[hotfix] $1\"; }; f";
+      cmb = "!f() { git commit -m \"[$(git branch --show-current)] $1\"; }; f";
       ca = "commit --amend";
       cane = "commit --amend --no-edit";
       cf = "commit --fixup";
