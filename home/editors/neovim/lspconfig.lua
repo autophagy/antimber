@@ -11,11 +11,18 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+
 lspconfig.rnix.setup{}
 lspconfig.bashls.setup{}
 lspconfig.terraform_lsp.setup{}
 lspconfig.rls.setup{}
-lspconfig.cssls.setup {}
+lspconfig.cssls.setup {
+    cmd = { "css-languageserver", "--stdio" },
+    capabilities = capabilities
+}
 lspconfig.yamlls.setup {
     settings = {
         yaml = {
