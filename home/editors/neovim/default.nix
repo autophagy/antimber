@@ -135,6 +135,7 @@
       statix
       yamllint
       dhall-lsp-server
+      gopls
     ];
 
     extraConfig = ''

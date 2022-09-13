@@ -38,3 +38,4 @@ lspconfig.yamlls.setup {
     }
 }
 lspconfig.dhall_lsp_server.setup{}
+lspconfig.gopls.setup{}
