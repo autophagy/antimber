@@ -52,7 +52,7 @@ in
       };
 
       assigns = {
-        "2" = [{ class = "firefox"; } { class = "qutebrowser"; }];
+        "2" = [{ class = "firefox"; } { class = "qutebrowser"; } { class = "chromium-browser"; }];
         "3" = [{ class = "code"; }];
         "9" = [{ class = "discord"; }];
         "10" = [{ class = "slack"; }];
@@ -60,7 +60,7 @@ in
 
       floating.criteria = [
         { class = "Pavucontrol"; }
-        { class = "Keepassx2"; }
+        { class = "KeePassXC"; }
         { class = "zoom"; }
       ];
 

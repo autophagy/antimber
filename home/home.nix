@@ -39,6 +39,7 @@
     # Browsers
     firefox
     qutebrowser
+    chromium
 
     # Communication
     slack
