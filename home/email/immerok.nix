@@ -5,14 +5,14 @@
       primary = true;
       realName = "Mika Naylor";
       passwordCommand = "${pkgs.sops}/bin/sops --decrypt --extract \"['immerok']\" ${credPath}";
-      address = "mika@immerok.com";
-      userName = "mika@immerok.com";
+      address = "mika@immerok.io";
+      userName = "mika@immerok.io";
       signature = {
         showSignature = "append";
         text = ''
           Mika Naylor
           Site Reliability Engineer
-          immerok GmbH ✭ immerok.com
+          immerok GmbH ✭ immerok.io
         '';
       };
       imap = {
