@@ -58,6 +58,7 @@
     awscli2
     argocd
     minikube
+    cilium-cli
 
     # Languages/Language Tools
     nixpkgs-fmt
