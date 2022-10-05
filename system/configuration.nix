@@ -10,7 +10,6 @@
       options = "--delete-older-than 30d";
     };
 
-    package = pkgs.nixFlakes;
     registry.nixpkgs.flake = inputs.nixpkgs;
 
     extraOptions = ''

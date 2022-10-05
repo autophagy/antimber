@@ -129,7 +129,7 @@
       rnix-lsp
       nodePackages.bash-language-server
       terraform-lsp
-      rls
+      rust-analyzer
       nodePackages.vscode-css-languageserver-bin
       yaml-language-server
       statix
