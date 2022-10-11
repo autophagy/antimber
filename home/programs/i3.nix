@@ -58,11 +58,15 @@ in
         "10" = [{ class = "slack"; }];
       };
 
-      floating.criteria = [
-        { class = "Pavucontrol"; }
-        { class = "KeePassXC"; }
-        { class = "zoom"; }
-      ];
+      floating = {
+        border = 1;
+
+        criteria = [
+          { class = "Pavucontrol"; }
+          { class = "KeePassXC"; }
+          { class = "zoom"; }
+        ];
+      };
 
       keybindings = lib.mkOptionDefault {
         "XF86MonBrightnessUp" = "exec light -A 2";
@@ -90,6 +94,10 @@ in
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
       };
+
+      window.commands = [
+        { command = "border pixel 1"; criteria = { class = "^.*"; }; }
+      ];
     };
   };
 }
