@@ -72,15 +72,15 @@
     videoDrivers = [ "modesetting" "intel" "libvulkan1" "mesa-vulkan-drivers" "vulkan-utils" ];
   };
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
+  virtualisation = {
+    docker.enable = true;
+    podman.enable = true;
   };
 
   users.users.mika = {
     isNormalUser = true;
     description = "Mika Naylor";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
     shell = pkgs.zsh;
   };
 
