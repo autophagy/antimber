@@ -77,6 +77,8 @@
     podman.enable = true;
   };
 
+  services.tailscale.enable = true;
+
   users.users.mika = {
     isNormalUser = true;
     description = "Mika Naylor";
