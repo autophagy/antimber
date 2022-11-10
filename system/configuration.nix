@@ -49,7 +49,18 @@
   };
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      checkReversePath = "loose";
+    };
+  };
+
+  services.resolved = {
+    enable = true;
+    dnssec = "false";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
