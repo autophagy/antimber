@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./polybar.nix
+    ./polybar
     ./redshift.nix
   ];
 

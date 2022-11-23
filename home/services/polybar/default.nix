@@ -1,7 +1,8 @@
 { pkgs, ... }:
 
 let
-  common = import ../common.nix;
+  common = import ../../common.nix;
+  vpnstatusScript = pkgs.callPackage ./scripts/vpnstatus.nix { };
 in
 {
   services.polybar = {
@@ -31,7 +32,7 @@ in
         module-margin-right = 1;
         font-0 = "Inconsolata:pixelsize=9;2";
         modules-left = "i3";
-        modules-right = "wlan battery cpu memory pulseaudio date";
+        modules-right = "vpn wlan battery cpu memory pulseaudio date";
       };
 
       "module/i3" = {
@@ -95,6 +96,12 @@ in
         date = "%d %b %Y";
         time = "%H.%M";
         label = "%date% // %time%";
+      };
+
+      "module/vpn" = {
+        type = "custom/script";
+        interval = 5.0;
+        exec = "${vpnstatusScript}/bin/vpnstatus";
       };
 
     };
