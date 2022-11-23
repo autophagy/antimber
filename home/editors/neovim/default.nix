@@ -38,7 +38,7 @@
         config = builtins.readFile ./cmp.lua;
       }
       {
-        plugin = nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars);
+        plugin = nvim-treesitter.withAllGrammars;
         type = "lua";
         config = builtins.readFile ./treesitter.lua;
       }
