@@ -5,10 +5,11 @@ let
   tailscale = "${pkgs.tailscale}/bin/tailscale";
 in
 pkgs.writeShellScriptBin "vpnstatus" ''
-  STATE=$(${tailscale} status --json | ${jq} -r '.BackendState')
+  STATUS=$(${tailscale} status --json)
+  STATE=$(echo "$STATUS" | ${jq} -r '.BackendState')
   if [[ "$STATE" == "Running" ]]; then
-      IP=$(${tailscale} ip -4)
-      echo "VPN $IP"
+      CURRENT_TAILNET=$(echo "$STATUS" | ${jq} -r '.CurrentTailnet.Name')
+      echo "VPN $CURRENT_TAILNET"
   else
       echo ""
   fi
