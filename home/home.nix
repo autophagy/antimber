@@ -60,9 +60,6 @@
     minikube
     cilium-cli
 
-    # Languages/Language Tools
-    nixpkgs-fmt
-
     # Utilities
     wget
     arandr
