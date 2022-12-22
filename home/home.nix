@@ -70,7 +70,6 @@
     bind
     htop
     sops
-    olive-editor
     jq
   ];
 }
