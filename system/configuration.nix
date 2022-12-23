@@ -2,6 +2,8 @@
 
 {
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   nix = {
     # Automatic monthly garbage collection
     gc = {
