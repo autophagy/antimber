@@ -48,6 +48,22 @@
         "type": "indirect"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1672146123,
+        "narHash": "sha256-xUnLVFhi2dqvcQo8Xs2DrFD9V3tjcia4VZ/j/wWCWXI=",
+        "owner": "nix-community",
+        "repo": "nur",
+        "rev": "c24c370994643d1d3987ffdbf883fb7f36233690",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "nur",
+        "type": "github"
+      }
+    },
     "nvim-scrollbar": {
       "flake": false,
       "locked": {
@@ -69,6 +85,7 @@
         "herbz-theme": "herbz-theme",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nur": "nur",
         "nvim-scrollbar": "nvim-scrollbar"
       }
     },

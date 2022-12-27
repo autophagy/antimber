@@ -18,15 +18,22 @@
       url = "https://raw.githubusercontent.com/irssi-import/themes/gh-pages/h3rbz.theme";
       flake = false;
     };
+
+    nur.url = "github:nix-community/nur/master";
   };
 
-  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, ... }@inputs:
     let
       system = "x86_64-linux";
+
+      overlays = {
+        nur = nur.overlay;
+      };
 
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
+        overlays = builtins.attrValues overlays;
       };
     in
     {
