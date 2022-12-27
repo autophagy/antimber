@@ -16,6 +16,7 @@
         id = 0;
 
         search = {
+          force = true;
           default = "DuckDuckGo";
           engines = {
             "Nix Packages" = {
