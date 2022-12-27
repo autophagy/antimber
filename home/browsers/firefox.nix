@@ -38,6 +38,27 @@
           { name = "Github"; keyword = "github"; url = "https://github.com"; }
           { name = "Hacker News"; keyword = "hn"; url = "https://news.ycombinator.com"; }
         ];
+
+        settings = {
+          "browser.startup.homepage" = "https://ft.com";
+          "browser.contentblocking.category" = "strict";
+          "privacy.sanitize.sanitizeOnShutdown" = true;
+          "privacy.clearOnShutdown.cookies" = true;
+          "privacy.clearOnShutdown.offlineApps" = true;
+          "browser.search.suggest.enabled" = false;
+          "browser.urlbar.suggest.searches" = false;
+          "browser.urlbar.speculativeConnect.enabled" = false;
+          "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
+          "browser.urlbar.suggest.quicksuggest.sponsored" = false;
+          "datareporting.healthreport.uploadEnabled" = false;
+          "app.shield.optoutstudies.enabled" = false;
+          "app.normandy.enabled" = false;
+          "app.normandy.api_url" = "";
+          "breakpad.reportURL" = "";
+          "browser.tabs.crashReporting.sendReport" = false;
+          "browser.crashReports.unsubmittedCheck.autoSubmit2" = false;
+          "dom.security.https_only_mode" = true;
+        };
       };
     };
   };
