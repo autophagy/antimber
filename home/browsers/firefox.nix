@@ -30,6 +30,21 @@
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@n" ];
             };
+
+            "YouTube" = {
+              urls = [{
+                template = "https://www.youtube.com/results";
+                params = [
+                  { name = "search_query"; value = "{searchTerms}"; }
+                ];
+              }];
+              definedAliases = [ "@y" ];
+            };
+
+            "Google Maps" = {
+              urls = [{ template = "https://www.google.com/maps/search/{searchTerms}"; }];
+              definedAliases = [ "@m" ];
+            };
           };
         };
 
