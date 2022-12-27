@@ -58,6 +58,9 @@
           "browser.tabs.crashReporting.sendReport" = false;
           "browser.crashReports.unsubmittedCheck.autoSubmit2" = false;
           "dom.security.https_only_mode" = true;
+          "browser.newtabpage.activity-stream.showSponsored" = false;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+          "browser.newtabpage.activity-stream.default.sites" = "";
         };
       };
     };
