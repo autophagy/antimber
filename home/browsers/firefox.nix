@@ -45,6 +45,16 @@
               urls = [{ template = "https://www.google.com/maps/search/{searchTerms}"; }];
               definedAliases = [ "@m" ];
             };
+
+            "Wikipedia" = {
+              urls = [{
+                template = "https://en.wikipedia.org/w/index.php";
+                params = [
+                  { name = "search"; value = "{searchTerms}"; }
+                ];
+              }];
+              definedAliases = [ "@w" ];
+            };
           };
         };
 
