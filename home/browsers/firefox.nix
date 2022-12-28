@@ -28,7 +28,7 @@
                 ];
               }];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@n" ];
+              definedAliases = [ "@nixpkgs" ];
             };
 
             "YouTube" = {
@@ -38,23 +38,24 @@
                   { name = "search_query"; value = "{searchTerms}"; }
                 ];
               }];
-              definedAliases = [ "@y" ];
+              definedAliases = [ "@youtube" ];
             };
 
             "Google Maps" = {
               urls = [{ template = "https://www.google.com/maps/search/{searchTerms}"; }];
-              definedAliases = [ "@m" ];
+              definedAliases = [ "@maps" ];
             };
 
-            "Wikipedia" = {
+            "GitHub" = {
               urls = [{
-                template = "https://en.wikipedia.org/w/index.php";
+                template = "https://github.com/search";
                 params = [
-                  { name = "search"; value = "{searchTerms}"; }
+                  { name = "q"; value = "{searchTerms}"; }
                 ];
               }];
-              definedAliases = [ "@w" ];
+              definedAliases = [ "@github" ];
             };
+
           };
         };
 
