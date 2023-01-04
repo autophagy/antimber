@@ -71,5 +71,6 @@
     htop
     sops
     jq
+    lnav
   ];
 }
