@@ -63,6 +63,7 @@
           { name = "Financial Times"; keyword = "ft"; url = "https://ft.com"; }
           { name = "Github"; keyword = "github"; url = "https://github.com"; }
           { name = "Hacker News"; keyword = "hn"; url = "https://news.ycombinator.com"; }
+          { name = "Hordburh"; keyword = "mastodon"; url = "https://hordburh.autophagy.io"; }
         ];
 
         settings = {
