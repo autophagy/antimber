@@ -2,6 +2,7 @@
 {
   accounts.email = {
     accounts.autophagy = {
+      primary = true;
       realName = "Mika Naylor";
       passwordCommand = "${pkgs.sops}/bin/sops --decrypt --extract \"['autophagy']\" ${credPath}";
       address = "mail@autophagy.io";

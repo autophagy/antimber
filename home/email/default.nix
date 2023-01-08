@@ -5,7 +5,6 @@ in
 {
   imports = [
     ./neomutt.nix
-    (import ./immerok.nix { inherit pkgs credPath; })
     (import ./autophagy.nix { inherit pkgs credPath; })
   ];
 
