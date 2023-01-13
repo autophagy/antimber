@@ -56,9 +56,7 @@
     kubectl
     kubectx
     awscli2
-    argocd
     minikube
-    cilium-cli
 
     # Utilities
     wget
