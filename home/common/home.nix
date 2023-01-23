@@ -7,7 +7,6 @@
     ./browsers
     ./services
     ./terminal
-    ./virtualisation
     ./email
   ];
 
@@ -50,13 +49,6 @@
     mpv
     pavucontrol
     spotify
-    obs-studio
-
-    # Devops
-    kubectl
-    kubectx
-    awscli2
-    minikube
 
     # Utilities
     wget
@@ -69,6 +61,5 @@
     htop
     sops
     jq
-    lnav
   ];
 }

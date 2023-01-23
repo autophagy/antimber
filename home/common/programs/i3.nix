@@ -9,12 +9,12 @@ in
 
   home.file = {
     backgroundImage = {
-      source = ../../static/background-image.jpg;
+      source = ../../../static/background-image.jpg;
       target = ".config/background.jpg";
     };
 
     lockImage = {
-      source = ../../static/lock.png;
+      source = ../../../static/lock.png;
       target = ".config/lock.png";
     };
   };

@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         user:
-          - mika
+          - heorot
 
     steps:
       - uses: actions/checkout@v2

@@ -44,10 +44,11 @@
           src = nvim-scrollbar;
         };
       };
-      homeConfigurations.mika = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.heorot = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./home/home.nix
+          ./home/common/home.nix
+          ./home/heorot/home.nix
         ];
         extraSpecialArgs = { inherit (inputs.self) nvimPlugins; inherit herbz-theme; };
       };
