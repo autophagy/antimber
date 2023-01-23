@@ -61,5 +61,6 @@
     htop
     sops
     jq
+    just
   ];
 }

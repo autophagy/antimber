@@ -13,11 +13,17 @@ Currently using `NixOS`_, with `i3`_ as my window manager and
 
 My configuration is described by a nix flake. To build/switch the NixOS configuration::
 
-    λ sudo nixos-rebuild switch --flake .#
+    λ just home-manager
 
 To build/switch home-manager::
 
-    λ home-manager switch --flake .
+    λ just nixos
+
+A full switch can be done with the ``full`` target.
+
+Antimber manages the following machines:
+
+- **Heorot** - My personal development laptop (Lenovo X1 Carbon).
 
 *My legacy Arch Linux dotfiles are available on the* `arch`_ *branch.*
 
