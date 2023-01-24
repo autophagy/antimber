@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, hostName, ... }:
 
 {
 
@@ -33,6 +33,7 @@
       enable = true;
       checkReversePath = "loose";
     };
+    inherit hostName;
   };
 
   services.resolved = {

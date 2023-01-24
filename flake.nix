@@ -55,6 +55,7 @@
           inherit (inputs.self) nvimPlugins;
           inherit herbz-theme;
           rootPath = ./.;
+          hostName = "heorot";
         };
       };
 
@@ -64,7 +65,10 @@
           ./system/common/configuration.nix
           ./system/machines/heorot
         ];
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          hostName = "heorot";
+        };
       };
 
       devShells.${system}.ci = pkgs.mkShell {

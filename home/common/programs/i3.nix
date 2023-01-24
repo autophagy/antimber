@@ -1,4 +1,4 @@
-{ lib, pkgs, config, rootPath, common, ... }:
+{ lib, pkgs, config, rootPath, common, hostName, ... }:
 
 let
   mod = "Mod4";
@@ -8,12 +8,12 @@ in
 
   home.file = {
     backgroundImage = {
-      source = rootPath + /static/background-image.jpg;
+      source = rootPath + "/static/backgrounds/${hostName}.jpg";
       target = ".config/background.jpg";
     };
 
     lockImage = {
-      source = rootPath + /static/lock.png;
+      source = rootPath + "/static/backgrounds/${hostName}-lock.png";
       target = ".config/lock.png";
     };
   };
