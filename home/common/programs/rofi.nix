@@ -1,7 +1,6 @@
-_:
+{ common, ... }:
 let
   themePath = ".config/rofi/theme.rasi";
-  common = import ../common.nix;
   prompt = "λ";
 in
 {

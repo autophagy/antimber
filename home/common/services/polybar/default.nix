@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, common, ... }:
 
 let
-  common = import ../../common.nix;
   vpnstatusScript = pkgs.callPackage ./scripts/vpnstatus.nix { };
 in
 {

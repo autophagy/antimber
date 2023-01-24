@@ -1,20 +1,19 @@
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, config, rootPath, common, ... }:
 
 let
   mod = "Mod4";
-  common = import ../common.nix;
 in
 {
   home.packages = with pkgs; [ feh i3lock ];
 
   home.file = {
     backgroundImage = {
-      source = ../../../static/background-image.jpg;
+      source = rootPath + /static/background-image.jpg;
       target = ".config/background.jpg";
     };
 
     lockImage = {
-      source = ../../../static/lock.png;
+      source = rootPath + /static/lock.png;
       target = ".config/lock.png";
     };
   };

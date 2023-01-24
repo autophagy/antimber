@@ -44,14 +44,20 @@
           src = nvim-scrollbar;
         };
       };
+
       homeConfigurations.heorot = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./home/common/home.nix
           ./home/heorot/home.nix
         ];
-        extraSpecialArgs = { inherit (inputs.self) nvimPlugins; inherit herbz-theme; };
+        extraSpecialArgs = {
+          inherit (inputs.self) nvimPlugins;
+          inherit herbz-theme;
+          rootPath = ./.;
+        };
       };
+
       nixosConfigurations.heorot = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
@@ -60,9 +66,11 @@
         ];
         specialArgs = { inherit inputs; };
       };
+
       devShells.${system}.ci = pkgs.mkShell {
         buildInputs = with pkgs; [ nixpkgs-fmt statix ];
       };
+
       formatter.${system} = pkgs.nixpkgs-fmt;
     };
 }

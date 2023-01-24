@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  _module.args.common = import ./common.nix;
+
   imports = [
     ./programs
     ./editors

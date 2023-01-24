@@ -1,7 +1,4 @@
-_:
-let
-  common = import ../common.nix;
-in
+{ common, ... }:
 {
   programs.urxvt = {
     enable = true;

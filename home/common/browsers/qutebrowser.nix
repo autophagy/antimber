@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, common, ... }:
 
-let
-  common = import ../common.nix;
-in
 {
   home.packages = with pkgs.python39Packages; [
     adblock
