@@ -26,30 +26,6 @@
   # Sound.
   hardware.pulseaudio.enable = true;
 
-  # Bluetooth.
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = pkgs.lib.mkForce false;
-  };
-
-  hardware.opengl = {
-    enable = true;
-    package = pkgs.mesa.drivers;
-
-    extraPackages = with pkgs; [
-      libGL
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-      intel-media-driver
-    ];
-    setLdLibraryPath = true;
-
-    package32 = pkgs.pkgsi686Linux.mesa.drivers;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
   # Enable networking
   networking = {
     networkmanager.enable = true;
@@ -80,14 +56,6 @@
       defaultSession = "none+i3";
     };
     windowManager.i3.enable = true;
-
-    libinput.enable = true;
-    videoDrivers = [ "modesetting" "intel" "libvulkan1" "mesa-vulkan-drivers" "vulkan-utils" ];
-  };
-
-  virtualisation = {
-    docker.enable = true;
-    podman.enable = true;
   };
 
   services.tailscale.enable = true;
@@ -98,8 +66,6 @@
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
     shell = pkgs.zsh;
   };
-
-  programs.light.enable = true;
 
   environment.systemPackages = with pkgs; [ ];
 

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -24,4 +24,39 @@
   networking.hostName = "heorot";
 
   hardware.enableRedistributableFirmware = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = pkgs.lib.mkForce false;
+  };
+
+  hardware.opengl = {
+    enable = true;
+    package = pkgs.mesa.drivers;
+
+    extraPackages = with pkgs; [
+      libGL
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-media-driver
+    ];
+    setLdLibraryPath = true;
+
+    package32 = pkgs.pkgsi686Linux.mesa.drivers;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
+  services.xserver = {
+    libinput.enable = true;
+    videoDrivers = [ "modesetting" "intel" "libvulkan1" "mesa-vulkan-drivers" "vulkan-utils" ];
+  };
+
+  virtualisation = {
+    docker.enable = true;
+    podman.enable = true;
+  };
+
+  programs.light.enable = true;
 }

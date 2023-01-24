@@ -55,8 +55,8 @@
       nixosConfigurations.heorot = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
+          ./system/common/configuration.nix
           ./system/machines/heorot
-          ./system/configuration.nix
         ];
         specialArgs = { inherit inputs; };
       };
