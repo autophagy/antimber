@@ -64,5 +64,6 @@
     sops
     jq
     just
+    git-absorb
   ];
 }
