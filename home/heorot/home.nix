@@ -5,6 +5,7 @@
     ./editors
     ./terminal
     ./virtualisation
+    ./services
   ];
 
   home.packages = with pkgs; [

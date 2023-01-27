@@ -13,7 +13,6 @@ in
 
     settings = {
       "bar/statusbar" = {
-        monitor = "eDP-1";
         width = "100%";
         height = 30;
         radius = 0.0;
@@ -31,7 +30,6 @@ in
         module-margin-right = 1;
         font-0 = "Inconsolata:pixelsize=9;2";
         modules-left = "i3";
-        modules-right = "vpn wlan battery cpu memory pulseaudio date";
       };
 
       "module/i3" = {
@@ -50,32 +48,11 @@ in
         label-visible-padding = 1;
       };
 
-      "module/wlan" = {
-        type = "internal/network";
-        interface = "wlp0s20f3";
-        interval = 3.0;
-        format-connected = "<label-connected>";
-        label-connected = "%local_ip%";
-        format-disconnected = "";
-      };
-
       "module/pulseaudio" = {
         type = "internal/pulseaudio";
         format-volume = "<label-volume>";
         label-muted = "--%";
         label-volume = "%percentage%%";
-      };
-
-      "module/battery" = {
-        type = "internal/battery";
-        battery = "BAT0";
-        adapter = "AC";
-        full-at = 99;
-        low-at = 10;
-        format-discharging = "BAT <label-discharging>";
-        format-charging = "BAT +<label-charging>";
-        format-low = "%{F${common.colours.alert}}BAT <label-low>%{F-}";
-        label-full = "";
       };
 
       "module/cpu" = {

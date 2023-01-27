@@ -79,6 +79,7 @@
         inherit pkgs;
         modules = [
           ./home/common/home.nix
+          ./home/gamentol/home.nix
         ];
         extraSpecialArgs = {
           inherit (inputs.self) nvimPlugins;
