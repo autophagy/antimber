@@ -64,6 +64,7 @@
           { name = "Github"; keyword = "github"; url = "https://github.com"; }
           { name = "Hacker News"; keyword = "hn"; url = "https://news.ycombinator.com"; }
           { name = "Hordburh"; keyword = "mastodon"; url = "https://hordburh.autophagy.io"; }
+          { name = "Syncthing"; keyword = "syncthing"; url = "http://localhost:8384"; }
         ];
 
         settings = {
