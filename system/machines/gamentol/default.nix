@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports =
@@ -24,4 +24,17 @@
   # Enable swap on luks
   boot.initrd.luks.devices."luks-5ad23ef1-f79e-4cd1-b24e-745d03f70562".device = "/dev/disk/by-uuid/5ad23ef1-f79e-4cd1-b24e-745d03f70562";
   boot.initrd.luks.devices."luks-5ad23ef1-f79e-4cd1-b24e-745d03f70562".keyFile = "/crypto_keyfile.bin";
+
+  nixpkgs.config.allowUnfree = true;
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
 }
