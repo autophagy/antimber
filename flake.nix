@@ -45,6 +45,8 @@
         };
       };
 
+      # Heorot
+
       homeConfigurations.heorot = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
@@ -68,6 +70,33 @@
         specialArgs = {
           inherit inputs;
           hostName = "heorot";
+        };
+      };
+
+      # Gamentol
+
+      homeConfigurations.gamentol = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./home/common/home.nix
+        ];
+        extraSpecialArgs = {
+          inherit (inputs.self) nvimPlugins;
+          inherit herbz-theme;
+          rootPath = ./.;
+          hostName = "gamentol";
+        };
+      };
+
+      nixosConfigurations.gamentol = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./system/common/configuration.nix
+          ./system/machines/gamentol
+        ];
+        specialArgs = {
+          inherit inputs;
+          hostName = "gamentol";
         };
       };
 

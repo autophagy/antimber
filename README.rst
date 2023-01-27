@@ -24,6 +24,7 @@ A full switch can be done with the ``full`` target.
 Antimber manages the following machines:
 
 - **Heorot** - My personal development laptop (Lenovo X1 Carbon).
+- **Gamentól** - Gaming machine.
 
 *My legacy Arch Linux dotfiles are available on the* `arch`_ *branch.*
 
