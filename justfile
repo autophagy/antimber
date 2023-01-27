@@ -1,5 +1,5 @@
 machine := `hostname`
-flake_path := "~/" + machine + "/autophagy/antimber/.#" + machine
+flake_path := "~/runcraeft/autophagy/antimber/.#" + machine
 
 # Switch home manager config
 home-manager:
