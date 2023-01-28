@@ -101,6 +101,19 @@
         };
       };
 
+      # Hindberige
+
+      nixosConfigurations.hindberige = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./system/machines/hindberige
+        ];
+        specialArgs = {
+          inherit inputs;
+          hostName = "hindberige";
+        };
+      };
+
       devShells.${system}.ci = pkgs.mkShell {
         buildInputs = with pkgs; [ nixpkgs-fmt statix ];
       };
