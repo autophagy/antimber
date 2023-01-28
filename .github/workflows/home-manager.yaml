@@ -33,7 +33,6 @@ jobs:
         machine:
           - heorot
           - gamentol
-          - hindberige
     steps:
       - uses: actions/checkout@v2
 
