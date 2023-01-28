@@ -25,6 +25,7 @@
   outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, ... }@inputs:
     let
       system = "x86_64-linux";
+      rpiSystem = "aarch64-linux";
 
       overlays = {
         nur = nur.overlay;
@@ -35,6 +36,11 @@
         config = { allowUnfree = true; };
         overlays = builtins.attrValues overlays;
       };
+
+      rpiPkgs = import nixpkgs {
+        system = rpiSystem;
+      };
+
     in
     {
       nvimPlugins = {
@@ -104,7 +110,7 @@
       # Hindberige
 
       nixosConfigurations.hindberige = nixpkgs.lib.nixosSystem {
-        inherit system;
+        system = rpiSystem;
         modules = [
           ./system/machines/hindberige
         ];
