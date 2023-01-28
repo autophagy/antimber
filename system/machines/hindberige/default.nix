@@ -44,6 +44,13 @@
 
   networking.firewall.enable = false;
 
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
+  };
+
   system.stateVersion = "22.11";
 }
 
