@@ -6,8 +6,14 @@
       ./hardware-configuration.nix
     ];
 
-  boot.loader.grub.enable = false;
-  boot.loader.generic-extlinux-compatible.enable = true;
+  boot = {
+    loader.grub.enable = false;
+    loader.generic-extlinux-compatible.enable = true;
+    kernel.sysctl = {
+      "net.ipv4.ip_forward" = 1;
+      "net.ipv6.conf.all.forwarding" = 1;
+    };
+  };
 
   networking.hostName = hostName;
 
@@ -51,6 +57,8 @@
       dockerCompat = true;
     };
   };
+
+  services.tailscale.enable = true;
 
   system.stateVersion = "22.11";
 }
