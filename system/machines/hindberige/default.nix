@@ -7,11 +7,22 @@
     ];
 
   boot = {
-    loader.grub.enable = false;
-    loader.generic-extlinux-compatible.enable = true;
+    loader = {
+      grub.enable = false;
+      generic-extlinux-compatible.enable = true;
+    };
     kernel.sysctl = {
       "net.ipv4.ip_forward" = 1;
       "net.ipv6.conf.all.forwarding" = 1;
+    };
+    cleanTmpDir = true;
+  };
+
+  documentation.nixos.enable = false;
+  nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 30d";
     };
   };
 
