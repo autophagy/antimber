@@ -17,4 +17,5 @@
     enable = true;
     enableZshIntegration = true;
   };
+  programs.autorandr.enable = true;
 }

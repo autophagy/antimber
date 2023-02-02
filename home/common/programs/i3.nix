@@ -41,6 +41,7 @@ in
 
       startup = [
         { command = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/${config.home.file.backgroundImage.target}"; }
+        { command = "${pkgs.autorandr}/bin/autorandr -c"; }
       ];
 
       gaps = {

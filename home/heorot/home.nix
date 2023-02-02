@@ -6,6 +6,7 @@
     ./terminal
     ./virtualisation
     ./services
+    ./programs
   ];
 
   home.packages = with pkgs; [
