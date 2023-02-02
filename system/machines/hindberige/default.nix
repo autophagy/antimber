@@ -42,13 +42,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ vim git just ];
-  services.openssh = {
-    enable = true;
-    passwordAuthentication = false;
-    kbdInteractiveAuthentication = false;
-  };
-
+  environment.systemPackages = with pkgs; [ vim git just htop wget ];
   networking.firewall.enable = false;
 
   virtualisation = {
@@ -58,7 +52,16 @@
     };
   };
 
-  services.tailscale.enable = true;
+
+  services = {
+    openssh = {
+      enable = true;
+      passwordAuthentication = false;
+      kbdInteractiveAuthentication = false;
+    };
+    tailscale.enable = true;
+    jellyfin.enable = true;
+  };
 
   system.stateVersion = "22.11";
 }
