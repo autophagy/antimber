@@ -15,7 +15,7 @@ _:
           "DP-1" = {
             enable = true;
             mode = "1920x1080";
-            primary = true;
+            primary = false;
             position = "1920x0";
             rate = "60.00";
           };

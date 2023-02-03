@@ -8,6 +8,7 @@
     ./discord.nix
     ./bat.nix
     ./irssi.nix
+    ./autorandr.nix
   ];
 
   programs.home-manager.enable = true;
@@ -17,5 +18,4 @@
     enable = true;
     enableZshIntegration = true;
   };
-  programs.autorandr.enable = true;
 }

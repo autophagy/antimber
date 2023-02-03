@@ -4,7 +4,6 @@
   services.polybar = {
     settings = {
       "bar/statusbar" = {
-        monitor = "eDP-1";
         modules-right = "vpn wlan battery cpu memory pulseaudio date";
       };
 

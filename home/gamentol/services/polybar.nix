@@ -4,7 +4,6 @@
   services.polybar = {
     settings = {
       "bar/statusbar" = {
-        monitor = "HDMI-0";
         modules-right = "vpn wlan cpu memory pulseaudio date";
       };
 
