@@ -8,13 +8,12 @@ pkgs.writeShellScriptBin "vpnstatus" ''
   STATUS=$(${tailscale} status --json)
   STATE=$(echo "$STATUS" | ${jq} -r '.BackendState')
   if [[ "$STATE" == "Running" ]]; then
-      CURRENT_TAILNET=$(echo "$STATUS" | ${jq} -r '.CurrentTailnet.Name')
-      HOSTNAME=$(echo "$STATUS" | ${jq} -r '.Self.HostName')
+      DNS_NAME=$(echo "$STATUS" | ${jq} -r '.Self.DNSName')
       EXIT_NODE_STATUS=$(echo "$STATUS" | ${jq} -r '.ExitNodeStatus.Online' || echo "false")
           if [[ "$EXIT_NODE_STATUS" == "true" ]]; then
-              echo "VPN $HOSTNAME@$CURRENT_TAILNET ▶"
+              echo "VPN $DNS_NAME ▶"
           else
-              echo "VPN $HOSTNAME@$CURRENT_TAILNET"
+              echo "VPN $DNS_NAME"
           fi
   else
       echo ""
