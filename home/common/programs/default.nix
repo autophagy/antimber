@@ -9,13 +9,10 @@
     ./bat.nix
     ./irssi.nix
     ./autorandr.nix
+    ./gpg.nix
+    ./ssh.nix
   ];
 
   programs.home-manager.enable = true;
   programs.gh.enable = true;
-  programs.gpg.enable = true;
-  services.gpg-agent = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 }
