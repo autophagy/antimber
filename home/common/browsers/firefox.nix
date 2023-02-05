@@ -67,6 +67,7 @@
           { name = "Hordburh"; keyword = "mastodon"; url = "https://hordburh.autophagy.io"; }
           { name = "Syncthing"; keyword = "syncthing"; url = "http://localhost:8384"; }
           { name = "Jellyfin"; keyword = "jellyfin"; url = "https://hindberige.faun-basilisk.ts.net:8920"; }
+          { name = "Home Manager Options"; keyword = "homemanager"; url = "https://nix-community.github.io/home-manager/options.html"; }
         ];
 
         settings = {
