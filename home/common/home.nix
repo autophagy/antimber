@@ -51,6 +51,7 @@
     mpv
     pavucontrol
     spotify
+    jellyfin-media-player
 
     # Utilities
     wget
