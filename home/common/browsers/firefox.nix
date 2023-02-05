@@ -8,6 +8,7 @@
       duckduckgo-privacy-essentials
       privacy-badger
       firefox-translations
+      tabliss
     ];
     profiles = {
       default = {
