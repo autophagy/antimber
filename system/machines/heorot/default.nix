@@ -21,6 +21,8 @@
   boot.initrd.luks.devices."luks-a49798c8-95a6-4e7d-993b-5f223edbf853".device = "/dev/disk/by-uuid/a49798c8-95a6-4e7d-993b-5f223edbf853";
   boot.initrd.luks.devices."luks-a49798c8-95a6-4e7d-993b-5f223edbf853".keyFile = "/crypto_keyfile.bin";
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   hardware.enableRedistributableFirmware = true;
 
   hardware.bluetooth = {
