@@ -66,7 +66,7 @@
           { name = "Hacker News"; keyword = "hn"; url = "https://news.ycombinator.com"; }
           { name = "Hordburh"; keyword = "mastodon"; url = "https://hordburh.autophagy.io"; }
           { name = "Syncthing"; keyword = "syncthing"; url = "http://localhost:8384"; }
-          { name = "Jellyfin"; keyword = "jellyfin"; url = "https://hindberige.faun-basilisk.ts.net:8920"; }
+          { name = "Jellyfin"; keyword = "jellyfin"; url = "https://hindberige.autophagy.io:8920"; }
           { name = "Home Manager Options"; keyword = "homemanager"; url = "https://nix-community.github.io/home-manager/options.html"; }
         ];
 

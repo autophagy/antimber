@@ -4,7 +4,7 @@ _:
     enable = true;
     matchBlocks = {
       hindberige = {
-        hostname = "hindberige.faun-basilisk.ts.net";
+        hostname = "hindberige.autophagy.io";
         user = "mika";
         extraOptions.SetEnv = "TERM=xterm-256color";
       };
