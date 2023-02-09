@@ -24,6 +24,7 @@
       automatic = true;
       options = "--delete-older-than 30d";
     };
+    settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
   networking.hostName = hostName;
@@ -54,7 +55,14 @@
   };
 
   environment.systemPackages = with pkgs; [ vim git just htop wget ];
-  networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      22 # SSH
+      8096 # Jellyfin HTTP
+      8920 # Jellyfin HTTPS
+    ];
+  };
 
   virtualisation = {
     podman = {

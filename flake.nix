@@ -125,6 +125,7 @@
       };
 
       formatter.${system} = pkgs.nixpkgs-fmt;
+      formatter.${rpiSystem} = rpiPkgs.nixpkgs-fmt;
     };
 }
 
