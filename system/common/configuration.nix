@@ -68,6 +68,17 @@
     shell = pkgs.zsh;
   };
 
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ brlaser gutenprint ];
+    browsing = true;
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+  };
+
   environment.systemPackages = with pkgs; [ git just ];
 
   # This value determines the NixOS release from which the default
