@@ -31,20 +31,7 @@
   };
 
   users = {
-    motd = ''
-
-         .~~.   .~~.
-        '. \ ' ' / .'
-         .~ .~~~..~.
-        : .~.'~'.~. :
-       ~ (   ) (   ) ~
-      ( : '~'.~.'~' : )
-       ~ .~ (   ) ~. ~
-        (  : '~' :  )
-         '~ .~~~. ~'
-             '~'
-
-    '';
+    motd = builtins.readFile ./motd;
     users.mika = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
