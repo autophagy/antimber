@@ -57,6 +57,12 @@
       defaultSession = "none+i3";
     };
     windowManager.i3.enable = true;
+    serverFlagsSection = ''
+      Option "BlankTime" "0"
+      Option "StandbyTime" "0"
+      Option "SuspendTime" "0"
+      Option "OffTime" "0"
+    '';
   };
 
   services.tailscale.enable = true;
