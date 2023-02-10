@@ -1,9 +1,12 @@
-{ config, pkgs, hostName, ... }:
+{ pkgs, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
+      ./networking.nix
+      ./virtualization.nix
+      ./services.nix
     ];
 
   boot = {
@@ -26,8 +29,6 @@
     };
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
-
-  networking.hostName = hostName;
 
   users = {
     motd = ''
@@ -55,48 +56,6 @@
   };
 
   environment.systemPackages = with pkgs; [ vim git just htop wget ];
-  networking.firewall = {
-    enable = true;
-    trustedInterfaces = [ "tailscale0" ];
-    allowedTCPPorts = [
-      22 # SSH
-      8096 # Jellyfin HTTP
-      8920 # Jellyfin HTTPS
-    ];
-    allowedUDPPorts = [
-      41641 # Tailscale
-    ];
-  };
-
-  age.secrets.forebodere.file = ../../../secrets/forebodere.age;
-
-  virtualisation = {
-    podman = {
-      enable = true;
-      dockerCompat = true;
-    };
-    oci-containers = {
-      backend = "podman";
-      containers = {
-        forebodere = {
-          image = "localhost/forebodere:latest";
-          volumes = [ "/home/mika/storage/forebodere.hord:/app/forebodere.hord" ];
-          environmentFiles = [ config.age.secrets.forebodere.path ];
-        };
-      };
-    };
-  };
-
-
-  services = {
-    openssh = {
-      enable = true;
-      passwordAuthentication = false;
-      kbdInteractiveAuthentication = false;
-    };
-    tailscale.enable = true;
-    jellyfin.enable = true;
-  };
 
   system.stateVersion = "22.11";
 }
