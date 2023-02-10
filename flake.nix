@@ -17,9 +17,13 @@
     };
     nur.url = "github:nix-community/nur/master";
     utils.url = "github:numtide/flake-utils";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, utils, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, utils, agenix, ... }@inputs:
     utils.lib.eachDefaultSystem (system:
       let
         overlays = {
@@ -104,6 +108,7 @@
             inherit system;
             modules = [
               ./system/machines/hindberige
+              agenix.nixosModules.default
             ];
             specialArgs = {
               inherit inputs;
