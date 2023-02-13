@@ -9,6 +9,7 @@
       privacy-badger
       firefox-translations
       tabliss
+      bitwarden
     ];
     profiles = {
       default = {
