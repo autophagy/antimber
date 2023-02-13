@@ -8,6 +8,7 @@
       ./virtualization.nix
       ./services.nix
       ./nginx.nix
+      ./vaultwarden.nix
     ];
 
   boot = {

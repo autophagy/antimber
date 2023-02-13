@@ -5,4 +5,5 @@ let
 in
 {
   "forebodere.age".publicKeys = keys;
+  "vaultwarden.age".publicKeys = keys;
 }
