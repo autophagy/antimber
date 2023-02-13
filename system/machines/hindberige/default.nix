@@ -7,6 +7,7 @@
       ./networking.nix
       ./virtualization.nix
       ./services.nix
+      ./nginx.nix
     ];
 
   boot = {
