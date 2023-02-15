@@ -21,9 +21,13 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ansine = {
+      url = "github:autophagy/ansine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, utils, agenix, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, utils, agenix, ansine, ... }@inputs:
     utils.lib.eachDefaultSystem (system:
       let
         overlays = {
@@ -107,11 +111,13 @@
           nixosConfigurations.hindberige = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
+              ./system/modules
               ./system/machines/hindberige
               agenix.nixosModules.default
             ];
             specialArgs = {
               inherit inputs;
+              ansine = ansine.defaultPackage.${system};
               hostName = "hindberige";
             };
           };

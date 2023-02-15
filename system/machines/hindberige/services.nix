@@ -16,6 +16,20 @@ _:
         ROCKET_PORT = 8222;
       };
     };
+    ansine = {
+      enable = true;
+      port = 3134;
+      services = {
+        Jellyfin = {
+          description = "Media system";
+          route = "/jellyfin/";
+        };
+        Vaultwarden = {
+          description = "Bitwarden compatible credential storage";
+          route = "/vault/";
+        };
+      };
+    };
   };
 }
 

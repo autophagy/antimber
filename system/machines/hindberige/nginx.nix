@@ -13,6 +13,9 @@ _:
         sslCertificate = "/var/nginx/certs/hindberige.autophagy.io/fullchain.pem";
         sslCertificateKey = "/var/nginx/certs/hindberige.autophagy.io/privkey.pem";
         locations = {
+          "/" = {
+            proxyPass = "http://localhost:3134";
+          };
           "/jellyfin/" = {
             proxyPass = "http://localhost:8096/jellyfin/";
             extraConfig = ''
