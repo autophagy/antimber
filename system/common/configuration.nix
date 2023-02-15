@@ -55,6 +55,10 @@
     displayManager = {
       lightdm.enable = true;
       defaultSession = "none+i3";
+      autoLogin = {
+        enable = true;
+        user = "mika";
+      };
     };
     windowManager.i3.enable = true;
     serverFlagsSection = ''
