@@ -18,6 +18,7 @@ _:
           };
           "/jellyfin/" = {
             proxyPass = "http://localhost:8096/jellyfin/";
+            proxyWebsockets = true;
             extraConfig = ''
               proxy_buffering off;
             '';
