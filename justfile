@@ -1,5 +1,5 @@
 machine := `hostname`
-flake_path := "~/runcraeft/autophagy/antimber/.#" + machine
+flake_path := justfile_directory() + "/.#" + machine
 
 [private]
 home-manager verb:
