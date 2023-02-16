@@ -11,15 +11,17 @@ on `home-manager`_.
 Currently using `NixOS`_, with `i3`_ as my window manager and
 `Neovim`_ as my primary development environment.
 
-My configuration is described by a nix flake. To build/switch the NixOS configuration::
+My configuration is described by a nix flake. To build nixos or home-manager using `just`_::
 
-    λ just home-manager
+    λ just build nixos
+    λ just build home-manager
 
-To build/switch home-manager::
+To switch nixos or home-manager configurations::
 
-    λ just nixos
+    λ just switch nixos
+    λ just switch home-manager
 
-A full switch can be done with the ``full`` target.
+A full build or switch can be done with the ``full`` target.
 
 Antimber manages the following machines:
 
@@ -33,4 +35,5 @@ Antimber manages the following machines:
 .. _home-manager: https://github.com/nix-community/home-manager
 .. _i3: https://i3wm.org/
 .. _Neovim: https://neovim.io/
+.. _just: https://github.com/casey/just
 .. _arch: https://github.com/autophagy/antimber/tree/arch

@@ -1,13 +1,21 @@
 machine := `hostname`
 flake_path := "~/runcraeft/autophagy/antimber/.#" + machine
 
-# Switch home manager config
-home-manager:
-    home-manager switch --flake {{flake_path}}
+[private]
+home-manager verb:
+    home-manager {{verb}} --flake {{flake_path}}
 
-# Switch nixos config
-nixos:
-    sudo nixos-rebuild switch --flake {{flake_path}}
+[private]
+nixos verb:
+    sudo nixos-rebuild {{verb}} --flake {{flake_path}}
 
-# Switch both home manager and nixos
-full: home-manager nixos
+[private]
+full verb: (home-manager verb) (nixos verb)
+
+# Build a target (home-manager, nixos, or full)
+build target:
+    just {{target}} build
+
+# Switch a target (home-manager, nixos, or full)
+switch target:
+    just {{target}} switch
