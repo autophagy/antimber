@@ -30,11 +30,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1676480579,
-        "narHash": "sha256-Cl0+At5mpT6sIqX+nx064oFA+kbzzQnuXjBPut3/JRo=",
+        "lastModified": 1676567594,
+        "narHash": "sha256-TZFrDzhxxQge9m1XB6KSMZl4poyrzh/HX84D1h570qE=",
         "owner": "autophagy",
         "repo": "ansine",
-        "rev": "cde9294e0bd8279094fcc0c1f30cfc078b1ac427",
+        "rev": "9546a5f89433aec424d2d1fdcb91c52c78891ff3",
         "type": "github"
       },
       "original": {

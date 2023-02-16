@@ -7,7 +7,7 @@ let
   user = "ansine";
   group = user;
   cfgFile = pkgs.writeText "ansine-config.json" (builtins.toJSON {
-    inherit (cfg) services port;
+    inherit (cfg) services port nixosCurrentSystem refreshInterval;
   });
 in
 {
@@ -19,6 +19,18 @@ in
         type = types.port;
         default = 3000;
         description = lib.mdDoc "Port number Ansine will listen to.";
+      };
+
+      nixosCurrentSystem = mkOption {
+        type = types.bool;
+        default = true;
+        description = lib.mdDoc "Whether to display the current NixOS generation via /run/current-system.";
+      };
+
+      refreshInterval = mkOption {
+        type = types.int;
+        default = 10;
+        description = lib.mdDoc "The interval, in seconds, that the dashboard should refresh system metrics";
       };
 
       services = mkOption {

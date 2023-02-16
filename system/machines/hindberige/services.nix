@@ -19,6 +19,7 @@ _:
     ansine = {
       enable = true;
       port = 3134;
+      refreshInterval = 3;
       services = {
         Jellyfin = {
           description = "Media system";
