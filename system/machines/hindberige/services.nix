@@ -8,7 +8,10 @@ _:
       kbdInteractiveAuthentication = false;
     };
     tailscale.enable = true;
-    jellyfin.enable = true;
+    jellyfin = {
+      enable = true;
+      openFirewall = true; # Temporary until Tailscale & range requests works
+    };
     vaultwarden = {
       enable = true;
       config = {
