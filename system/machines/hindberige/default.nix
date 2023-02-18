@@ -29,7 +29,11 @@
       automatic = true;
       options = "--delete-older-than 30d";
     };
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      substituters = [ "https://autophagy.cachix.org" ];
+      trusted-public-keys = [ "autophagy.cachix.org-1:aOfvRQFCgIVXyAxlQjl3ccmlQC70X1ukzr4rDgaCMWw=" ];
+    };
   };
 
   users = {

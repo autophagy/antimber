@@ -21,5 +21,6 @@
 
     # Utilities
     lnav
+    cachix
   ];
 }
