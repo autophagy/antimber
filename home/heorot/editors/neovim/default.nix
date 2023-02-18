@@ -1,4 +1,4 @@
-{ pkgs, nvimPlugins, ... }:
+{ pkgs, ... }:
 {
   programs.neovim = {
     withNodeJs = true;
@@ -111,7 +111,7 @@
         '';
       }
       {
-        plugin = nvimPlugins.nvim-scrollbar;
+        plugin = nvim-scrollbar;
         type = "lua";
         config = ''
           require("scrollbar").setup()

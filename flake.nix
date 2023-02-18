@@ -29,20 +29,19 @@
       let
         overlays = {
           nur = nur.overlay;
+          nvim-scrollbar = final: prev: {
+            vimPackages.nvim-scrollbar = prev.vimUtils.buildVimPluginFrom2Nix {
+              pname = "nvim-scrollbar";
+              version = "main";
+              src = nvim-scrollbar;
+            };
+          };
         };
 
         pkgs = import nixpkgs {
           inherit system;
           config = { allowUnfree = true; };
           overlays = builtins.attrValues overlays;
-        };
-
-        nvimPlugins = {
-          nvim-scrollbar = pkgs.vimUtils.buildVimPluginFrom2Nix {
-            pname = "nvim-scrollbar";
-            version = "main";
-            src = nvim-scrollbar;
-          };
         };
       in
       {
@@ -56,7 +55,6 @@
               ./home/heorot/home.nix
             ];
             extraSpecialArgs = {
-              inherit nvimPlugins;
               inherit herbz-theme;
               rootPath = ./.;
               hostName = "heorot";
@@ -84,7 +82,6 @@
               ./home/gamentol/home.nix
             ];
             extraSpecialArgs = {
-              inherit nvimPlugins;
               inherit herbz-theme;
               rootPath = ./.;
               hostName = "gamentol";
