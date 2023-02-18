@@ -21,10 +21,7 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ansine = {
-      url = "github:autophagy/ansine";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    ansine.url = "github:autophagy/ansine";
   };
 
   outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, utils, agenix, ansine, ... }@inputs:
