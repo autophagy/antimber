@@ -108,13 +108,12 @@
           nixosConfigurations.hindberige = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
-              ./system/modules
               ./system/machines/hindberige
               agenix.nixosModules.default
+              ansine.nixosModules.default
             ];
             specialArgs = {
               inherit inputs;
-              ansine = ansine.defaultPackage.${system};
               hostName = "hindberige";
             };
           };
