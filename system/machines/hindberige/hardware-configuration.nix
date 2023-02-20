@@ -19,7 +19,7 @@
       };
     "/media" =
       {
-        device = "/dev/disk/by-uuid/52e66162-14d1-4bd5-ae18-780b76a34f5d";
+        device = "/dev/disk/by-uuid/d134350a-bdfb-4cc8-ace6-9f4978b397e4";
         fsType = "ext4";
       };
   };
