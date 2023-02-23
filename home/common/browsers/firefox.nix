@@ -5,7 +5,6 @@
     enable = true;
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
       ublock-origin
-      duckduckgo-privacy-essentials
       privacy-badger
       firefox-translations
       tabliss
@@ -19,8 +18,16 @@
 
         search = {
           force = true;
-          default = "DuckDuckGo";
+          default = "Kagi";
           engines = {
+            "Kagi" = {
+              urls = [{
+                template = "https://kagi.com/search";
+                params = [
+                  { name = "q"; value = "{searchTerms}"; }
+                ];
+              }];
+            };
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";
