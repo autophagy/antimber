@@ -35,6 +35,7 @@
     script = ''
       ${pkgs.awscli2}/bin/aws s3 sync /var/lib/bitwarden_rs/ s3://hindberige-backups/vaultwarden/
     '';
+    onFailure = [ "systemd-notify@%n.service" ];
   };
 }
 
