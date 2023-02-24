@@ -6,4 +6,5 @@ in
 {
   "forebodere.age".publicKeys = keys;
   "vaultwarden.age".publicKeys = keys;
+  "email.notifications.age".publicKeys = keys;
 }

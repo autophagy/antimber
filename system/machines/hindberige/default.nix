@@ -9,6 +9,7 @@
       ./services.nix
       ./nginx.nix
       ./vaultwarden.nix
+      ./mail.nix
     ];
 
   boot = {
