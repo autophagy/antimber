@@ -39,13 +39,21 @@
 
   users = {
     motd = builtins.readFile ./motd;
-    users.mika = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" ];
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICIdbr5D6l66CFklBLi1Dl8ybAlEPu6k7Ve6B+Z+itZO mail@autophagy.io" # Heorot
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhx/eQ3TXkbtbT//g+I29aI6iQoZA8sks5OAK/bEALP mail@autophagy.io" # Gamentol
-      ];
+    users = {
+      mika = {
+        isNormalUser = true;
+        extraGroups = [ "wheel" ];
+        openssh.authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICIdbr5D6l66CFklBLi1Dl8ybAlEPu6k7Ve6B+Z+itZO mail@autophagy.io" # Heorot
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhx/eQ3TXkbtbT//g+I29aI6iQoZA8sks5OAK/bEALP mail@autophagy.io" # Gamentol
+        ];
+      };
+      emily = {
+        isNormalUser = true;
+        openssh.authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMd0dU/DlOGxmkIgbWqWuSzNPMkKUQQht4AN42Sixx0r hello@emilywoods.me"
+        ];
+      };
     };
   };
 
