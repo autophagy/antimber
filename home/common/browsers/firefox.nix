@@ -100,6 +100,7 @@
           "browser.newtabpage.activity-stream.showSponsored" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.newtabpage.activity-stream.default.sites" = "";
+          "signon.rememberSignons" = false;
         };
       };
     };
