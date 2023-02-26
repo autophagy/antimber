@@ -21,16 +21,19 @@ _:
     };
     ansine = {
       enable = true;
-      port = 3134;
-      refreshInterval = 3;
-      services = {
-        Jellyfin = {
-          description = "Media system";
-          route = "/jellyfin/";
-        };
-        Vaultwarden = {
-          description = "Bitwarden compatible credential storage";
-          route = "/vault/";
+      settings = {
+        port = 3134;
+        nixosCurrentSystem = true;
+        refreshInterval = 3;
+        services = {
+          Jellyfin = {
+            description = "Media system";
+            route = "/jellyfin/";
+          };
+          Vaultwarden = {
+            description = "Bitwarden compatible credential storage";
+            route = "/vault/";
+          };
         };
       };
     };
