@@ -89,6 +89,10 @@
     nssmdns = true;
   };
 
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+
+  services.pcscd.enable = true;
+
   environment.systemPackages = with pkgs; [ git just ];
 
   # This value determines the NixOS release from which the default

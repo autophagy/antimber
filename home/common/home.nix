@@ -66,5 +66,6 @@
     jq
     just
     git-absorb
+    yubikey-manager
   ];
 }
