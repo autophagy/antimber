@@ -24,11 +24,12 @@
     initExtra = ''
       autoload -U promptinit; promptinit
       PURE_PROMPT_SYMBOL="λ"
+      PURE_GIT_PULL=0
       prompt pure
     '';
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "gpg-agent" ];
+      plugins = [ "gpg-agent" ];
     };
     sessionVariables = {
       EDITOR = "vim";
