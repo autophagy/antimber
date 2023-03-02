@@ -6,7 +6,7 @@ _:
     userEmail = "mail@autophagy.io";
     userName = "Mika Naylor";
     signing = {
-      key = null;
+      key = "734E068BCC06C31D";
       signByDefault = true;
     };
     extraConfig = {
