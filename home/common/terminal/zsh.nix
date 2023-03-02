@@ -28,7 +28,7 @@
     '';
     oh-my-zsh = {
       enable = true;
-      plugins = [ "ssh-agent" "git" "gpg-agent" ];
+      plugins = [ "git" "gpg-agent" ];
     };
     sessionVariables = {
       EDITOR = "vim";

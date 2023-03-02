@@ -14,5 +14,6 @@ _:
     enableZshIntegration = true;
     enableSshSupport = true;
     enableScDaemon = true;
+    pinentryFlavor = "tty";
   };
 }
