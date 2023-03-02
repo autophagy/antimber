@@ -49,6 +49,9 @@
         host = "mail.gandi.net";
         port = 465;
       };
+      gpg = {
+        signByDefault = true;
+      };
     };
   };
 }

@@ -14,6 +14,10 @@ _:
     enableZshIntegration = true;
     enableSshSupport = true;
     enableScDaemon = true;
-    pinentryFlavor = "tty";
+    pinentryFlavor = "qt";
   };
+
+  home.file.".gnupg/sshcontrol".text = ''
+    BF37F1F88381DCB1704D07DF06106ACAAA3845C6
+  '';
 }

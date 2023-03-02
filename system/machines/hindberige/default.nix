@@ -44,8 +44,7 @@
         isNormalUser = true;
         extraGroups = [ "wheel" ];
         openssh.authorizedKeys.keys = [
-          "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAICSlCdT/wFnQM8NDoPLYMotY7FF+SQdnmko7wsygxg7yAAAABHNzaDo= mail@autophagy.io" # Heorot
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhx/eQ3TXkbtbT//g+I29aI6iQoZA8sks5OAK/bEALP mail@autophagy.io" # Gamentol
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0EdkL/Fvhyh1G43rRVcZPZWga1m6nO6Io0G9uJE+jFb59zICccyQs6TerFckzNsVG7wssVD2M7ls2VX5ggPefDMHeWQbGuwk8DG3B5RsIAlcZHeXze2hI9LugfpDtA068QDJnGyFiLg1QnQS3hfQuC0Ra7OJ9XAb8blnF9PLvzFp1diNPUXZ1ks8udRzIl99DoLcitxLqG6R8p0WUyzVRL+EU/zL6/YbGAgoUUpTH4dAHFfe/AfPzRs4MsSwVsrnA+ohmp8sp/GNpU6tnFafeT0IkfIrfVPSfj45x+IlmlLIKi32xFLbsbUx0irynAJQ6K/DpgUqoNzCjShl/i0LT+vE/v6n8Jmqkbf5Air/g9lJ3aZeK3BISdDHeRHirU7w34r+rdVBtMyyX3E91jE2VhiuJ8GkT4jiAke/Y+bWkaY7pjv5YZMl8txyMwgQIEWGatJaTv1h4zsBNUVWavI61LXVERAI9n1FUw/4zNpZ+LExxqnbGXp0jlRGJcutXB8XQ3+Bz7uaazQNgci0hNpTIXZnlWV1eYtWl+KP39sPab1UhNd1o57Rnd35W5VXE06/Na7eTr7hcydFzWajW5JcqxOgZE8d/xta1DhL9o2RqdAcNkzNPMiFvQ8A0iiOAmVht9MpVQaBCb0jn7FUTNiKjP6ARsXwgUBMtnVxajkSozw== openpgp:0x74DABE5E"
         ];
       };
       emily = {
