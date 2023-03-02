@@ -5,6 +5,7 @@ _:
     scdaemonSettings = {
       disable-ccid = true;
       pcsc-shared = true;
+      disable-application = "piv";
     };
   };
 
