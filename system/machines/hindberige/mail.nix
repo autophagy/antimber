@@ -26,9 +26,10 @@ let
   '';
 in
 {
-  age.secrets.email = {
-    file = ../../../secrets/email.notifications.age;
+  sops.secrets.email = {
+    sopsFile = ../../../secrets/hindberige/email.yaml;
     owner = "systemd-notify";
+    key = "notifications";
   };
 
   programs.msmtp = {
@@ -42,7 +43,7 @@ in
       host = "mail.gandi.net";
       from = "notifications@autophagy.io";
       user = "notifications@autophagy.io";
-      passwordeval = "cat ${config.age.secrets.email.path}";
+      passwordeval = "cat ${config.sops.secrets.email.path}";
     };
   };
 
