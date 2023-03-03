@@ -1,7 +1,10 @@
 { config, ... }:
 
 {
-  age.secrets.forebodere.file = ../../../secrets/forebodere.age;
+  sops.secrets.forebodere = {
+    sopsFile = ../../../secrets/hindberige/forebodere.env;
+    format = "dotenv";
+  };
 
   virtualisation = {
     podman = {
@@ -14,7 +17,7 @@
         forebodere = {
           image = "localhost/forebodere:latest";
           volumes = [ "/home/mika/storage/forebodere.hord:/app/forebodere.hord" ];
-          environmentFiles = [ config.age.secrets.forebodere.path ];
+          environmentFiles = [ config.sops.secrets.forebodere.path ];
         };
       };
     };

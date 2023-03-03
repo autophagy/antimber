@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  age.secrets.vaultwarden.file = ../../../secrets/vaultwarden.age;
+  sops.secrets.vaultwarden = {
+    sopsFile = ../../../secrets/hindberige/vaultwarden.env;
+    format = "dotenv";
+  };
 
   services = {
     vaultwarden = {
@@ -30,7 +33,7 @@
       Type = "oneshot";
       User = "vaultwarden";
       Group = "vaultwarden";
-      EnvironmentFile = config.age.secrets.vaultwarden.path;
+      EnvironmentFile = config.sops.secrets.vaultwarden.path;
     };
     script = ''
       ${pkgs.awscli2}/bin/aws s3 sync /var/lib/bitwarden_rs/ s3://hindberige-backups/vaultwarden/
