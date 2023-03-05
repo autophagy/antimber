@@ -7,6 +7,9 @@ _:
       pcsc-shared = true;
       disable-application = "piv";
     };
+    publicKeys = [
+      { source = ./autophagy.pub; trust = "ultimate"; }
+    ];
   };
 
   services.gpg-agent = {

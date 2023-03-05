@@ -9,7 +9,7 @@
     ./bat.nix
     ./irssi.nix
     ./autorandr.nix
-    ./gpg.nix
+    ./gpg
     ./ssh.nix
   ];
 
