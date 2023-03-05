@@ -19,9 +19,9 @@
     utils.url = "github:numtide/flake-utils";
     sops-nix.url = "github:Mic92/sops-nix";
     ansine.url = "github:autophagy/ansine/v1.0.0";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
-
-  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, utils, sops-nix, ansine, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, utils, sops-nix, ansine, nixos-hardware, ... }@inputs:
     utils.lib.eachDefaultSystem (system:
       let
         overlays = {
@@ -63,6 +63,7 @@
             modules = [
               ./system/common/configuration.nix
               ./system/machines/heorot
+              nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
             ];
             specialArgs = {
               inherit inputs;
