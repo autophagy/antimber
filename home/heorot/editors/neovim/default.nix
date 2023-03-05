@@ -106,7 +106,7 @@
         config = ''
           let g:fzf_preview_window = ""
           let g:fzf_preview_window = ['right:50%', 'ctrl-/']
-          nnoremap <silent> <C-p> :Files<CR>
+          nnoremap <silent> <C-p> :GFiles<CR>
           nnoremap <silent> <A-p> :Rg<CR>
         '';
       }
