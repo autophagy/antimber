@@ -37,4 +37,6 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  services.fstrim.enable = true;
 }
