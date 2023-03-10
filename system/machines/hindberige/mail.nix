@@ -40,9 +40,9 @@ in
       port = 465;
       tls_starttls = false;
 
-      host = "mail.gandi.net";
+      host = "smtp.fastmail.com";
       from = "notifications@autophagy.io";
-      user = "notifications@autophagy.io";
+      user = "mail@autophagy.io";
       passwordeval = "cat ${config.sops.secrets.email.path}";
     };
   };

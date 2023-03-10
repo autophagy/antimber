@@ -15,7 +15,7 @@
         '';
       };
       imap = {
-        host = "mail.gandi.net";
+        host = "imap.fastmail.com";
         port = 993;
       };
       mbsync = {
@@ -33,12 +33,12 @@
           color index red default "~D"
         '';
         extraMailboxes = [
-          "Inbox/newsletters"
-          "Inbox/github"
-          "Inbox/mailing-lists/arch-announce"
-          "Inbox/mailing-lists/nixos"
-          "Inbox/mailing-lists/qutebrowser"
-          "Inbox/mailing-lists/tla-plus"
+          "newsletters"
+          "github"
+          "mailing-lists/arch-announce"
+          "mailing-lists/nixos"
+          "mailing-lists/qutebrowser"
+          "mailing-lists/tla-plus"
           "Sifetha"
           "Sent"
           "Trash"
@@ -46,7 +46,7 @@
         ];
       };
       smtp = {
-        host = "mail.gandi.net";
+        host = "smtp.fastmail.com";
         port = 465;
       };
       gpg = {
