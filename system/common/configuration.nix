@@ -78,6 +78,8 @@
     shell = pkgs.zsh;
   };
 
+  programs.zsh.enable = true;
+
   services.printing = {
     enable = true;
     drivers = with pkgs; [ brlaser gutenprint ];

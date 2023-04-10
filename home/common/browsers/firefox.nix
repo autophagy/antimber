@@ -3,19 +3,19 @@
 {
   programs.firefox = {
     enable = true;
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      ublock-origin
-      privacy-badger
-      firefox-translations
-      tabliss
-      bitwarden
-    ];
+
     profiles = {
       default = {
         name = "mika";
         path = "s45qaa2p.mika";
         id = 0;
-
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+          privacy-badger
+          firefox-translations
+          tabliss
+          bitwarden
+        ];
         search = {
           force = true;
           default = "Kagi";
