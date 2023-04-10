@@ -8,7 +8,7 @@
       "Shift-Control-V" = "eval:paste_clipboard";
     };
     fonts = [
-      "xft:Inconsolata Nerd Font:size=12:antialias=true:style=Regular"
+      "xft:Inconsolata Nerd Font Mono:size=12:antialias=true:style=Regular"
       "xft:DejaVuSansMono Nerd Font Mono:style=Book:size=10"
       "xft:Symbola:style=Regular:size=12"
     ];
