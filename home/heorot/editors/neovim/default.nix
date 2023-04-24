@@ -132,6 +132,10 @@
       yamllint
       dhall-lsp-server
       gopls
+      elmPackages.elm
+      elmPackages.elm-test
+      elmPackages.elm-format
+      elmPackages.elm-language-server
     ];
 
     extraConfig = ''
