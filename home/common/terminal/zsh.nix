@@ -26,6 +26,7 @@
       PURE_PROMPT_SYMBOL="λ"
       PURE_GIT_PULL=0
       prompt pure
+      clear
     '';
     oh-my-zsh = {
       enable = true;
