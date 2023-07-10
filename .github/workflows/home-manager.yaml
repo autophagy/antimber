@@ -42,11 +42,14 @@ jobs:
       - name: Build NixOS
         run: nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
 
-  fmt:
-    name: Lint
+  check:
+    name: Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Check Nix flake inputs
+        uses: DeterminateSystems/flake-checker-action@v4
 
       - name: Install Nix
         uses: cachix/install-nix-action@v17
