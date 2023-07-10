@@ -48,9 +48,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Check Nix flake inputs
-        uses: DeterminateSystems/flake-checker-action@v4
-
       - name: Install Nix
         uses: cachix/install-nix-action@v17
 
@@ -59,3 +56,6 @@ jobs:
 
       - name: Lint
         run: nix develop .#ci -c statix check .
+
+      - name: Check Nix flake inputs
+        uses: DeterminateSystems/flake-checker-action@v4
