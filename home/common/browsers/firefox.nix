@@ -73,7 +73,6 @@
           { name = "Github"; keyword = "github"; url = "https://github.com"; }
           { name = "Hacker News"; keyword = "hn"; url = "https://news.ycombinator.com"; }
           { name = "Hordburh"; keyword = "mastodon"; url = "https://hordburh.autophagy.io"; }
-          { name = "Syncthing"; keyword = "syncthing"; url = "http://localhost:8384"; }
           { name = "Jellyfin"; keyword = "jellyfin"; url = "https://hindberige.autophagy.io/jellyfin"; }
           { name = "Home Manager Options"; keyword = "homemanager"; url = "https://nix-community.github.io/home-manager/options.html"; }
         ];

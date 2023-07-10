@@ -6,7 +6,7 @@
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -l";
       g = "git";
