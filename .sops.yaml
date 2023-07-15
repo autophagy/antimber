@@ -1,6 +1,6 @@
 keys:
   - &admin_autophagy 5947CC90AB7F3C52A5BDF8E29B0A46ACC6F6E9FB
-  - &server_hindberige age1n80v2gw3sfn5mkn3045kc5mnq0pjwgtmvgr08nxwn6ma9063fsfsxeghhp
+  - &server_hindberige age14cg498d2sds8eypzkjg077rfwe9kxxmwpfhyxwzd8cdts5a2f9psjjsvfz
 creation_rules:
   - path_regex: secrets/hindberige/[^/]+\.(yaml|env)$
     key_groups:
