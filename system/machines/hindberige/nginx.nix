@@ -35,6 +35,9 @@ _:
             proxyPass = "http://localhost:8222";
             proxyWebsockets = true;
           };
+          "/sabnzbd" = {
+            proxyPass = "http://localhost:8080/sabnzbd";
+          };
         };
       };
     };
