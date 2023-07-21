@@ -36,6 +36,7 @@
       trusted-public-keys = [ "autophagy.cachix.org-1:aOfvRQFCgIVXyAxlQjl3ccmlQC70X1ukzr4rDgaCMWw=" ];
     };
   };
+  nixpkgs.config.allowUnfree = true;
 
   users = {
     motd = builtins.readFile ./motd;
