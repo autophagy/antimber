@@ -19,6 +19,7 @@ _:
         ROCKET_PORT = 8222;
       };
     };
+    sabnzbd.enable = true;
     ansine = {
       enable = true;
       settings = {
@@ -33,6 +34,10 @@ _:
           Vaultwarden = {
             description = "Bitwarden compatible credential storage";
             route = "/vault/";
+          };
+          SABnzbd = {
+            description = "Usenet NZB reader";
+            route = "/sabnzbd";
           };
         };
       };
