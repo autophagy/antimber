@@ -6,6 +6,9 @@
     ./redshift.nix
   ];
 
-  services.picom.enable = true;
+  services.picom = {
+    enable = true;
+    vSync = true;
+  };
   services.keybase.enable = true;
 }
