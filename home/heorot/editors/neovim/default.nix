@@ -130,7 +130,7 @@
       yaml-language-server
       statix
       yamllint
-      dhall-lsp-server
+      #dhall-lsp-server
       gopls
       elmPackages.elm
       elmPackages.elm-test
