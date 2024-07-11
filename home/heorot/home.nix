@@ -22,5 +22,7 @@
     # Utilities
     lnav
     cachix
+    obsidian
   ];
+
 }

@@ -8,13 +8,19 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+    };
 
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
+    # Setup keyfile
+    initrd.secrets = {
+      "/crypto_keyfile.bin" = null;
+    };
   };
 
   # Enable swap on luks
@@ -23,34 +29,38 @@
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-  hardware.enableRedistributableFirmware = true;
+  hardware = {
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = pkgs.lib.mkForce false;
+    enableRedistributableFirmware = true;
+
+    bluetooth = {
+      enable = true;
+      powerOnBoot = pkgs.lib.mkForce false;
+    };
+
+    graphics = {
+      enable = true;
+      package = pkgs.mesa.drivers;
+
+      extraPackages = with pkgs; [
+        libGL
+        vaapiIntel
+        vaapiVdpau
+        libvdpau-va-gl
+        intel-media-driver
+      ];
+
+      package32 = pkgs.pkgsi686Linux.mesa.drivers;
+      enable32Bit = true;
+    };
   };
 
-  hardware.opengl = {
-    enable = true;
-    package = pkgs.mesa.drivers;
+  services = {
+    xserver = {
+      videoDrivers = [ "modesetting" "intel" "libvulkan1" "mesa-vulkan-drivers" "vulkan-utils" ];
+    };
 
-    extraPackages = with pkgs; [
-      libGL
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-      intel-media-driver
-    ];
-    setLdLibraryPath = true;
-
-    package32 = pkgs.pkgsi686Linux.mesa.drivers;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  services.xserver = {
     libinput.enable = true;
-    videoDrivers = [ "modesetting" "intel" "libvulkan1" "mesa-vulkan-drivers" "vulkan-utils" ];
   };
 
   virtualisation = {

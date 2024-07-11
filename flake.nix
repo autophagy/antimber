@@ -43,73 +43,75 @@
       in
       {
         packages = {
-          # Heorot
+          # NixOS Configurations
 
-          homeConfigurations.heorot = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [
-              ./home/common/home.nix
-              ./home/heorot/home.nix
-            ];
-            extraSpecialArgs = {
-              inherit herbz-theme;
-              rootPath = ./.;
-              hostName = "heorot";
+          nixosConfigurations = {
+            heorot = nixpkgs.lib.nixosSystem {
+              inherit system;
+              modules = [
+                ./system/common/configuration.nix
+                ./system/machines/heorot
+                nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
+              ];
+              specialArgs = {
+                inherit inputs;
+                hostName = "heorot";
+              };
+            };
+
+            gamentol = nixpkgs.lib.nixosSystem {
+              inherit system;
+              modules = [
+                ./system/common/configuration.nix
+                ./system/machines/gamentol
+              ];
+              specialArgs = {
+                inherit inputs;
+                hostName = "gamentol";
+              };
+            };
+
+            hindberige = nixpkgs.lib.nixosSystem {
+              inherit system;
+              modules = [
+                ./system/machines/hindberige
+                sops-nix.nixosModules.sops
+                ansine.nixosModules.default
+              ];
+              specialArgs = {
+                inherit inputs;
+                hostName = "hindberige";
+              };
             };
           };
 
-          nixosConfigurations.heorot = nixpkgs.lib.nixosSystem {
-            inherit system;
-            modules = [
-              ./system/common/configuration.nix
-              ./system/machines/heorot
-              nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
-            ];
-            specialArgs = {
-              inherit inputs;
-              hostName = "heorot";
+          # Homemanager Configurations
+
+          homeConfigurations = {
+            heorot = home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              modules = [
+                ./home/common/home.nix
+                ./home/heorot/home.nix
+              ];
+              extraSpecialArgs = {
+                inherit herbz-theme;
+                rootPath = ./.;
+                hostName = "heorot";
+              };
             };
-          };
 
-          # Gamentol
-
-          homeConfigurations.gamentol = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [
-              ./home/common/home.nix
-              ./home/gamentol/home.nix
-            ];
-            extraSpecialArgs = {
-              inherit herbz-theme;
-              rootPath = ./.;
-              hostName = "gamentol";
-            };
-          };
-
-          nixosConfigurations.gamentol = nixpkgs.lib.nixosSystem {
-            inherit system;
-            modules = [
-              ./system/common/configuration.nix
-              ./system/machines/gamentol
-            ];
-            specialArgs = {
-              inherit inputs;
-              hostName = "gamentol";
-            };
-          };
-
-          # Hindberige
-
-          nixosConfigurations.hindberige = nixpkgs.lib.nixosSystem {
-            inherit system;
-            modules = [
-              ./system/machines/hindberige
-              sops-nix.nixosModules.sops
-              ansine.nixosModules.default
-            ];
-            specialArgs = {
-              inherit inputs;
-              hostName = "hindberige";
+            gamentol = home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              modules = [
+                ./home/common/home.nix
+                ./home/gamentol/home.nix
+              ];
+              extraSpecialArgs = {
+                inherit herbz-theme;
+                rootPath = ./.;
+                hostName = "gamentol";
+              };
             };
           };
         };

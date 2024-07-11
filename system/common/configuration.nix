@@ -36,40 +36,11 @@
     inherit hostName;
   };
 
-  services.resolved = {
-    enable = true;
-    dnssec = "false";
-  };
-
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-    enable = true;
-    displayManager = {
-      lightdm.enable = true;
-      defaultSession = "none+i3";
-      autoLogin = {
-        enable = true;
-        user = "mika";
-      };
-    };
-    windowManager.i3.enable = true;
-    serverFlagsSection = ''
-      Option "BlankTime" "0"
-      Option "StandbyTime" "0"
-      Option "SuspendTime" "0"
-      Option "OffTime" "0"
-    '';
-  };
-
-  services.tailscale.enable = true;
 
   users.users.mika = {
     isNormalUser = true;
@@ -80,20 +51,54 @@
 
   programs.zsh.enable = true;
 
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [ brlaser gutenprint ];
-    browsing = true;
+  services = {
+    resolved = {
+      enable = true;
+      dnssec = "false";
+    };
+
+    # Configure keymap in X11
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+      displayManager.lightdm.enable = true;
+      windowManager.i3.enable = true;
+      serverFlagsSection = ''
+        Option "BlankTime" "0"
+        Option "StandbyTime" "0"
+        Option "SuspendTime" "0"
+        Option "OffTime" "0"
+      '';
+    };
+
+    displayManager = {
+      defaultSession = "none+i3";
+      autoLogin = {
+        enable = true;
+        user = "mika";
+      };
+    };
+
+    tailscale.enable = true;
+
+    printing = {
+      enable = true;
+      drivers = with pkgs; [ brlaser gutenprint ];
+      browsing = true;
+    };
+
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+    };
+
+    udev.packages = [ pkgs.yubikey-personalization ];
+    pcscd.enable = true;
+
   };
-
-  services.avahi = {
-    enable = true;
-    nssmdns = true;
-  };
-
-  services.udev.packages = [ pkgs.yubikey-personalization ];
-
-  services.pcscd.enable = true;
 
   environment.systemPackages = with pkgs; [ git just ];
 
@@ -104,5 +109,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
+
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
 }

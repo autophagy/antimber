@@ -12,9 +12,48 @@
     ./email
   ];
 
-  home.username = "mika";
-  home.homeDirectory = "/home/mika";
-  home.stateVersion = "22.05";
+  home = {
+    username = "mika";
+    homeDirectory = "/home/mika";
+    stateVersion = "22.05";
+
+    packages = with pkgs; [
+      # Fonts
+      (nerdfonts.override { fonts = [ "Inconsolata" "DejaVuSansMono" ]; })
+      symbola
+
+      # Browsers
+      firefox
+      chromium
+
+      # Communication
+      slack
+      zoom-us
+
+      # Media
+      gimp
+      mpv
+      pavucontrol
+      spotify
+      jellyfin-media-player
+
+      # Utilities
+      wget
+      arandr
+      ripgrep
+      keepassxc
+      scrot
+      zathura
+      bind
+      htop
+      sops
+      jq
+      just
+      git-absorb
+      yubikey-manager
+    ];
+
+  };
 
   nixpkgs.config.allowUnfree = true;
   xsession.enable = true;
@@ -31,41 +70,4 @@
       "application/pdf" = "zathura.desktop";
     };
   };
-
-  home.packages = with pkgs; [
-    # Fonts
-    (nerdfonts.override { fonts = [ "Inconsolata" "DejaVuSansMono" ]; })
-    symbola
-
-    # Browsers
-    firefox
-    qutebrowser
-    chromium
-
-    # Communication
-    slack
-    zoom-us
-
-    # Media
-    gimp
-    mpv
-    pavucontrol
-    spotify
-    jellyfin-media-player
-
-    # Utilities
-    wget
-    arandr
-    ripgrep
-    keepassxc
-    scrot
-    zathura
-    bind
-    htop
-    sops
-    jq
-    just
-    git-absorb
-    yubikey-manager
-  ];
 }

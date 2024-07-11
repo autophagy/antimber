@@ -15,14 +15,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 
-lspconfig.rnix.setup{}
 lspconfig.bashls.setup{}
 lspconfig.terraform_lsp.setup{}
 lspconfig.rust_analyzer.setup{}
-lspconfig.cssls.setup {
-    cmd = { "css-languageserver", "--stdio" },
-    capabilities = capabilities
-}
 lspconfig.yamlls.setup {
     settings = {
         yaml = {

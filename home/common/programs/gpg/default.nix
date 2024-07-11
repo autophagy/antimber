@@ -1,4 +1,4 @@
-_:
+{ pkgs, ... }:
 {
   programs.gpg = {
     enable = true;
@@ -17,7 +17,7 @@ _:
     enableZshIntegration = true;
     enableSshSupport = true;
     enableScDaemon = true;
-    pinentryFlavor = "qt";
+    pinentryPackage = pkgs.pinentry-qt;
   };
 
   home.file.".gnupg/sshcontrol".text = ''

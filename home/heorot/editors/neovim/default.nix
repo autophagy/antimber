@@ -122,11 +122,9 @@
 
     extraPackages = with pkgs; [
       shellcheck
-      rnix-lsp
       nodePackages.bash-language-server
       terraform-lsp
       rust-analyzer
-      nodePackages.vscode-css-languageserver-bin
       yaml-language-server
       statix
       yamllint
