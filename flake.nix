@@ -21,8 +21,21 @@
     ansine.url = "github:autophagy/ansine/v1.0.0";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
-  outputs = { nixpkgs, home-manager, nvim-scrollbar, herbz-theme, nur, utils, sops-nix, ansine, nixos-hardware, ... }@inputs:
-    utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nvim-scrollbar,
+      herbz-theme,
+      nur,
+      utils,
+      sops-nix,
+      ansine,
+      nixos-hardware,
+      ...
+    }@inputs:
+    utils.lib.eachDefaultSystem (
+      system:
       let
         overlays = {
           nur = nur.overlay;
@@ -37,7 +50,9 @@
 
         pkgs = import nixpkgs {
           inherit system;
-          config = { allowUnfree = true; };
+          config = {
+            allowUnfree = true;
+          };
           overlays = builtins.attrValues overlays;
         };
       in
@@ -117,11 +132,13 @@
         };
 
         devShells.ci = pkgs.mkShell {
-          buildInputs = with pkgs; [ nixpkgs-fmt statix ];
+          buildInputs = with pkgs; [
+            nixfmt-rfc-style
+            statix
+          ];
         };
 
-        formatter = pkgs.nixpkgs-fmt;
-      });
+        formatter = pkgs.nixfmt-rfc-style;
+      }
+    );
 }
-
-

@@ -19,7 +19,12 @@
 
     packages = with pkgs; [
       # Fonts
-      (nerdfonts.override { fonts = [ "Inconsolata" "DejaVuSansMono" ]; })
+      (nerdfonts.override {
+        fonts = [
+          "Inconsolata"
+          "DejaVuSansMono"
+        ];
+      })
       symbola
 
       # Browsers

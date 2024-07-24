@@ -8,7 +8,10 @@
       disable-application = "piv";
     };
     publicKeys = [
-      { source = ./autophagy.pub; trust = "ultimate"; }
+      {
+        source = ./autophagy.pub;
+        trust = "ultimate";
+      }
     ];
   };
 

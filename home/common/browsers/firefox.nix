@@ -21,47 +21,70 @@
           default = "Kagi";
           engines = {
             "Kagi" = {
-              urls = [{
-                template = "https://kagi.com/search";
-                params = [
-                  { name = "q"; value = "{searchTerms}"; }
-                ];
-              }];
+              urls = [
+                {
+                  template = "https://kagi.com/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
             };
             "Nix Packages" = {
-              urls = [{
-                template = "https://search.nixos.org/packages";
-                params = [
-                  { name = "type"; value = "packages"; }
-                  { name = "query"; value = "{searchTerms}"; }
-                ];
-              }];
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@nixpkgs" ];
             };
 
             "YouTube" = {
-              urls = [{
-                template = "https://www.youtube.com/results";
-                params = [
-                  { name = "search_query"; value = "{searchTerms}"; }
-                ];
-              }];
+              urls = [
+                {
+                  template = "https://www.youtube.com/results";
+                  params = [
+                    {
+                      name = "search_query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
               definedAliases = [ "@youtube" ];
             };
 
             "Google Maps" = {
-              urls = [{ template = "https://www.google.com/maps/search/{searchTerms}"; }];
+              urls = [ { template = "https://www.google.com/maps/search/{searchTerms}"; } ];
               definedAliases = [ "@maps" ];
             };
 
             "GitHub" = {
-              urls = [{
-                template = "https://github.com/search";
-                params = [
-                  { name = "q"; value = "{searchTerms}"; }
-                ];
-              }];
+              urls = [
+                {
+                  template = "https://github.com/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
               definedAliases = [ "@github" ];
             };
 
@@ -69,12 +92,36 @@
         };
 
         bookmarks = [
-          { name = "Financial Times"; keyword = "ft"; url = "https://ft.com"; }
-          { name = "Github"; keyword = "github"; url = "https://github.com"; }
-          { name = "Hacker News"; keyword = "hn"; url = "https://news.ycombinator.com"; }
-          { name = "Hordburh"; keyword = "mastodon"; url = "https://hordburh.autophagy.io"; }
-          { name = "Jellyfin"; keyword = "jellyfin"; url = "https://hindberige.autophagy.io/jellyfin"; }
-          { name = "Home Manager Options"; keyword = "homemanager"; url = "https://nix-community.github.io/home-manager/options.html"; }
+          {
+            name = "Financial Times";
+            keyword = "ft";
+            url = "https://ft.com";
+          }
+          {
+            name = "Github";
+            keyword = "github";
+            url = "https://github.com";
+          }
+          {
+            name = "Hacker News";
+            keyword = "hn";
+            url = "https://news.ycombinator.com";
+          }
+          {
+            name = "Hordburh";
+            keyword = "mastodon";
+            url = "https://hordburh.autophagy.io";
+          }
+          {
+            name = "Jellyfin";
+            keyword = "jellyfin";
+            url = "https://hindberige.autophagy.io/jellyfin";
+          }
+          {
+            name = "Home Manager Options";
+            keyword = "homemanager";
+            url = "https://nix-community.github.io/home-manager/options.html";
+          }
         ];
 
         settings = {

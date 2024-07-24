@@ -10,12 +10,24 @@ _:
       signByDefault = true;
     };
     extraConfig = {
-      rebase = { autosquash = true; };
-      credential = { helper = "cache --timeout=3600"; };
-      core = { editor = "nvim"; };
-      push = { default = "simple"; };
-      pull = { rebase = false; };
-      init = { defaultBranch = "main"; };
+      rebase = {
+        autosquash = true;
+      };
+      credential = {
+        helper = "cache --timeout=3600";
+      };
+      core = {
+        editor = "nvim";
+      };
+      push = {
+        default = "simple";
+      };
+      pull = {
+        rebase = false;
+      };
+      init = {
+        defaultBranch = "main";
+      };
     };
     aliases = {
       a = "add";

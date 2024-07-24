@@ -1,11 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot = {
@@ -57,7 +56,13 @@
 
   services = {
     xserver = {
-      videoDrivers = [ "modesetting" "intel" "libvulkan1" "mesa-vulkan-drivers" "vulkan-utils" ];
+      videoDrivers = [
+        "modesetting"
+        "intel"
+        "libvulkan1"
+        "mesa-vulkan-drivers"
+        "vulkan-utils"
+      ];
     };
 
     libinput.enable = true;

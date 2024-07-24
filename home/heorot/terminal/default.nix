@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./direnv.nix
-  ];
+  imports = [ ./direnv.nix ];
 }

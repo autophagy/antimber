@@ -52,7 +52,7 @@ jobs:
         uses: cachix/install-nix-action@v27
 
       - name: Fmt
-        run: nix develop .#ci -c nixpkgs-fmt --check ./
+        run: nix develop .#ci -c nixfmt --check ./
 
       - name: Lint
         run: nix develop .#ci -c statix check .

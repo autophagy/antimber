@@ -1,10 +1,21 @@
-{ lib, pkgs, config, rootPath, common, hostName, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  rootPath,
+  common,
+  hostName,
+  ...
+}:
 
 let
   mod = "Mod4";
 in
 {
-  home.packages = with pkgs; [ feh i3lock ];
+  home.packages = with pkgs; [
+    feh
+    i3lock
+  ];
 
   home.file = {
     backgroundImage = {
@@ -40,7 +51,9 @@ in
       };
 
       startup = [
-        { command = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/${config.home.file.backgroundImage.target}"; }
+        {
+          command = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/${config.home.file.backgroundImage.target}";
+        }
         { command = "${pkgs.autorandr}/bin/autorandr -c"; }
       ];
 
@@ -52,10 +65,14 @@ in
       };
 
       assigns = {
-        "2" = [{ class = "firefox"; } { class = "qutebrowser"; } { class = "chromium-browser"; }];
-        "3" = [{ class = "code"; }];
-        "9" = [{ class = "discord"; }];
-        "10" = [{ class = "slack"; }];
+        "2" = [
+          { class = "firefox"; }
+          { class = "qutebrowser"; }
+          { class = "chromium-browser"; }
+        ];
+        "3" = [ { class = "code"; } ];
+        "9" = [ { class = "discord"; } ];
+        "10" = [ { class = "slack"; } ];
       };
 
       floating = {
@@ -96,7 +113,12 @@ in
       };
 
       window.commands = [
-        { command = "border pixel 1"; criteria = { class = "^.*"; }; }
+        {
+          command = "border pixel 1";
+          criteria = {
+            class = "^.*";
+          };
+        }
       ];
     };
   };

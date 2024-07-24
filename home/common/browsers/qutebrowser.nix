@@ -1,9 +1,7 @@
 { pkgs, common, ... }:
 
 {
-  home.packages = with pkgs.python39Packages; [
-    adblock
-  ];
+  home.packages = with pkgs.python39Packages; [ adblock ];
 
   programs.qutebrowser = {
     enable = true;

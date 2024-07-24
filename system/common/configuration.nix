@@ -1,4 +1,9 @@
-{ pkgs, inputs, hostName, ... }:
+{
+  pkgs,
+  inputs,
+  hostName,
+  ...
+}:
 
 {
 
@@ -45,7 +50,13 @@
   users.users.mika = {
     isNormalUser = true;
     description = "Mika Naylor";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "video"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -86,7 +97,10 @@
 
     printing = {
       enable = true;
-      drivers = with pkgs; [ brlaser gutenprint ];
+      drivers = with pkgs; [
+        brlaser
+        gutenprint
+      ];
       browsing = true;
     };
 
@@ -100,7 +114,10 @@
 
   };
 
-  environment.systemPackages = with pkgs; [ git just ];
+  environment.systemPackages = with pkgs; [
+    git
+    just
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

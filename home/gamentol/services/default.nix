@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./polybar.nix
-  ];
+  imports = [ ./polybar.nix ];
 }

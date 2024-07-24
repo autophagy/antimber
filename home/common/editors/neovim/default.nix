@@ -6,9 +6,7 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-    plugins = with pkgs.vimPlugins; [
-      gruvbox-nvim
-    ];
+    plugins = with pkgs.vimPlugins; [ gruvbox-nvim ];
 
     extraConfig = ''
       set number

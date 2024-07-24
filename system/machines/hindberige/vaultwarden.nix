@@ -41,4 +41,3 @@
     onFailure = [ "systemd-notify@%n.service" ];
   };
 }
-
