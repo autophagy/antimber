@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  imports = [ ./neovim ];
+  imports = [ ./neovim ./helix ];
 
   programs.vscode.enable = true;
 }
