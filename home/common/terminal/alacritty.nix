@@ -20,8 +20,8 @@
       };
       colors = {
         primary = {
-          background = common.colours.background;
-          foreground = common.colours.foreground;
+          inherit (common.colours) background;
+          inherit (common.colours) foreground;
         };
         normal = {
           black = "#282828";
