@@ -30,6 +30,7 @@
 
   # Sound.
   hardware.pulseaudio.enable = true;
+  services.pipewire.enable = false;
 
   # Enable networking
   networking = {
