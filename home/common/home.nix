@@ -25,10 +25,8 @@
           "DejaVuSansMono"
         ];
       })
-      symbola
 
       # Browsers
-      firefox
       chromium
 
       # Communication
