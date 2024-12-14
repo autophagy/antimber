@@ -35,7 +35,7 @@ in
     config = {
       modifier = "Mod4";
       menu = "rofi -show drun";
-      terminal = "${pkgs.rxvt-unicode}/bin/urxvt";
+      terminal = "${pkgs.alacritty}/bin/alacritty";
       workspaceAutoBackAndForth = true;
       defaultWorkspace = "workspace number 1";
       bars = [ ];
