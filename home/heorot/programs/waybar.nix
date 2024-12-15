@@ -51,6 +51,10 @@ in
           format = "BAT {capacity}%";
           format-charging = "BAT +{capacity}%";
           format-plugged = "BAT +{capacity}%";
+          states = {
+            warning = 30;
+            critical = 15;
+          };
         };
         "network" = {
           format-wifi = "{ipaddr}";
