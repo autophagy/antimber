@@ -1,12 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, common, ... }:
 
 let
   vpnStatusScript = pkgs.callPackage ../../common/services/polybar/scripts/vpnstatus.nix { };
+  style = import ./waybar-style.nix { inherit common; };
 in
 {
   programs.waybar = {
+    inherit style;
+
     enable = true;
-    style = builtins.readFile ./waybar-style.css;
     settings = {
       mainBar = {
         layer = "top";

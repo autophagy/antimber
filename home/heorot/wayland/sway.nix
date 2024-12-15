@@ -1,13 +1,16 @@
 {
   pkgs,
   common,
-  config,
   lib,
+  rootPath,
+  hostName,
   ...
 }:
 
 let
   mod = "Mod4";
+  backgroundImage = rootPath + "/static/backgrounds/${hostName}.jpg";
+  lockImage = rootPath + "/static/backgrounds/${hostName}-lock.png";
 in
 {
   programs.swaylock = {
@@ -38,7 +41,7 @@ in
 
       output = {
         "*" = {
-          bg = "${config.home.homeDirectory}/${config.home.file.backgroundImage.target} fill";
+          bg = "${backgroundImage} fill";
         };
       };
 
@@ -79,7 +82,7 @@ in
 
         "Print" = "exec --no-startup-id grim -g \"$(slurp)\"";
 
-        "${mod}+Shift+o" = "exec --no-startup-id swaylock -i ${config.home.homeDirectory}/${config.home.file.lockImage.target}";
+        "${mod}+Shift+o" = "exec --no-startup-id swaylock -i ${lockImage}";
 
         "${mod}+m" = "move workspace to output right";
         "${mod}+Shift+m" = "move workspace to output left";
