@@ -70,30 +70,6 @@
     };
 
     # Configure keymap in X11
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-      displayManager.lightdm.enable = true;
-      windowManager.i3.enable = true;
-      serverFlagsSection = ''
-        Option "BlankTime" "0"
-        Option "StandbyTime" "0"
-        Option "SuspendTime" "0"
-        Option "OffTime" "0"
-      '';
-    };
-
-    displayManager = {
-      defaultSession = "none+i3";
-      autoLogin = {
-        enable = true;
-        user = "mika";
-      };
-    };
-
     tailscale.enable = true;
 
     printing = {

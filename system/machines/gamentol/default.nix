@@ -32,7 +32,33 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+      displayManager.lightdm.enable = true;
+      windowManager.i3.enable = true;
+      serverFlagsSection = ''
+        Option "BlankTime" "0"
+        Option "StandbyTime" "0"
+        Option "SuspendTime" "0"
+        Option "OffTime" "0"
+      '';
+      videoDrivers = [ "nvidia" ];
+    };
+
+    displayManager = {
+      defaultSession = "none+i3";
+      autoLogin = {
+        enable = true;
+        user = "mika";
+      };
+    };
+  };
+
   hardware.graphics.enable = true;
 
   hardware.nvidia = {

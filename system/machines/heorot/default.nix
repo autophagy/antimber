@@ -82,4 +82,18 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.sway}/bin/sway";
+        user = "mika";
+      };
+      default_session = initial_session;
+    };
+  };
+
+  security.polkit.enable = true;
+  security.pam.services.swaylock = { };
 }

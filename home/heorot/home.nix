@@ -7,6 +7,7 @@
     ./virtualisation
     ./services
     ./programs
+    ./wayland
   ];
 
   home.packages = with pkgs; [

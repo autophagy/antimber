@@ -1,12 +1,15 @@
 { common, ... }:
+let
+  font-size = 12;
+in
 {
   programs.alacritty = {
     enable = true;
     settings = {
       window = {
         padding = {
-          x = 15;
-          y = 15;
+          x = font-size * 2;
+          y = font-size * 2;
         };
         decorations = "Full";
         decorations_theme_variant = "Dark";
@@ -16,7 +19,7 @@
         bold.family = "Inconsolata Nerd Font Mono";
         italic.family = "Inconsolata Nerd Font Mono";
         bold_italic.family = "Inconsolata Nerd Font Mono";
-        size = 7.5;
+        size = font-size;
       };
       colors = {
         primary = {

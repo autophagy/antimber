@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  imports = [ ./autorandr.nix ];
+  imports = [
+    ./autorandr.nix
+    ./waybar.nix
+  ];
 }
