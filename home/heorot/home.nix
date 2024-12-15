@@ -24,6 +24,8 @@
     lnav
     cachix
     obsidian
+    grim
+    slurp
   ];
 
 }

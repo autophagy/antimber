@@ -77,8 +77,7 @@ in
         "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
         "XF86AudioMicMute" = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle";
 
-        "Print" = "exec --no-startup-id scrot ~/images/screenshots/%b%d::%H%M%S.png";
-        "Shift+Print" = "exec --no-startup-id scrot -s ~/images/screenshots/%b%d::%H%M%S.png";
+        "Print" = "exec --no-startup-id grim -g \"$(slurp)\"";
 
         "${mod}+Shift+o" = "exec --no-startup-id swaylock -i ${config.home.homeDirectory}/${config.home.file.lockImage.target}";
 
