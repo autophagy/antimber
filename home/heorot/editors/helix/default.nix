@@ -16,6 +16,7 @@
     settings = {
       theme = "gruvbox";
       editor = {
+        bufferline = "multiple";
         true-color = true;
         mouse = false;
         cursorline = true;
