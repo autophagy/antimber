@@ -1,6 +1,6 @@
 { common, ... }:
 let
-  font-size = 12;
+  font-size = 10;
 in
 {
   programs.alacritty = {
@@ -15,10 +15,10 @@ in
         decorations_theme_variant = "Dark";
       };
       font = {
-        normal.family = "Inconsolata Nerd Font Mono";
-        bold.family = "Inconsolata Nerd Font Mono";
-        italic.family = "Inconsolata Nerd Font Mono";
-        bold_italic.family = "Inconsolata Nerd Font Mono";
+        normal.family = "Inconsolata";
+        bold.family = "Inconsolata";
+        italic.family = "Inconsolata";
+        bold_italic.family = "Inconsolata";
         size = font-size;
       };
       colors = {

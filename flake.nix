@@ -20,6 +20,10 @@
     sops-nix.url = "github:Mic92/sops-nix";
     ansine.url = "github:autophagy/ansine/v1.0.0";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -32,13 +36,14 @@
       sops-nix,
       ansine,
       nixos-hardware,
+      lix-module,
       ...
     }@inputs:
     utils.lib.eachDefaultSystem (
       system:
       let
         overlays = {
-          nur = nur.overlay;
+          nur = nur.overlays.default;
           nvim-scrollbar = final: prev: {
             vimPackages.nvim-scrollbar = prev.vimUtils.buildVimPluginFrom2Nix {
               pname = "nvim-scrollbar";
@@ -67,6 +72,7 @@
                 ./system/common/configuration.nix
                 ./system/machines/heorot
                 nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
+                lix-module.nixosModules.default
               ];
               specialArgs = {
                 inherit inputs;

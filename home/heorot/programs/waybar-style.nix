@@ -2,9 +2,8 @@
 
 ''
   * {
-      /* `otf-font-awesome` is required to be installed for icons */
-      font-family: Inconsolata Nerd Font Mono;
-      font-size: 14px;
+      font-family: Inconsolata;
+      font-size: 12px;
   }
 
   window#waybar {

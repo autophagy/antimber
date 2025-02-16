@@ -29,8 +29,10 @@
   };
 
   # Sound.
-  hardware.pulseaudio.enable = true;
-  services.pipewire.enable = false;
+  services = {
+    pulseaudio.enable = true;
+    pipewire.enable = false;
+  };
 
   # Enable networking
   networking = {

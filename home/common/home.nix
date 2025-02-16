@@ -19,12 +19,8 @@
 
     packages = with pkgs; [
       # Fonts
-      (nerdfonts.override {
-        fonts = [
-          "Inconsolata"
-          "DejaVuSansMono"
-        ];
-      })
+      nerd-fonts.inconsolata
+      nerd-fonts.dejavu-sans-mono
 
       # Browsers
       chromium
