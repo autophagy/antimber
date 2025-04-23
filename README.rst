@@ -8,8 +8,8 @@ antimber
 These are a set of nix expressions and dotfiles for my Linux workspace. Depends
 on `home-manager`_.
 
-Currently using `NixOS`_, with `i3`_ as my window manager and
-`Neovim`_ as my primary development environment.
+Currently using `NixOS`_, with `sway`_ as my window manager and
+`Helix`_ as my primary development environment.
 
 My configuration is described by a nix flake. To build nixos or home-manager using `just`_::
 
@@ -33,7 +33,7 @@ Antimber manages the following machines:
 
 .. _NixOS: https://nixos.org/
 .. _home-manager: https://github.com/nix-community/home-manager
-.. _i3: https://i3wm.org/
-.. _Neovim: https://neovim.io/
+.. _sway: https://swaywm.org/
+.. _Helix: https://helix-editor.com/
 .. _just: https://github.com/casey/just
 .. _arch: https://github.com/autophagy/antimber/tree/arch
