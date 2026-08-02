@@ -87,7 +87,7 @@
             };
 
             hindberige = nixpkgs.lib.nixosSystem {
-              inherit system;
+              system = "aarch64-linux";
               modules = [
                 ./system/machines/hindberige
                 sops-nix.nixosModules.sops

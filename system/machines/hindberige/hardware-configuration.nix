@@ -20,7 +20,7 @@
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
-      options = [ "noatime " ];
+      options = [ "noatime" ];
     };
     "/media" = {
       device = "/dev/disk/by-uuid/d134350a-bdfb-4cc8-ace6-9f4978b397e4";
