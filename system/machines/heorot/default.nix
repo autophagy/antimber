@@ -75,8 +75,6 @@
     podman.enable = true;
   };
 
-  programs.light.enable = true;
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
