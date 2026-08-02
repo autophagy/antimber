@@ -21,9 +21,8 @@ in
           "sway/workspaces"
           "sway/mode"
         ];
-        modules-center =
-          [
-          ];
+        modules-center = [
+        ];
         modules-right = [
           "custom/vpn"
           "custom/separator"

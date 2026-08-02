@@ -21,7 +21,8 @@
         "sd_mod"
       ];
       kernelModules = [ ];
-      luks.devices."luks-208765fd-de3d-4246-ab3f-2a37ffabd6b8".device = "/dev/disk/by-uuid/208765fd-de3d-4246-ab3f-2a37ffabd6b8";
+      luks.devices."luks-208765fd-de3d-4246-ab3f-2a37ffabd6b8".device =
+        "/dev/disk/by-uuid/208765fd-de3d-4246-ab3f-2a37ffabd6b8";
     };
 
     kernelModules = [ "kvm-intel" ];

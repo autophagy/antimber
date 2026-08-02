@@ -96,7 +96,8 @@ in
         "Print" = "exec --no-startup-id scrot ~/images/screenshots/%b%d::%H%M%S.png";
         "Shift+Print" = "exec --no-startup-id scrot -s ~/images/screenshots/%b%d::%H%M%S.png";
 
-        "${mod}+Shift+o" = "exec --no-startup-id i3lock -i ${config.home.homeDirectory}/${config.home.file.lockImage.target}";
+        "${mod}+Shift+o" =
+          "exec --no-startup-id i3lock -i ${config.home.homeDirectory}/${config.home.file.lockImage.target}";
 
         "${mod}+m" = "move workspace to output right";
         "${mod}+Shift+m" = "move workspace to output left";
