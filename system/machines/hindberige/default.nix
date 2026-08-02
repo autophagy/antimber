@@ -71,6 +71,7 @@
   ];
 
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  boot.initrd.systemd.enableTpm2 = false;
 
   system.stateVersion = "22.11";
 }
