@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./storage.nix
     ./networking.nix
     ./virtualization.nix
     ./services.nix
