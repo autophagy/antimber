@@ -63,7 +63,7 @@
       }
       plenary-nvim
       {
-        plugin = null-ls-nvim;
+        plugin = none-ls-nvim;
         type = "lua";
         config = builtins.readFile ./null_ls.lua;
       }
@@ -122,7 +122,7 @@
 
     extraPackages = with pkgs; [
       shellcheck
-      nodePackages.bash-language-server
+      bash-language-server
       terraform-lsp
       rust-analyzer
       yaml-language-server

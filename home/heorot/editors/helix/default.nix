@@ -9,7 +9,7 @@
       yaml-language-server
       nixfmt-rfc-style
       pyright
-      ruff-lsp
+      ruff
       nil
     ];
 
@@ -80,7 +80,8 @@
           args = [ "--stdio" ];
         };
         ruff = {
-          command = "${pkgs.ruff-lsp}/bin/ruff-lsp";
+          command = "${pkgs.ruff}/bin/ruff";
+          args = [ "server" ];
         };
         elm = {
           command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server";
