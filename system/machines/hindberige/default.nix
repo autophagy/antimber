@@ -21,7 +21,7 @@
       "net.ipv4.ip_forward" = 1;
       "net.ipv6.conf.all.forwarding" = 1;
     };
-    cleanTmpDir = true;
+    tmp.cleanOnBoot = true;
   };
 
   documentation.nixos.enable = false;
@@ -72,7 +72,7 @@
   ];
 
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-  boot.initrd.systemd.enableTpm2 = false;
+  boot.initrd.systemd.tpm2.enable = false;
 
   system.stateVersion = "22.11";
 }

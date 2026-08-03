@@ -87,7 +87,6 @@
             };
 
             hindberige = nixpkgs.lib.nixosSystem {
-              system = "aarch64-linux";
               modules = [
                 ./system/machines/hindberige
                 sops-nix.nixosModules.sops
