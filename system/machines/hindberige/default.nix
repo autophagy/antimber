@@ -8,6 +8,7 @@
     ./services.nix
     ./nginx.nix
     ./vaultwarden.nix
+    ./immich.nix
     ./mail.nix
   ];
 

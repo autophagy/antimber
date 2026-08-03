@@ -38,6 +38,26 @@ _:
           "/sabnzbd" = {
             proxyPass = "http://localhost:8080/sabnzbd";
           };
+          "/photos/" = {
+            return = "301 https://photos.hindberige.autophagy.io/";
+          };
+        };
+      };
+
+      "photos.hindberige.autophagy.io" = {
+        forceSSL = true;
+        sslCertificate = "/var/nginx/certs/photos.hindberige.autophagy.io/fullchain.pem";
+        sslCertificateKey = "/var/nginx/certs/photos.hindberige.autophagy.io/privkey.pem";
+        locations."/" = {
+          proxyPass = "http://localhost:2283";
+          proxyWebsockets = true;
+          extraConfig = ''
+            client_max_body_size 50000M;
+            proxy_request_buffering off;
+            client_body_buffer_size 1024k;
+            proxy_read_timeout 600s;
+            proxy_send_timeout 600s;
+          '';
         };
       };
     };

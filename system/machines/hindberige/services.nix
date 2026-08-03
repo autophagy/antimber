@@ -35,6 +35,10 @@ _:
             description = "Bitwarden compatible credential storage";
             route = "/vault/";
           };
+          Immich = {
+            description = "Photo management";
+            route = "/photos/";
+          };
           SABnzbd = {
             description = "Usenet NZB reader";
             route = "/sabnzbd";
