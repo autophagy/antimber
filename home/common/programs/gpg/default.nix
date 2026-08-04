@@ -20,7 +20,7 @@
     enableZshIntegration = true;
     enableSshSupport = true;
     enableScDaemon = true;
-    pinentryPackage = pkgs.pinentry-qt;
+    pinentry.package = pkgs.pinentry-qt;
   };
 
   home.file.".gnupg/sshcontrol".text = ''

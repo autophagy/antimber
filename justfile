@@ -1,4 +1,4 @@
-machine := `hostname`
+machine := `hostname -s`
 flake_path := justfile_directory() + "/.#" + machine
 
 [private]

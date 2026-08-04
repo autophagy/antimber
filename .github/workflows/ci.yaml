@@ -10,12 +10,16 @@ concurrency:
 jobs:
   home-manager-build:
     name: Home Manager Build
-    runs-on: ubuntu-latest
     strategy:
       matrix:
-        user:
-          - heorot
-          - gamentol
+        include:
+          - user: heorot
+            runner: ubuntu-latest
+          - user: gamentol
+            runner: ubuntu-latest
+          - user: aeppelboc
+            runner: macos-14
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v4
 

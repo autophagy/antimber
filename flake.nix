@@ -38,7 +38,7 @@
       system:
       let
         overlays = {
-          nur = nur.overlay;
+          nur = nur.overlays.default;
           nvim-scrollbar = final: prev: {
             vimPackages.nvim-scrollbar = prev.vimUtils.buildVimPluginFrom2Nix {
               pname = "nvim-scrollbar";
@@ -127,17 +127,22 @@
                 hostName = "gamentol";
               };
             };
+
+            aeppelboc = home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              modules = [ ./home/aeppelboc/home.nix ];
+            };
           };
         };
 
         devShells.ci = pkgs.mkShell {
           buildInputs = with pkgs; [
-            nixfmt-rfc-style
+            nixfmt
             statix
           ];
         };
 
-        formatter = pkgs.nixfmt-rfc-style;
+        formatter = pkgs.nixfmt;
       }
     );
 }

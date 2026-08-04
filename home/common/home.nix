@@ -4,6 +4,7 @@
   _module.args.common = import ./common.nix;
 
   imports = [
+    ./base.nix
     ./programs
     ./editors
     ./browsers
@@ -12,49 +13,41 @@
     ./email
   ];
 
-  home = {
-    username = "mika";
-    homeDirectory = "/home/mika";
-    stateVersion = "22.05";
+  home.packages = with pkgs; [
+    # Fonts
+    nerd-fonts.inconsolata
+    nerd-fonts.dejavu-sans-mono
 
-    packages = with pkgs; [
-      # Fonts
-      nerd-fonts.inconsolata
-      nerd-fonts.dejavu-sans-mono
+    # Browsers
+    chromium
 
-      # Browsers
-      chromium
+    # Communication
+    slack
+    zoom-us
 
-      # Communication
-      slack
-      zoom-us
+    # Media
+    gimp
+    mpv
+    pavucontrol
+    spotify
+    jellyfin-media-player
 
-      # Media
-      gimp
-      mpv
-      pavucontrol
-      spotify
-      jellyfin-media-player
+    # Utilities
+    wget
+    arandr
+    ripgrep
+    keepassxc
+    scrot
+    zathura
+    bind
+    htop
+    sops
+    jq
+    just
+    git-absorb
+    yubikey-manager
+  ];
 
-      # Utilities
-      wget
-      arandr
-      ripgrep
-      keepassxc
-      scrot
-      zathura
-      bind
-      htop
-      sops
-      jq
-      just
-      git-absorb
-      yubikey-manager
-    ];
-
-  };
-
-  nixpkgs.config.allowUnfree = true;
   xsession.enable = true;
   fonts.fontconfig.enable = true;
 

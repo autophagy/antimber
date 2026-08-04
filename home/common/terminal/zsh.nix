@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [ pure-prompt ];
 
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -l";
@@ -21,7 +21,7 @@
       path = "$HOME/.zsh_history";
       ignoreSpace = true;
     };
-    initExtra = ''
+    initContent = ''
       autoload -U promptinit; promptinit
       PURE_PROMPT_SYMBOL="λ"
       PURE_GIT_PULL=0

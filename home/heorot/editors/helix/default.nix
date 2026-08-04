@@ -7,7 +7,7 @@
       rust-analyzer
       terraform-ls
       yaml-language-server
-      nixfmt-rfc-style
+      nixfmt
       pyright
       ruff
       nil
@@ -108,7 +108,7 @@
           name = "nix";
           auto-format = true;
           language-servers = [ { name = "nil"; } ];
-          formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+          formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
         }
         {
           name = "bash";

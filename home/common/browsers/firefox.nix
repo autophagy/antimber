@@ -3,6 +3,7 @@
 {
   programs.firefox = {
     enable = true;
+    configPath = ".mozilla/firefox";
 
     profiles = {
       default = {
@@ -39,7 +40,7 @@
               definedAliases = [ "@nixpkgs" ];
             };
 
-            "YouTube" = {
+            youtube = {
               urls = [
                 {
                   template = "https://www.youtube.com/results";
@@ -77,38 +78,41 @@
           };
         };
 
-        bookmarks = [
-          {
-            name = "Financial Times";
-            keyword = "ft";
-            url = "https://ft.com";
-          }
-          {
-            name = "Github";
-            keyword = "github";
-            url = "https://github.com";
-          }
-          {
-            name = "Hacker News";
-            keyword = "hn";
-            url = "https://news.ycombinator.com";
-          }
-          {
-            name = "Hordburh";
-            keyword = "mastodon";
-            url = "https://hordburh.autophagy.io";
-          }
-          {
-            name = "Jellyfin";
-            keyword = "jellyfin";
-            url = "https://hindberige.autophagy.io/jellyfin";
-          }
-          {
-            name = "Home Manager Options";
-            keyword = "homemanager";
-            url = "https://nix-community.github.io/home-manager/options.html";
-          }
-        ];
+        bookmarks = {
+          force = true;
+          settings = [
+            {
+              name = "Financial Times";
+              keyword = "ft";
+              url = "https://ft.com";
+            }
+            {
+              name = "Github";
+              keyword = "github";
+              url = "https://github.com";
+            }
+            {
+              name = "Hacker News";
+              keyword = "hn";
+              url = "https://news.ycombinator.com";
+            }
+            {
+              name = "Hordburh";
+              keyword = "mastodon";
+              url = "https://hordburh.autophagy.io";
+            }
+            {
+              name = "Jellyfin";
+              keyword = "jellyfin";
+              url = "https://hindberige.autophagy.io/jellyfin";
+            }
+            {
+              name = "Home Manager Options";
+              keyword = "homemanager";
+              url = "https://nix-community.github.io/home-manager/options.html";
+            }
+          ];
+        };
 
         settings = {
           "browser.startup.homepage" = "https://ft.com";
@@ -134,6 +138,7 @@
           "browser.newtabpage.activity-stream.default.sites" = "";
           "signon.rememberSignons" = false;
         };
+
       };
     };
   };

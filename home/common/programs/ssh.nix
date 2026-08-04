@@ -1,11 +1,26 @@
 _: {
   programs.ssh = {
     enable = true;
-    matchBlocks = {
+    enableDefaultConfig = false;
+    settings = {
+      "*" = {
+        ForwardAgent = false;
+        AddKeysToAgent = "no";
+        Compression = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
+      };
       hindberige = {
-        hostname = "hindberige.autophagy.io";
-        user = "mika";
-        extraOptions.SetEnv = "TERM=xterm-256color";
+        HostName = "hindberige.autophagy.io";
+        User = "mika";
+        SetEnv = {
+          TERM = "xterm-256color";
+        };
       };
     };
   };

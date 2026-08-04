@@ -11,6 +11,7 @@
       vim-trailing-whitespace
       {
         plugin = indentLine;
+        type = "viml";
         config = ''
           let g:indentLine_char = ':'
           let g:indentLine_fileTypeExclude = ['markdown', 'rst']
@@ -45,6 +46,7 @@
       }
       {
         plugin = lspsaga-nvim;
+        type = "viml";
         config = ''
           " show hover doc
           nnoremap <silent>K :Lspsaga hover_doc<CR>
@@ -80,6 +82,7 @@
       # Utils
       {
         plugin = nerdtree;
+        type = "viml";
         config = ''
           let NERDTreeIgnore=['\.pyc$', '\~$']
           map <C-n> :NERDTreeToggle<CR>
@@ -93,6 +96,7 @@
       }
       {
         plugin = vim-test;
+        type = "viml";
         config = ''
           nmap <silent> t<C-n> :TestNearest<CR>
           nmap <silent> t<C-f> :TestFile<CR>
@@ -103,6 +107,7 @@
       }
       {
         plugin = fzf-vim;
+        type = "viml";
         config = ''
           let g:fzf_preview_window = ""
           let g:fzf_preview_window = ['right:50%', 'ctrl-/']

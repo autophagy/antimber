@@ -5,11 +5,11 @@
 antimber
   noun: matter, materials, substance
 
-These are a set of nix expressions and dotfiles for my Linux workspace. Depends
-on `home-manager`_.
+These are a set of nix expressions and dotfiles for my Linux and macOS
+workspaces. Depends on `home-manager`_.
 
-Currently using `NixOS`_, with `sway`_ as my window manager and
-`Helix`_ as my primary development environment.
+The Linux machines use `NixOS`_ with `sway`_ as the window manager. `Helix`_
+is the primary development environment across the configurations.
 
 My configuration is described by a nix flake. To build nixos or home-manager using `just`_::
 
@@ -21,13 +21,15 @@ To switch nixos or home-manager configurations::
     λ just switch nixos
     λ just switch home-manager
 
-A full build or switch can be done with the ``full`` target.
+A full build or switch can be done with the ``full`` target on NixOS machines.
+Home Manager can also be built or switched independently on macOS.
 
 Antimber manages the following machines:
 
-- **Heorot** - My personal development laptop (Lenovo X1 Carbon).
+- **Æppelbōc** - MacOS personal development laptop (Apple Silicon MacBook).
 - **Gamentól** - Gaming machine.
 - **Hindberige** - Raspberry Pi 3 Model B.
+- **Heorot** - Linux personal development laptop (Lenovo X1 Carbon).
 
 *My legacy Arch Linux dotfiles are available on the* `arch`_ *branch.*
 
