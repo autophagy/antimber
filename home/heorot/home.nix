@@ -18,7 +18,6 @@
     kubectl
     kubectx
     awscli2
-    minikube
 
     # Utilities
     lnav
