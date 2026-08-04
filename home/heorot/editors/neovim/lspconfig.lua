@@ -1,5 +1,3 @@
-local lspconfig = require'lspconfig'
-
 vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
 vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
 vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
@@ -11,14 +9,7 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-
-lspconfig.bashls.setup{}
-lspconfig.terraform_lsp.setup{}
-lspconfig.rust_analyzer.setup{}
-lspconfig.yamlls.setup {
+vim.lsp.config("yamlls", {
     settings = {
         yaml = {
             schemas = {
@@ -31,7 +22,13 @@ lspconfig.yamlls.setup {
             }
         },
     }
-}
---lspconfig.dhall_lsp_server.setup{}
-lspconfig.gopls.setup{}
-lspconfig.elmls.setup{}
+})
+
+vim.lsp.enable({
+    "bashls",
+    "terraform_lsp",
+    "rust_analyzer",
+    "yamlls",
+    "gopls",
+    "elmls",
+})
