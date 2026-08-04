@@ -18,6 +18,7 @@
     ../heorot/editors/neovim
     ../heorot/editors/helix
     ../heorot/terminal/direnv.nix
+    ./programs/opencode
   ];
 
   home.homeDirectory = "/Users/mika";
@@ -31,6 +32,7 @@
     jq
     just
     git-absorb
+    yubikey-manager
     kubectl
     kubectx
     awscli2
