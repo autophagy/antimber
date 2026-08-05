@@ -12,6 +12,7 @@
       ruff
       nil
       purescript
+      purescript-language-server
     ];
 
     settings = {
@@ -88,7 +89,7 @@
           command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server";
         };
         purescript = {
-          command = "purescript-language-server";
+          command = "${pkgs.purescript-language-server}/bin/purescript-language-server";
           args = [ "--stdio" ];
         };
       };

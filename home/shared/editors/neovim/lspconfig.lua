@@ -31,4 +31,5 @@ vim.lsp.enable({
     "yamlls",
     "gopls",
     "elmls",
+    "purescriptls",
 })

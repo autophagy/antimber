@@ -46,6 +46,9 @@
               src = nvim-scrollbar;
             };
           };
+          purescript-language-server = final: prev: {
+            purescript-language-server = prev.callPackage ./pkgs/purescript-language-server { };
+          };
         };
 
         pkgs = import nixpkgs {
@@ -58,6 +61,8 @@
       in
       {
         packages = {
+          purescript-language-server = pkgs.purescript-language-server;
+
           # NixOS Configurations
 
           nixosConfigurations = {

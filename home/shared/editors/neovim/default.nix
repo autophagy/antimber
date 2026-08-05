@@ -140,6 +140,8 @@
       elmPackages.elm-test
       elmPackages.elm-format
       elmPackages.elm-language-server
+      purescript
+      purescript-language-server
     ];
 
     extraConfig = ''
