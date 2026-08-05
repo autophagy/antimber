@@ -1,7 +1,7 @@
 { pkgs, common, ... }:
 
 let
-  vpnStatusScript = pkgs.callPackage ../../common/services/polybar/scripts/vpnstatus.nix { };
+  vpnStatusScript = pkgs.callPackage ../../shared/services/vpnstatus.nix { };
   style = import ./waybar-style.nix { inherit common; };
 in
 {

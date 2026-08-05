@@ -1,7 +1,7 @@
 { pkgs, common, ... }:
 
 let
-  vpnstatusScript = pkgs.callPackage ./scripts/vpnstatus.nix { };
+  vpnstatusScript = pkgs.callPackage ../../../shared/services/vpnstatus.nix { };
 in
 {
   services.polybar = {

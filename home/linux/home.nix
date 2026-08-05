@@ -1,23 +1,22 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  _module.args.common = import ./common.nix;
-
   imports = [
-    ./base.nix
+    ../shared/home.nix
     ./programs
-    ./editors
+    ./terminal
     ./browsers
     ./services
-    ./terminal
     ./email
   ];
 
-  home.packages = with pkgs; [
-    # Fonts
-    nerd-fonts.inconsolata
-    nerd-fonts.dejavu-sans-mono
+  home.homeDirectory = lib.mkDefault "/home/mika";
 
+  home.packages = with pkgs; [
     # Browsers
     chromium
 
@@ -33,19 +32,12 @@
     jellyfin-media-player
 
     # Utilities
-    wget
     arandr
-    ripgrep
-    keepassxc
     scrot
+    keepassxc
     zathura
     bind
     htop
-    sops
-    jq
-    just
-    git-absorb
-    yubikey-manager
   ];
 
   xsession.enable = true;

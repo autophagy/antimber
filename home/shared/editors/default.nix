@@ -5,6 +5,4 @@
     ./neovim
     ./helix
   ];
-
-  programs.vscode.enable = true;
 }

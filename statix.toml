@@ -1,4 +1,3 @@
 disabled = []
 nix_version = '2.4'
-ignore = ['.direnv', 'home/common/browsers/qutebrowser.nix']
-
+ignore = ['.direnv', 'home/linux/browsers/qutebrowser.nix']

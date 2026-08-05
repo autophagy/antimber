@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs.neovim = {
+    enable = true;
     withNodeJs = true;
 
     plugins = with pkgs.vimPlugins; [

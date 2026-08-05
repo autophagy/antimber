@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ./editors
-    ./terminal
     ./virtualisation
     ./services
     ./programs
@@ -14,17 +12,8 @@
     # Media
     obs-studio
 
-    # Devops
-    kubectl
-    kubectx
-    awscli2
-
-    # Utilities
-    lnav
-    cachix
-    obsidian
+    # Wayland utilities
     grim
     slurp
   ];
-
 }

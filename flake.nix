@@ -105,7 +105,7 @@
             heorot = home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               modules = [
-                ./home/common/home.nix
+                ./home/linux/home.nix
                 ./home/heorot/home.nix
               ];
               extraSpecialArgs = {
@@ -118,7 +118,7 @@
             gamentol = home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
               modules = [
-                ./home/common/home.nix
+                ./home/linux/home.nix
                 ./home/gamentol/home.nix
               ];
               extraSpecialArgs = {
@@ -130,7 +130,13 @@
 
             aeppelboc = home-manager.lib.homeManagerConfiguration {
               inherit pkgs;
-              modules = [ ./home/aeppelboc/home.nix ];
+              modules = [
+                ./home/macos/home.nix
+                ./home/aeppelboc/home.nix
+              ];
+              extraSpecialArgs = {
+                inherit herbz-theme;
+              };
             };
           };
         };
