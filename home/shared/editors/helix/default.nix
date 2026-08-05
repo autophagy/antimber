@@ -13,6 +13,7 @@
       nil
       purescript
       purescript-language-server
+      purs-tidy
     ];
 
     settings = {
@@ -132,6 +133,11 @@
         {
           name = "purescript";
           language-servers = [ "purescript" ];
+          auto-format = true;
+          formatter = {
+            command = "${pkgs.purs-tidy}/bin/purs-tidy";
+            args = [ "format" ];
+          };
         }
       ];
     };

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -10,4 +10,6 @@
     conda
     blender
   ];
+
+  services.picom.enable = lib.mkForce false;
 }

@@ -48,6 +48,7 @@
           };
           purescript-language-server = final: prev: {
             purescript-language-server = prev.callPackage ./pkgs/purescript-language-server { };
+            purs-tidy = prev.callPackage ./pkgs/purs-tidy { };
           };
         };
 
@@ -61,7 +62,8 @@
       in
       {
         packages = {
-          purescript-language-server = pkgs.purescript-language-server;
+          inherit (pkgs) purescript-language-server;
+          inherit (pkgs) purs-tidy;
 
           # NixOS Configurations
 
