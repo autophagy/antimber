@@ -11,6 +11,7 @@
       pyright
       ruff
       nil
+      purescript
     ];
 
     settings = {
@@ -86,6 +87,10 @@
         elm = {
           command = "${pkgs.elmPackages.elm-language-server}/bin/elm-language-server";
         };
+        purescript = {
+          command = "purescript-language-server";
+          args = [ "--stdio" ];
+        };
       };
 
       language = [
@@ -122,6 +127,10 @@
         {
           name = "elm";
           language-servers = [ "elm" ];
+        }
+        {
+          name = "purescript";
+          language-servers = [ "purescript" ];
         }
       ];
     };
