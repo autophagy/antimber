@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -29,6 +34,8 @@
         "luks-5ad23ef1-f79e-4cd1-b24e-745d03f70562".keyFile = "/crypto_keyfile.bin";
       };
     };
+
+    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -60,11 +67,18 @@
     };
   };
 
-  hardware.graphics.enable = true;
+  hardware = {
+    graphics.enable = true;
 
-  hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    open = true;
+    nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      open = true;
+    };
+
+    bluetooth.enable = true;
+
+    xpadneo.enable = true;
+
   };
 
   programs.steam = {
@@ -74,4 +88,5 @@
   };
 
   services.fstrim.enable = true;
+  services.pipewire.enable = lib.mkForce false;
 }
