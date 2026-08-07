@@ -14,7 +14,7 @@
     "usb_storage"
     "usbhid"
   ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   fileSystems = {
     "/" = {
