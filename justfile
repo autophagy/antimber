@@ -19,3 +19,9 @@ build target:
 # Switch a target (home-manager, nixos, or full)
 switch target:
     just {{target}} switch
+
+# Deploy a machine's NixOS config from GitHub main: the host itself evaluates,
+# pulls the prebuilt closure from cachix, and activates it. Substitute-only
+# (--max-jobs 0): a cache miss errors rather than building on the target.
+deploy-to machine host=machine:
+    ssh -t {{host}} "sudo nixos-rebuild switch --flake github:autophagy/antimber#{{machine}} --refresh --max-jobs 0"
