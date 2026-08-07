@@ -18,6 +18,7 @@
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
     };
+    kernel.sysctl."vm.swappiness" = 10;
     tmp.cleanOnBoot = true;
   };
 

@@ -31,7 +31,7 @@
   swapDevices = [
     {
       device = "/media/swapfile";
-      size = 1024;
+      size = 8192;
     }
   ];
 
