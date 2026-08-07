@@ -34,6 +34,27 @@
       User = "vaultwarden";
       Group = "vaultwarden";
       EnvironmentFile = config.sops.secrets.vaultwarden.path;
+
+      ProtectSystem = "strict";
+      ProtectHome = true;
+      PrivateTmp = true;
+      PrivateDevices = true;
+      NoNewPrivileges = true;
+      ProtectKernelTunables = true;
+      ProtectKernelModules = true;
+      ProtectControlGroups = true;
+      RestrictSUIDSGID = true;
+      RestrictNamespaces = true;
+      LockPersonality = true;
+      ReadOnlyPaths = [ "/var/lib/bitwarden_rs" ];
+      RestrictAddressFamilies = [
+        "AF_INET"
+        "AF_INET6"
+        "AF_UNIX"
+      ];
+      SystemCallArchitectures = "native";
+      SystemCallFilter = [ "@system-service" ];
+      CapabilityBoundingSet = "";
     };
     script = ''
       ${pkgs.awscli2}/bin/aws s3 sync /var/lib/bitwarden_rs/ s3://hindberige-backups/vaultwarden/

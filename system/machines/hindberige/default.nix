@@ -18,10 +18,6 @@
       grub.enable = false;
       generic-extlinux-compatible.enable = true;
     };
-    kernel.sysctl = {
-      "net.ipv4.ip_forward" = 1;
-      "net.ipv6.conf.all.forwarding" = 1;
-    };
     tmp.cleanOnBoot = true;
   };
 

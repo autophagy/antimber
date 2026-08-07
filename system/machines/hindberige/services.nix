@@ -4,15 +4,24 @@ _:
   services = {
     openssh = {
       enable = true;
+      openFirewall = false; # Reachable over Tailscale + end0 (see networking.nix)
       settings = {
         PasswordAuthentication = false;
         KbdInteractiveAuthentication = false;
+        PermitRootLogin = "no";
+        AllowUsers = [
+          "mika"
+          "emily"
+        ];
       };
     };
-    tailscale.enable = true;
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "server"; # exit node
+    };
     jellyfin = {
       enable = true;
-      openFirewall = true; # Temporary until Tailscale & range requests works
+      openFirewall = false;
     };
     vaultwarden = {
       enable = true;

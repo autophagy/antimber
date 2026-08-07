@@ -5,10 +5,10 @@
     inherit hostName;
     firewall = {
       enable = true;
-      allowedTCPPorts = [
-        22 # SSH
-        80 # HTTP
-        443 # HTTPS
+      trustedInterfaces = [ "tailscale0" ];
+      allowedTCPPorts = [ ];
+      interfaces.end0.allowedTCPPorts = [
+        22 # SSH break-glass
       ];
       allowedUDPPorts = [
         41641 # Tailscale
