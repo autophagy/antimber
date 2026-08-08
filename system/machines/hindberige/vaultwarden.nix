@@ -22,6 +22,7 @@
   systemd.timers.vaultwarden-backup = {
     timerConfig = {
       OnCalendar = "*-*-* 08:00:00";
+      Persistent = true;
       Unit = "vaultwarden-backup.service";
     };
     wantedBy = [ "timers.target" ];
@@ -46,7 +47,7 @@
       RestrictSUIDSGID = true;
       RestrictNamespaces = true;
       LockPersonality = true;
-      ReadOnlyPaths = [ "/var/lib/bitwarden_rs" ];
+      ReadWritePaths = [ "/var/lib/bitwarden_rs" ];
       RestrictAddressFamilies = [
         "AF_INET"
         "AF_INET6"
@@ -57,7 +58,20 @@
       CapabilityBoundingSet = "";
     };
     script = ''
-      ${pkgs.awscli2}/bin/aws s3 sync /var/lib/bitwarden_rs/ s3://hindberige-backups/vaultwarden/
+      set -euo pipefail
+
+      ${pkgs.sqlite}/bin/sqlite3 -cmd ".timeout 10000" \
+        /var/lib/bitwarden_rs/db.sqlite3 \
+        ".backup '/tmp/db.sqlite3'"
+
+      ${pkgs.awscli2}/bin/aws s3 cp /tmp/db.sqlite3 \
+        s3://hindberige-backups/vaultwarden/db.sqlite3
+
+      ${pkgs.awscli2}/bin/aws s3 sync /var/lib/bitwarden_rs/ \
+        s3://hindberige-backups/vaultwarden/ \
+        --exclude 'db.sqlite3' \
+        --exclude 'db.sqlite3-shm' \
+        --exclude 'db.sqlite3-wal'
     '';
     onFailure = [ "systemd-notify@%n.service" ];
   };
