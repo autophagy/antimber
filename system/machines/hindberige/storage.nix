@@ -4,6 +4,8 @@ _:
   boot.tmp.useTmpfs = true;
 
   boot.initrd.systemd.emergencyAccess = true;
+  boot.initrd.verbose = true;
+  boot.consoleLogLevel = 7;
 
   systemd.tmpfiles.rules = [
     "d /media/journal 2755 root systemd-journal -"
