@@ -13,4 +13,12 @@ _:
     options = [ "bind" ];
     depends = [ "/media" ];
   };
+
+  fileSystems."/nix" = {
+    device = "/media/nix";
+    fsType = "none";
+    options = [ "bind" ];
+    neededForBoot = true;
+    depends = [ "/media" ];
+  };
 }
