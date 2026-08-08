@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  sops.secrets.vaultwarden = {
-    sopsFile = ../../../secrets/hindberige/vaultwarden.env;
+  sops.secrets.s3-backup = {
+    sopsFile = ../../../secrets/hindberige/s3-backup.env;
     format = "dotenv";
   };
 
@@ -34,7 +34,7 @@
       Type = "oneshot";
       User = "vaultwarden";
       Group = "vaultwarden";
-      EnvironmentFile = config.sops.secrets.vaultwarden.path;
+      EnvironmentFile = config.sops.secrets.s3-backup.path;
 
       ProtectSystem = "strict";
       ProtectHome = true;
