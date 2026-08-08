@@ -22,6 +22,7 @@ _:
     jellyfin = {
       enable = true;
       openFirewall = false;
+      cacheDir = "/media/jellyfin/cache";
     };
     vaultwarden = {
       enable = true;
