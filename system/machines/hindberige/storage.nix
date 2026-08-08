@@ -3,6 +3,8 @@ _:
 {
   boot.tmp.useTmpfs = true;
 
+  boot.initrd.systemd.emergencyAccess = true;
+
   systemd.tmpfiles.rules = [
     "d /media/journal 2755 root systemd-journal -"
   ];

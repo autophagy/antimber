@@ -12,7 +12,12 @@
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "usb_storage"
+    "uas"
     "usbhid"
+  ];
+  boot.initrd.kernelModules = [
+    "usb_storage"
+    "uas"
   ];
   boot.kernelPackages = pkgs.linuxPackages;
 
