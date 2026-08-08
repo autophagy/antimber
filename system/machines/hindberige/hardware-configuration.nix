@@ -9,17 +9,26 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "usb_storage"
-    "uas"
-    "usbhid"
-  ];
-  boot.initrd.kernelModules = [
-    "usb_storage"
-    "uas"
-  ];
-  boot.kernelPackages = pkgs.linuxPackages;
+  boot = {
+    initrd = {
+      availableKernelModules = [
+        "pcie_brcmstb"
+        "xhci_pci"
+        "usb_storage"
+        "uas"
+        "usbhid"
+      ];
+
+      kernelModules = [
+        "pcie_brcmstb"
+        "xhci_pci"
+        "usb_storage"
+        "uas"
+      ];
+    };
+
+    kernelPackages = pkgs.linuxPackages;
+  };
 
   fileSystems = {
     "/" = {
