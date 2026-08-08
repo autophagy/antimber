@@ -1,4 +1,4 @@
-_:
+{ config, ... }:
 
 {
   services.immich = {
@@ -6,6 +6,8 @@ _:
     mediaLocation = "/media/immich";
     machine-learning.enable = false;
   };
+
+  services.postgresql.dataDir = "/media/postgres/${config.services.postgresql.package.psqlSchema}";
 
   systemd.services.immich-server.environment = {
     MALLOC_ARENA_MAX = "2";
