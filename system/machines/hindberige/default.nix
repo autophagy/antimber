@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
     ./storage.nix
     ./networking.nix
-    ./virtualization.nix
     ./services.nix
     ./nginx.nix
     ./vaultwarden.nix

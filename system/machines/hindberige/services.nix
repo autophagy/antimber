@@ -1,6 +1,11 @@
-_:
+{ config, ... }:
 
 {
+  sops.secrets.forebodere = {
+    sopsFile = ../../../secrets/hindberige/forebodere.env;
+    format = "dotenv";
+  };
+
   services = {
     openssh = {
       enable = true;
@@ -32,6 +37,33 @@ _:
       };
     };
     sabnzbd.enable = true;
+    forebodere = {
+      enable = true;
+      environmentFile = config.sops.secrets.forebodere.path;
+      settings = {
+        prefix = "!";
+        lol_quiet_gap_seconds = 5;
+        laugh_words = [
+          "lol"
+          "lmao"
+          "rofl"
+          "ha"
+          "lo"
+        ];
+        reactions = [
+          {
+            phrase = "my wife";
+            emoji = "murk";
+          }
+        ];
+        lol_tier_messages = {
+          low = "Multilol!";
+          medium = "Ultralol!";
+          high = "M-M-M-MONSTERLOL!";
+        };
+        markov_default_order = 2;
+      };
+    };
     ansine = {
       enable = true;
       settings = {

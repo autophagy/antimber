@@ -19,6 +19,7 @@
     utils.url = "github:numtide/flake-utils";
     sops-nix.url = "github:Mic92/sops-nix";
     ansine.url = "github:autophagy/ansine/v1.1.1";
+    forebodere.url = "github:autophagy/forebodere-rs/v0.1.1";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
   outputs =
@@ -31,6 +32,7 @@
       utils,
       sops-nix,
       ansine,
+      forebodere,
       nixos-hardware,
       ...
     }@inputs:
@@ -98,6 +100,7 @@
                 ./system/machines/hindberige
                 sops-nix.nixosModules.sops
                 ansine.nixosModules.default
+                forebodere.nixosModules.default
               ];
               specialArgs = {
                 inherit inputs;
