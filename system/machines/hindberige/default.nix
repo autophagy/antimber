@@ -10,6 +10,7 @@
     ./vaultwarden.nix
     ./immich.nix
     ./mail.nix
+    ./forebodere.nix
   ];
 
   boot = {
