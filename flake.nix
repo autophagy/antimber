@@ -19,7 +19,7 @@
     utils.url = "github:numtide/flake-utils";
     sops-nix.url = "github:Mic92/sops-nix";
     ansine.url = "github:autophagy/ansine/v1.1.1";
-    forebodere.url = "github:autophagy/forebodere-rs/v0.2.0";
+    forebodere.url = "github:autophagy/forebodere-rs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
   outputs =
