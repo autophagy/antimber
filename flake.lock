@@ -95,11 +95,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1786375378,
-        "narHash": "sha256-oPmEsqQCJYFn3LIn68bEQWqYsPzVfG+wOcG9/hjt1xI=",
+        "lastModified": 1786475868,
+        "narHash": "sha256-f5lM1CdtHFczpnKxVMTuoyNMRBYdnrf7sf86/lGU91A=",
         "owner": "autophagy",
         "repo": "forebodere-rs",
-        "rev": "631cb87458788ba44b610b20ac4491f16bcf7bb7",
+        "rev": "cea569dda1dea0129ea503416e13c989e9b6cc31",
         "type": "github"
       },
       "original": {
