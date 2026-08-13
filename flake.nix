@@ -105,6 +105,7 @@
               specialArgs = {
                 inherit inputs;
                 hostName = "hindberige";
+                fqdn = "hindberige.autophagy.io";
               };
             };
           };

@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  fqdn,
+  ...
+}:
 
 {
   sops.secrets.s3-backup = {
@@ -10,7 +15,7 @@
     vaultwarden = {
       enable = true;
       config = {
-        DOMAIN = "https://hindberige.autophagy.io/vault/";
+        DOMAIN = "https://${fqdn}/vault/";
         ROCKET_PORT = 8222;
         SIGNUPS_ALLOWED = false;
         SIGNUPS_VERIFY = true;

@@ -1,4 +1,4 @@
-_:
+{ fqdn, ... }:
 
 {
   services.nginx = {
@@ -14,10 +14,10 @@ _:
       add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
     '';
     virtualHosts = {
-      "hindberige.autophagy.io" = {
+      "${fqdn}" = {
         forceSSL = true;
-        sslCertificate = "/var/nginx/certs/hindberige.autophagy.io/fullchain.pem";
-        sslCertificateKey = "/var/nginx/certs/hindberige.autophagy.io/privkey.pem";
+        sslCertificate = "/var/nginx/certs/${fqdn}/fullchain.pem";
+        sslCertificateKey = "/var/nginx/certs/${fqdn}/privkey.pem";
         locations = {
           "/" = {
             proxyPass = "http://localhost:3134";
@@ -49,15 +49,15 @@ _:
             proxyWebsockets = true;
           };
           "/photos/" = {
-            return = "301 https://photos.hindberige.autophagy.io/";
+            return = "301 https://photos.${fqdn}/";
           };
         };
       };
 
-      "photos.hindberige.autophagy.io" = {
+      "photos.${fqdn}" = {
         forceSSL = true;
-        sslCertificate = "/var/nginx/certs/photos.hindberige.autophagy.io/fullchain.pem";
-        sslCertificateKey = "/var/nginx/certs/photos.hindberige.autophagy.io/privkey.pem";
+        sslCertificate = "/var/nginx/certs/photos.${fqdn}/fullchain.pem";
+        sslCertificateKey = "/var/nginx/certs/photos.${fqdn}/privkey.pem";
         locations."/" = {
           proxyPass = "http://localhost:2283";
           proxyWebsockets = true;

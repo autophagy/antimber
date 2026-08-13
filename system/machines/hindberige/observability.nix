@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, fqdn, ... }:
 
 {
   services = {
@@ -32,7 +32,7 @@
       enable = true;
       settings.server = {
         http_addr = "127.0.0.1";
-        domain = "hindberige.autophagy.io";
+        domain = fqdn;
         root_url = "%(protocol)s://%(domain)s/grafana/";
         serve_from_sub_path = true;
       };

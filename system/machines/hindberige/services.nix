@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, fqdn, ... }:
 
 {
   sops.secrets.forebodere = {
@@ -32,7 +32,7 @@
     vaultwarden = {
       enable = true;
       config = {
-        DOMAIN = "https://hindberige.autophagy.io/vault/";
+        DOMAIN = "https://${fqdn}/vault/";
         ROCKET_PORT = 8222;
       };
     };
