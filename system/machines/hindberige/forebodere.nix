@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  llamaHost = "127.0.0.1";
+  llamaPort = 8090;
+in
 {
   sops.secrets.forebodere = {
     sopsFile = ../../../secrets/hindberige/forebodere.env;
@@ -32,7 +36,7 @@
           high = "M-M-M-MONSTERLOL!";
         };
         markov_default_order = 2;
-        llm_endpoint = "http://127.0.0.1:8090";
+        llm_endpoint = "http://${llamaHost}:${toString llamaPort}";
       };
     };
   };
@@ -51,7 +55,7 @@
         after = [ "network.target" ];
         wantedBy = [ "multi-user.target" ];
         serviceConfig = {
-          ExecStart = "${pkgs.llama-cpp}/bin/llama-server -m /media/models/fused-360m-instruct/ggml-model-q4_k_m.gguf --host 127.0.0.1 --port 8090";
+          ExecStart = "${pkgs.llama-cpp}/bin/llama-server -m /media/models/fused-360m-instruct/ggml-model-q4_k_m.gguf --host ${llamaHost} --port ${toString llamaPort}";
           Restart = "on-failure";
           RestartSec = 5;
           User = "llama-server";

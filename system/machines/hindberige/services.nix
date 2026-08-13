@@ -1,11 +1,6 @@
-{ config, fqdn, ... }:
+_:
 
 {
-  sops.secrets.forebodere = {
-    sopsFile = ../../../secrets/hindberige/forebodere.env;
-    format = "dotenv";
-  };
-
   services = {
     openssh = {
       enable = true;
@@ -28,13 +23,6 @@
       enable = true;
       openFirewall = false;
       cacheDir = "/media/jellyfin/cache";
-    };
-    vaultwarden = {
-      enable = true;
-      config = {
-        DOMAIN = "https://${fqdn}/vault/";
-        ROCKET_PORT = 8222;
-      };
     };
     sabnzbd.enable = true;
     ansine = {

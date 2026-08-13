@@ -1,4 +1,4 @@
-{ fqdn, ... }:
+{ config, fqdn, ... }:
 
 {
   services.nginx = {
@@ -20,7 +20,7 @@
         sslCertificateKey = "/var/nginx/certs/${fqdn}/privkey.pem";
         locations = {
           "/" = {
-            proxyPass = "http://localhost:3134";
+            proxyPass = "http://localhost:${toString config.services.ansine.settings.port}";
           };
           "/jellyfin/" = {
             proxyPass = "http://localhost:8096/jellyfin/";
@@ -30,7 +30,7 @@
             '';
           };
           "/vault/" = {
-            proxyPass = "http://localhost:8222";
+            proxyPass = "http://localhost:${toString config.services.vaultwarden.config.ROCKET_PORT}";
             proxyWebsockets = true;
           };
           "/vault/notifications/hub" = {
@@ -38,14 +38,14 @@
             proxyWebsockets = true;
           };
           "/vault/notifications/hub/negotiate" = {
-            proxyPass = "http://localhost:8222";
+            proxyPass = "http://localhost:${toString config.services.vaultwarden.config.ROCKET_PORT}";
             proxyWebsockets = true;
           };
           "/sabnzbd" = {
             proxyPass = "http://localhost:8080/sabnzbd";
           };
           "/grafana/" = {
-            proxyPass = "http://localhost:3000";
+            proxyPass = "http://localhost:${toString config.services.grafana.settings.server.http_port}";
             proxyWebsockets = true;
           };
           "/photos/" = {
@@ -59,7 +59,7 @@
         sslCertificate = "/var/nginx/certs/photos.${fqdn}/fullchain.pem";
         sslCertificateKey = "/var/nginx/certs/photos.${fqdn}/privkey.pem";
         locations."/" = {
-          proxyPass = "http://localhost:2283";
+          proxyPass = "http://localhost:${toString config.services.immich.port}";
           proxyWebsockets = true;
           extraConfig = ''
             client_max_body_size 50000M;
