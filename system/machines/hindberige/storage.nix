@@ -8,6 +8,8 @@ _:
   systemd.tmpfiles.rules = [
     "d /media/journal 2755 root systemd-journal -"
     "d /media/sabnzbd 0700 sabnzbd sabnzbd -"
+    "d /media/prometheus 0700 prometheus prometheus -"
+    "d /media/grafana 0700 grafana grafana -"
   ];
 
   fileSystems = {
@@ -28,6 +30,20 @@ _:
 
     "/var/lib/sabnzbd" = {
       device = "/media/sabnzbd";
+      fsType = "none";
+      options = [ "bind" ];
+      depends = [ "/media" ];
+    };
+
+    "/var/lib/prometheus" = {
+      device = "/media/prometheus";
+      fsType = "none";
+      options = [ "bind" ];
+      depends = [ "/media" ];
+    };
+
+    "/var/lib/grafana" = {
+      device = "/media/grafana";
       fsType = "none";
       options = [ "bind" ];
       depends = [ "/media" ];

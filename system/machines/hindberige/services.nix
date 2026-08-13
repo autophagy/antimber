@@ -60,6 +60,10 @@
             description = "Usenet NZB reader";
             route = "/sabnzbd";
           };
+          Grafana = {
+            description = "Metrics dashboards";
+            route = "/grafana/";
+          };
         };
       };
     };

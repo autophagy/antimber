@@ -11,6 +11,7 @@
     ./immich.nix
     ./mail.nix
     ./forebodere.nix
+    ./observability.nix
   ];
 
   boot = {

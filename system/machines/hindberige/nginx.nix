@@ -44,6 +44,10 @@ _:
           "/sabnzbd" = {
             proxyPass = "http://localhost:8080/sabnzbd";
           };
+          "/grafana/" = {
+            proxyPass = "http://localhost:3000";
+            proxyWebsockets = true;
+          };
           "/photos/" = {
             return = "301 https://photos.hindberige.autophagy.io/";
           };
