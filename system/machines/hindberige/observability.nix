@@ -8,6 +8,7 @@
       listenAddress = "127.0.0.1";
       retentionTime = "90d";
       globalConfig.scrape_interval = "15s";
+      extraFlags = [ "--web.enable-otlp-receiver" ];
 
       exporters.node = {
         enable = true;
