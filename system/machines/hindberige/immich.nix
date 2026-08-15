@@ -37,6 +37,9 @@ in
       immich-server.environment = {
         MALLOC_ARENA_MAX = "2";
         VIPS_CONCURRENCY = "2";
+        IMMICH_TELEMETRY_INCLUDE = "all";
+        IMMICH_API_METRICS_PORT = "8081";
+        IMMICH_MICROSERVICES_METRICS_PORT = "8082";
       };
 
       immich-db-backup = {
