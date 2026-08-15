@@ -33,6 +33,16 @@ _:
         refreshInterval = 3;
         services = [
           {
+            name = "Grafana";
+            description = "Metrics dashboards";
+            route = "/grafana/";
+          }
+          {
+            name = "Immich";
+            description = "Photo management";
+            route = "/photos/";
+          }
+          {
             name = "Jellyfin";
             description = "Media system";
             route = "/jellyfin/";
@@ -43,19 +53,9 @@ _:
             route = "/vault/";
           }
           {
-            name = "Immich";
-            description = "Photo management";
-            route = "/photos/";
-          }
-          {
             name = "SABnzbd";
             description = "Usenet NZB reader";
             route = "/sabnzbd/";
-          }
-          {
-            name = "Grafana";
-            description = "Metrics dashboards";
-            route = "/grafana/";
           }
         ];
       };
