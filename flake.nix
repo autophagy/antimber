@@ -18,7 +18,7 @@
     nur.url = "github:nix-community/nur/master";
     utils.url = "github:numtide/flake-utils";
     sops-nix.url = "github:Mic92/sops-nix";
-    ansine.url = "github:autophagy/ansine/v1.1.1";
+    ansine.url = "github:autophagy/ansine";
     forebodere.url = "github:autophagy/forebodere-rs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
