@@ -1,4 +1,9 @@
-{ config, fqdn, ... }:
+{
+  config,
+  lib,
+  fqdn,
+  ...
+}:
 
 {
   services = {
@@ -33,6 +38,16 @@
               targets = [
                 "127.0.0.1:${config.systemd.services.immich-server.environment.IMMICH_API_METRICS_PORT}"
                 "127.0.0.1:${config.systemd.services.immich-server.environment.IMMICH_MICROSERVICES_METRICS_PORT}"
+              ];
+            }
+          ];
+        }
+        {
+          job_name = "llama";
+          static_configs = [
+            {
+              targets = [
+                (lib.removePrefix "http://" config.services.forebodere.settings.llm_endpoint)
               ];
             }
           ];

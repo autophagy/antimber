@@ -56,7 +56,7 @@ in
         after = [ "network.target" ];
         wantedBy = [ "multi-user.target" ];
         serviceConfig = {
-          ExecStart = "${pkgs.llama-cpp}/bin/llama-server -m /media/models/fused-360m-instruct/ggml-model-q4_k_m.gguf --host ${llamaHost} --port ${toString llamaPort}";
+          ExecStart = "${pkgs.llama-cpp}/bin/llama-server -m /media/models/fused-360m-instruct/ggml-model-q4_k_m.gguf --host ${llamaHost} --port ${toString llamaPort} --metrics";
           Restart = "on-failure";
           RestartSec = 5;
           User = "llama-server";
