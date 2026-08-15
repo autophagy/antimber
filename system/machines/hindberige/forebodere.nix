@@ -37,6 +37,7 @@ in
         };
         markov_default_order = 2;
         llm_endpoint = "http://${llamaHost}:${toString llamaPort}";
+        otlp_endpoint = "http://${config.services.prometheus.listenAddress}:${toString config.services.prometheus.port}/api/v1/otlp/v1/metrics";
       };
     };
   };
