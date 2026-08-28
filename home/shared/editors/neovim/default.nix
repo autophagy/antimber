@@ -3,6 +3,8 @@
   programs.neovim = {
     enable = true;
     withNodeJs = true;
+    withRuby = false;
+    withPython3 = false;
 
     plugins = with pkgs.vimPlugins; [
       # Themes
