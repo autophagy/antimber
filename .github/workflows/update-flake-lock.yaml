@@ -1,0 +1,76 @@
+---
+name: Update Flake Lock
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 0"
+concurrency:
+  group: update-flake-lock
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  update:
+    name: Update Inputs
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+
+      - name: Update flake inputs
+        run: nix flake update
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet -- flake.lock; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload updated flake.lock
+        if: steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: flake-lock
+          path: flake.lock
+
+  build:
+    name: Build
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    uses: ./.github/workflows/build.yaml
+    with:
+      flake-lock-artifact: flake-lock
+    secrets: inherit
+
+  commit-and-push:
+    name: Commit and Push
+    needs:
+      - update
+      - build
+    if: needs.update.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: flake-lock
+
+      - name: Commit and push
+        run: |
+          git config user.name "Mika Naylor"
+          git config user.email "mail@autophagy.io"
+          git add flake.lock
+          git commit -m "flake update :: $(date -u +%Y.%m.%d) ∅"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

@@ -4,71 +4,14 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 concurrency:
   group: ci
   cancel-in-progress: true
 jobs:
-  home-manager-build:
-    name: Home Manager Build
-    strategy:
-      matrix:
-        include:
-          - user: heorot
-            runner: ubuntu-latest
-          - user: gamentol
-            runner: ubuntu-latest
-          - user: aeppelboc
-            runner: macos-14
-    runs-on: ${{ matrix.runner }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Nix
-        uses: cachix/install-nix-action@v27
-
-      - name: Build Home Manager Config
-        run: nix build .#homeConfigurations.${{ matrix.user }}.activationPackage
-
-  nixos-build:
-    name: NixOS Build (${{ matrix.machine }})
-    runs-on: ${{ matrix.runner }}
-    timeout-minutes: 120
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - machine: heorot
-            runner: ubuntu-latest
-          - machine: gamentol
-            runner: ubuntu-latest
-          - machine: hindberige
-            runner: ubuntu-24.04-arm
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Nix
-        uses: cachix/install-nix-action@v27
-
-      - uses: cachix/cachix-action@v15
-        if: matrix.machine == 'hindberige'
-        with:
-          name: autophagy
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-
-      - name: Build NixOS
-        run: nix build .#nixosConfigurations.${{ matrix.machine }}.config.system.build.toplevel
-
-  fmt:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Nix
-        uses: cachix/install-nix-action@v27
-
-      - name: Fmt
-        run: nix develop .#ci -c nixfmt --check ./
-
-      - name: Lint
-        run: nix develop .#ci -c statix check .
+  build:
+    if: github.event_name != 'push' || !contains(github.event.head_commit.message, '∅')
+    uses: ./.github/workflows/build.yaml
+    secrets: inherit
