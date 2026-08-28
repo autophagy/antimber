@@ -31,5 +31,8 @@
     cachix
     lnav
     obsidian
+
+    # Coding Harnesses
+    pi-coding-agent
   ];
 }

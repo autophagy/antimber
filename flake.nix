@@ -52,6 +52,9 @@
             purescript-language-server = prev.callPackage ./pkgs/purescript-language-server { };
             purs-tidy = prev.callPackage ./pkgs/purs-tidy { };
           };
+          pi-coding-agent = final: prev: {
+            pi-coding-agent = prev.callPackage ./pkgs/pi-coding-agent { };
+          };
         };
 
         pkgs = import nixpkgs {
@@ -66,6 +69,7 @@
         packages = {
           inherit (pkgs) purescript-language-server;
           inherit (pkgs) purs-tidy;
+          inherit (pkgs) pi-coding-agent;
 
           # NixOS Configurations
 
