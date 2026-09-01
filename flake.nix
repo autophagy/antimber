@@ -11,10 +11,6 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvim-scrollbar = {
-      url = "github:petertriho/nvim-scrollbar";
-      flake = false;
-    };
     herbz-theme = {
       url = "https://raw.githubusercontent.com/irssi-import/themes/gh-pages/h3rbz.theme";
       flake = false;
@@ -31,7 +27,6 @@
       nixpkgs,
       home-manager,
       nix-darwin,
-      nvim-scrollbar,
       herbz-theme,
       nur,
       utils,
@@ -46,13 +41,6 @@
       let
         overlays = {
           nur = nur.overlays.default;
-          nvim-scrollbar = final: prev: {
-            vimPackages.nvim-scrollbar = prev.vimUtils.buildVimPluginFrom2Nix {
-              pname = "nvim-scrollbar";
-              version = "main";
-              src = nvim-scrollbar;
-            };
-          };
           purescript-language-server = final: prev: {
             purescript-language-server = prev.callPackage ./pkgs/purescript-language-server { };
             purs-tidy = prev.callPackage ./pkgs/purs-tidy { };
