@@ -36,117 +36,38 @@
       nixos-hardware,
       ...
     }@inputs:
-    utils.lib.eachDefaultSystem (
-      system:
-      let
-        overlays = {
-          nur = nur.overlays.default;
-          purescript-language-server = final: prev: {
-            purescript-language-server = prev.callPackage ./pkgs/purescript-language-server { };
-            purs-tidy = prev.callPackage ./pkgs/purs-tidy { };
-          };
-          pi-coding-agent = final: prev: {
-            pi-coding-agent = prev.callPackage ./pkgs/pi-coding-agent { };
-          };
+    let
+      overlays = {
+        nur = nur.overlays.default;
+        purescript-language-server = final: prev: {
+          purescript-language-server = prev.callPackage ./pkgs/purescript-language-server { };
+          purs-tidy = prev.callPackage ./pkgs/purs-tidy { };
         };
+        pi-coding-agent = final: prev: {
+          pi-coding-agent = prev.callPackage ./pkgs/pi-coding-agent { };
+        };
+      };
 
-        pkgs = import nixpkgs {
+      pkgsFor =
+        system:
+        import nixpkgs {
           inherit system;
           config = {
             allowUnfree = true;
           };
           overlays = builtins.attrValues overlays;
         };
+    in
+    utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = pkgsFor system;
       in
       {
         packages = {
           inherit (pkgs) purescript-language-server;
           inherit (pkgs) purs-tidy;
           inherit (pkgs) pi-coding-agent;
-
-          # NixOS Configurations
-
-          nixosConfigurations = {
-            heorot = nixpkgs.lib.nixosSystem {
-              inherit system;
-              modules = [
-                ./system/common/configuration.nix
-                ./system/machines/heorot
-                nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
-              ];
-              specialArgs = {
-                inherit inputs;
-                hostName = "heorot";
-              };
-            };
-
-            gamentol = nixpkgs.lib.nixosSystem {
-              inherit system;
-              modules = [
-                ./system/common/configuration.nix
-                ./system/machines/gamentol
-              ];
-              specialArgs = {
-                inherit inputs;
-                hostName = "gamentol";
-              };
-            };
-
-            hindberige = nixpkgs.lib.nixosSystem {
-              modules = [
-                ./system/machines/hindberige
-                sops-nix.nixosModules.sops
-                ansine.nixosModules.default
-                forebodere.nixosModules.default
-              ];
-              specialArgs = {
-                inherit inputs;
-                hostName = "hindberige";
-                fqdn = "hindberige.autophagy.io";
-              };
-            };
-          };
-
-          # Homemanager Configurations
-
-          homeConfigurations = {
-            heorot = home-manager.lib.homeManagerConfiguration {
-              inherit pkgs;
-              modules = [
-                ./home/linux/home.nix
-                ./home/heorot/home.nix
-              ];
-              extraSpecialArgs = {
-                inherit herbz-theme;
-                rootPath = ./.;
-                hostName = "heorot";
-              };
-            };
-
-            gamentol = home-manager.lib.homeManagerConfiguration {
-              inherit pkgs;
-              modules = [
-                ./home/linux/home.nix
-                ./home/gamentol/home.nix
-              ];
-              extraSpecialArgs = {
-                inherit herbz-theme;
-                rootPath = ./.;
-                hostName = "gamentol";
-              };
-            };
-
-            aeppelboc = home-manager.lib.homeManagerConfiguration {
-              inherit pkgs;
-              modules = [
-                ./home/macos/home.nix
-                ./home/aeppelboc/home.nix
-              ];
-              extraSpecialArgs = {
-                inherit herbz-theme;
-              };
-            };
-          };
         };
 
         devShells.ci = pkgs.mkShell {
@@ -160,6 +81,88 @@
       }
     )
     // {
+
+      # NixOS Configurations
+
+      nixosConfigurations = {
+        heorot = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./system/common/configuration.nix
+            ./system/machines/heorot
+            nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
+          ];
+          specialArgs = {
+            inherit inputs;
+            hostName = "heorot";
+          };
+        };
+
+        gamentol = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./system/common/configuration.nix
+            ./system/machines/gamentol
+          ];
+          specialArgs = {
+            inherit inputs;
+            hostName = "gamentol";
+          };
+        };
+
+        hindberige = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./system/machines/hindberige
+            sops-nix.nixosModules.sops
+            ansine.nixosModules.default
+            forebodere.nixosModules.default
+          ];
+          specialArgs = {
+            inherit inputs;
+            hostName = "hindberige";
+            fqdn = "hindberige.autophagy.io";
+          };
+        };
+      };
+
+      # Homemanager Configurations
+
+      homeConfigurations = {
+        heorot = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor "x86_64-linux";
+          modules = [
+            ./home/linux/home.nix
+            ./home/heorot/home.nix
+          ];
+          extraSpecialArgs = {
+            inherit herbz-theme;
+            rootPath = ./.;
+            hostName = "heorot";
+          };
+        };
+
+        gamentol = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor "x86_64-linux";
+          modules = [
+            ./home/linux/home.nix
+            ./home/gamentol/home.nix
+          ];
+          extraSpecialArgs = {
+            inherit herbz-theme;
+            rootPath = ./.;
+            hostName = "gamentol";
+          };
+        };
+
+        aeppelboc = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor "aarch64-darwin";
+          modules = [
+            ./home/macos/home.nix
+            ./home/aeppelboc/home.nix
+          ];
+          extraSpecialArgs = {
+            inherit herbz-theme;
+          };
+        };
+      };
 
       # Darwin Configurations
 
