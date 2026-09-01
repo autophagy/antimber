@@ -104,6 +104,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
 
-  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
-
 }
