@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvim-scrollbar = {
       url = "github:petertriho/nvim-scrollbar";
       flake = false;
@@ -26,6 +30,7 @@
     {
       nixpkgs,
       home-manager,
+      nix-darwin,
       nvim-scrollbar,
       herbz-theme,
       nur,
@@ -165,5 +170,19 @@
 
         formatter = pkgs.nixfmt;
       }
-    );
+    )
+    // {
+
+      # Darwin Configurations
+
+      darwinConfigurations = {
+        aeppelboc = nix-darwin.lib.darwinSystem {
+          modules = [ ./system/machines/aeppelboc ];
+          specialArgs = {
+            inherit inputs;
+            hostName = "aeppelboc";
+          };
+        };
+      };
+    };
 }

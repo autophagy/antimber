@@ -36,6 +36,23 @@ jobs:
       - name: Build Home Manager Config
         run: nix build .#homeConfigurations.${{ matrix.user }}.activationPackage
 
+  darwin-build:
+    name: Darwin Build
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - if: inputs.flake-lock-artifact != ''
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.flake-lock-artifact }}
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+
+      - name: Build Darwin Config
+        run: nix build .#darwinConfigurations.aeppelboc.system
+
   nixos-build:
     name: NixOS Build (${{ matrix.machine }})
     runs-on: ${{ matrix.runner }}

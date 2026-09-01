@@ -10,13 +10,22 @@ nixos verb:
     sudo nixos-rebuild {{verb}} --flake {{flake_path}}
 
 [private]
+darwin verb:
+    sudo darwin-rebuild {{verb}} --flake {{flake_path}}
+
+[private]
+[linux]
 full verb: (home-manager verb) (nixos verb)
 
-# Build a target (home-manager, nixos, or full)
+[private]
+[macos]
+full verb: (home-manager verb) (darwin verb)
+
+# Build a target (home-manager, nixos, darwin, or full)
 build target:
     just {{target}} build
 
-# Switch a target (home-manager, nixos, or full)
+# Switch a target (home-manager, nixos, darwin, or full)
 switch target:
     just {{target}} switch
 
