@@ -1,12 +1,11 @@
-_:
+{ common, ... }:
 
 {
   programs.git = {
     enable = true;
     settings = {
       user = {
-        email = "mail@autophagy.io";
-        name = "Mika Naylor";
+        inherit (common.user) name email;
       };
       rebase.autosquash = true;
       credential.helper = "cache --timeout=3600";
@@ -76,7 +75,7 @@ _:
       };
     };
     signing = {
-      key = "734E068BCC06C31D";
+      key = common.user.gpgKey;
       signByDefault = true;
     };
   };

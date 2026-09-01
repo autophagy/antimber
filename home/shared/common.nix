@@ -8,4 +8,9 @@
   versions = {
     nix = "unstable";
   };
+  user = {
+    name = "Mika Naylor";
+    email = "mail@autophagy.io";
+    gpgKey = "734E068BCC06C31D";
+  };
 }

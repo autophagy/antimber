@@ -3,6 +3,7 @@
 {
   imports = [
     ./git.nix
+    ./jujutsu.nix
     ./bat.nix
     ./irssi.nix
     ./ssh.nix
