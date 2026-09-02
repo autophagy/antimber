@@ -15,7 +15,6 @@
           rust.autoJoin = true;
           bash.autoJoin = true;
           haskell.autoJoin = true;
-          neovim.autoJoin = true;
           python.autoJoin = true;
         };
       };

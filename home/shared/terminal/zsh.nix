@@ -33,7 +33,7 @@
       plugins = [ "gpg-agent" ];
     };
     sessionVariables = {
-      EDITOR = "vim";
+      EDITOR = "hx";
     };
   };
 }

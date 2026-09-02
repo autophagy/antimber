@@ -7,7 +7,7 @@
       user = {
         inherit (common.user) name email;
       };
-      ui.editor = "nvim";
+      ui.editor = "hx";
       signing = {
         behavior = "drop";
         backend = "gpg";

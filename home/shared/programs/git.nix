@@ -9,7 +9,7 @@
       };
       rebase.autosquash = true;
       credential.helper = "cache --timeout=3600";
-      core.editor = "nvim";
+      core.editor = "hx";
       push.default = "simple";
       pull.rebase = false;
       init.defaultBranch = "main";
