@@ -26,6 +26,16 @@
       PURE_PROMPT_SYMBOL="λ"
       PURE_GIT_PULL=0
       prompt pure
+
+      prompt_pure_precustom() {
+        psvar[23]=
+        local root
+        root=$(jj workspace root --ignore-working-copy 2>/dev/null) || return
+        psvar[23]=$(jj log --ignore-working-copy --no-graph --limit 1 -r @ \
+          -T '"jj:" ++ change_id.shortest(8) ++ if(bookmarks, " " ++ bookmarks, "") ++ if(conflict, " (conflict)", "")' \
+          --repository "$root" 2>/dev/null)
+      }
+
       clear
     '';
     oh-my-zsh = {
