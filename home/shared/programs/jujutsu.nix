@@ -8,6 +8,7 @@
         inherit (common.user) name email;
       };
       ui.editor = "hx";
+      ui.paginate = "never";
       signing = {
         behavior = "drop";
         backend = "gpg";
