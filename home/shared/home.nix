@@ -19,6 +19,7 @@
     wget
     ripgrep
     sops
+    age-plugin-yubikey
     jq
     just
     git-absorb

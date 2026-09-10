@@ -7,6 +7,7 @@
     ./networking.nix
     ./services.nix
     ./nginx.nix
+    ./acme.nix
     ./vaultwarden.nix
     ./immich.nix
     ./mail.nix

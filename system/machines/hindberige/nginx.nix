@@ -16,8 +16,7 @@
     virtualHosts = {
       "${fqdn}" = {
         forceSSL = true;
-        sslCertificate = "/var/nginx/certs/${fqdn}/fullchain.pem";
-        sslCertificateKey = "/var/nginx/certs/${fqdn}/privkey.pem";
+        useACMEHost = fqdn;
         locations = {
           "/" = {
             proxyPass = "http://localhost:${toString config.services.ansine.settings.port}";
@@ -56,8 +55,7 @@
 
       "photos.${fqdn}" = {
         forceSSL = true;
-        sslCertificate = "/var/nginx/certs/photos.${fqdn}/fullchain.pem";
-        sslCertificateKey = "/var/nginx/certs/photos.${fqdn}/privkey.pem";
+        useACMEHost = fqdn;
         locations."/" = {
           proxyPass = "http://localhost:${toString config.services.immich.port}";
           proxyWebsockets = true;
