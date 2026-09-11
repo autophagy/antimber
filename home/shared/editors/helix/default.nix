@@ -14,6 +14,7 @@
       purescript
       purescript-language-server
       purs-tidy
+      jdt-language-server
     ];
 
     settings = {
@@ -92,6 +93,9 @@
         purescript = {
           command = "${pkgs.purescript-language-server}/bin/purescript-language-server";
           args = [ "--stdio" ];
+        };
+        jdtls = {
+          command = "${pkgs.jdt-language-server}/bin/jdtls";
         };
       };
 
