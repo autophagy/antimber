@@ -21,6 +21,7 @@
     ansine.url = "github:autophagy/ansine";
     forebodere.url = "github:autophagy/forebodere-rs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
   outputs =
     {
@@ -34,6 +35,7 @@
       ansine,
       forebodere,
       nixos-hardware,
+      nix-homebrew,
       ...
     }@inputs:
     let
@@ -168,7 +170,10 @@
 
       darwinConfigurations = {
         aeppelboc = nix-darwin.lib.darwinSystem {
-          modules = [ ./system/machines/aeppelboc ];
+          modules = [
+            ./system/machines/aeppelboc
+            nix-homebrew.darwinModules.nix-homebrew
+          ];
           specialArgs = {
             inherit inputs;
             hostName = "aeppelboc";

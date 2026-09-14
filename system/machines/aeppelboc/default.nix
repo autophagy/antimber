@@ -65,6 +65,17 @@
     just
   ];
 
+  nix-homebrew = {
+    enable = true;
+    user = "mika";
+    autoMigrate = true;
+  };
+
+  homebrew = {
+    enable = true;
+    casks = [ "steam" ];
+  };
+
   system = {
     primaryUser = "mika";
     stateVersion = 7;
