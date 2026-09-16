@@ -41,6 +41,11 @@
   };
   nixpkgs.config.allowUnfree = true;
 
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
+
   users = {
     motd = builtins.readFile ./motd;
     users = {
