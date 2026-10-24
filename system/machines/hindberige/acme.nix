@@ -13,6 +13,7 @@
       extraDomainNames = [ "*.${fqdn}" ];
       group = config.services.nginx.group;
       dnsProvider = "cloudflare";
+      dnsResolver = "1.1.1.1:53";
       credentialFiles.CF_DNS_API_TOKEN_FILE = config.sops.secrets.cloudflare-dns.path;
     };
   };
