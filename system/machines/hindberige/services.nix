@@ -9,10 +9,7 @@ _:
         PasswordAuthentication = false;
         KbdInteractiveAuthentication = false;
         PermitRootLogin = "no";
-        AllowUsers = [
-          "mika"
-          "emily"
-        ];
+        AllowUsers = [ "mika" ];
       };
     };
     tailscale = {
