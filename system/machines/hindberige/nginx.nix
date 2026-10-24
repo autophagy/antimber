@@ -32,14 +32,6 @@
             proxyPass = "http://localhost:${toString config.services.vaultwarden.config.ROCKET_PORT}";
             proxyWebsockets = true;
           };
-          "/vault/notifications/hub" = {
-            proxyPass = "http://localhost:3012";
-            proxyWebsockets = true;
-          };
-          "/vault/notifications/hub/negotiate" = {
-            proxyPass = "http://localhost:${toString config.services.vaultwarden.config.ROCKET_PORT}";
-            proxyWebsockets = true;
-          };
           "/sabnzbd" = {
             proxyPass = "http://localhost:8080/sabnzbd";
           };
