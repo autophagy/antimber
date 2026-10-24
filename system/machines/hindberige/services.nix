@@ -61,4 +61,33 @@ _:
       };
     };
   };
+
+  systemd.services.sabnzbd.serviceConfig = {
+    ProtectSystem = "strict";
+    ReadWritePaths = [ "/media/sabnzbd" ];
+    ProtectHome = true;
+    PrivateTmp = true;
+    PrivateDevices = true;
+    NoNewPrivileges = true;
+    ProtectKernelTunables = true;
+    ProtectKernelModules = true;
+    ProtectKernelLogs = true;
+    ProtectControlGroups = true;
+    ProtectClock = true;
+    ProtectHostname = true;
+    ProtectProc = "invisible";
+    ProcSubset = "pid";
+    RestrictSUIDSGID = true;
+    RestrictNamespaces = true;
+    RestrictRealtime = true;
+    LockPersonality = true;
+    RestrictAddressFamilies = [
+      "AF_INET"
+      "AF_INET6"
+      "AF_UNIX"
+    ];
+    SystemCallArchitectures = "native";
+    SystemCallFilter = [ "@system-service" ];
+    CapabilityBoundingSet = "";
+  };
 }
