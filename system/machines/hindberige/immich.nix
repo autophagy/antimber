@@ -30,10 +30,14 @@ in
     machine-learning.enable = false;
   };
 
-  services.postgresql.dataDir = "/media/postgres/${config.services.postgresql.package.psqlSchema}";
+  services.postgresql = {
+    package = pkgs.postgresql_17;
+    dataDir = "/media/postgres/${config.services.postgresql.package.psqlSchema}";
+  };
 
   systemd = {
     services = {
+      postgresql.unitConfig.ConditionPathExists = "${config.services.postgresql.dataDir}/PG_VERSION";
       immich-server.environment = {
         MALLOC_ARENA_MAX = "2";
         VIPS_CONCURRENCY = "2";
