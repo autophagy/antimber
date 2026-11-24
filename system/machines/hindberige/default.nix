@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -27,10 +27,7 @@
 
   documentation.nixos.enable = false;
   nix = {
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 30d";
-    };
+    gc.automatic = true;
     settings = {
       experimental-features = [
         "nix-command"
@@ -40,6 +37,30 @@
       trusted-public-keys = [ "autophagy.cachix.org-1:aOfvRQFCgIVXyAxlQjl3ccmlQC70X1ukzr4rDgaCMWw=" ];
     };
   };
+
+  systemd.services.nix-gc.preStart = ''
+    booted=$(readlink -f /run/booted-system)
+    current=$(readlink -f /nix/var/nix/profiles/system)
+    cutoff=$(($(date +%s) - 30 * 86400))
+    old=()
+    for link in /nix/var/nix/profiles/system-*-link; do
+      target=$(readlink -f "$link")
+      if [ "$target" != "$booted" ] && [ "$target" != "$current" ] && [ "$(stat -c %Y "$link")" -lt "$cutoff" ]; then
+        gen=''${link#/nix/var/nix/profiles/system-}
+        old+=("''${gen%-link}")
+      fi
+    done
+    if [ ''${#old[@]} -gt 0 ]; then
+      ${config.nix.package}/bin/nix-env -p /nix/var/nix/profiles/system --delete-generations "''${old[@]}"
+    fi
+    for profile in /nix/var/nix/profiles/default /nix/var/nix/profiles/per-user/*/*; do
+      case "$profile" in *-link) continue ;; esac
+      if [ -L "$profile" ]; then
+        ${config.nix.package}/bin/nix-env -p "$profile" --delete-generations 30d
+      fi
+    done
+  '';
+
   nixpkgs.config.allowUnfree = true;
 
   security.pki.caCertificateBlacklist = [
