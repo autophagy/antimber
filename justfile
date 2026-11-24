@@ -34,3 +34,7 @@ switch target:
 # (--max-jobs 0): a cache miss errors rather than building on the target.
 deploy-to machine host=machine:
     ssh -t {{host}} "sudo nixos-rebuild switch --flake github:autophagy/antimber#{{machine}} --refresh --max-jobs 0"
+
+# Install the U-Boot pinned in hindberige's config onto its FIRMWARE partition
+install-uboot host="hindberige":
+    ssh -t {{host}} "sudo install-uboot"

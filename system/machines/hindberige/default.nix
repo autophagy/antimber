@@ -13,6 +13,7 @@
     ./mail.nix
     ./forebodere.nix
     ./observability.nix
+    ./uboot.nix
   ];
 
   boot = {
